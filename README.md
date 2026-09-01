@@ -83,6 +83,39 @@ not in this repository (`logo-mark-white.png`, `design-tokens.json`). Its
 palette still holds: the stroke gradient of the current `logo.png` is exactly
 the guide's `spectrum`. The cube-face descriptions are stale; the values are not.
 
+## Analytics
+
+Google Tag Manager container `GTM-PS4XN2Z2`, wired the way Tag Manager's own
+install instructions specify: the loader inline in `<head>`, the `<noscript>`
+frame first inside `<body>`. Both are emitted by `nuxt.config.ts` and land in
+every prerendered page, including `404.html`. The container ID lives in
+`shared/site.ts` — set `GTM_ID` to an empty string and neither tag is emitted
+at all, which is what a fork should run with.
+
+The loader is ordered *after* the language-redirect script on purpose. That
+script calls `location.replace`, so a first-time non-English visitor never
+finishes loading `/`; firing the tag first would count a page nobody saw.
+
+**One thing has to be configured in Tag Manager.** After hydration the site is
+a single-page app, so only the first page of a visit causes a document load.
+`app/plugins/gtm-pageview.client.ts` pushes a `cachet_pageview` event on every
+subsequent route change, carrying `page_path`, `page_location`, `page_title`
+and `page_locale`. Without a matching trigger, the container sees only landing
+pages:
+
+1. In Tag Manager, create a **Custom Event** trigger on `cachet_pageview`.
+2. Point your GA4 event tag at it, alongside the built-in page view.
+
+The plugin deliberately does not fire on the initial load (the container
+already counted it), on `/it/` → `/it` trailing-slash redirects, or on in-page
+anchors like `#glossary` — each of those would otherwise inflate the numbers.
+
+> **Consent.** The tag currently loads for everyone, on first paint. Visitors
+> in the EU are covered by the ePrivacy directive, under which analytics
+> cookies generally need consent *before* they are set. If that matters for
+> this audience, the tag needs to move behind a consent banner — see the note
+> in `shared/site.ts`.
+
 ## Deployment
 
 `.github/workflows/deploy.yml` builds and publishes to GitHub Pages on every

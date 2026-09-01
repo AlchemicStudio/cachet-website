@@ -35,3 +35,10 @@ export const GITHUB_API = 'https://api.github.com'
 
 /** Remembers the visitor's language choice across visits. */
 export const LOCALE_COOKIE = 'cachet_locale'
+
+/**
+ * Google Tag Manager container. Empty disables the tag entirely — neither
+ * the loader nor the noscript frame is emitted — which is what local builds
+ * and forks should run with.
+ */
+export const GTM_ID = 'GTM-PS4XN2Z2'

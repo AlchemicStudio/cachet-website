@@ -1,16 +1,25 @@
 import { SITE } from '#shared/site'
 
 /**
- * Per-page metadata. `useLocaleHead` in `app.vue` already emits the canonical
- * and the seven `hreflang` alternates, so this only adds the title, the
- * description and the Open Graph card — with the locale's own OG image.
+ * Per-page metadata: title, description, Open Graph card with the locale's own
+ * image, and the canonical URL.
+ *
+ * `useLocaleHead` in `app.vue` emits the seven `hreflang` alternates but not a
+ * canonical, and GitHub Pages answers both `/docs` and `/docs/` — so the
+ * canonical is set here, without a trailing slash, to name one address per
+ * page.
  */
 export function useSiteSeo(page: 'home' | 'docs' | 'news') {
   const { t, locale } = useI18n()
+  const route = useRoute()
 
   const title = computed(() => t(`seo.${page}.title`))
   const description = computed(() => t(`seo.${page}.description`))
   const image = computed(() => `${SITE.url}/og/og-${locale.value}.png`)
+  const canonical = computed(() => {
+    const path = route.path.replace(/\/+$/, '')
+    return `${SITE.url}${path}`
+  })
 
   useSeoMeta({
     title: () => (page === 'home' ? title.value : `${title.value} · ${SITE.name}`),
@@ -26,12 +35,13 @@ export function useSiteSeo(page: 'home' | 'docs' | 'news') {
     twitterCard: 'summary_large_image',
     twitterTitle: title,
     twitterDescription: description,
-    twitterImage: image
+    twitterImage: image,
+    ogUrl: canonical
   })
 
-  useHead({
-    titleTemplate: page === 'home' ? undefined : `%s`
-  })
+  useHead(() => ({
+    link: [{ rel: 'canonical', href: canonical.value }]
+  }))
 }
 
 /**

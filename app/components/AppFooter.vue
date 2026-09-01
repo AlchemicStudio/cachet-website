@@ -18,6 +18,8 @@ const resources = computed(() => [
   { label: t('footer.tlBrowserLink'), to: 'https://eidas.ec.europa.eu/efda/tl-browser/' }
 ])
 
+const { applicable: consentApplicable, choice: consentChoice, reset: resetConsent } = useConsent()
+
 const year = new Date().getFullYear()
 </script>
 
@@ -77,13 +79,25 @@ const year = new Date().getFullYear()
           <ULink :to="SITE.orgUrl" target="_blank" class="hover:text-highlighted">{{ SITE.org }}</ULink>
           · {{ t('footer.license') }}
         </p>
-        <ULink
-          :to="`${SITE.repoUrl}/blob/main/LICENSE`"
-          target="_blank"
-          class="font-mono hover:text-highlighted"
-        >
-          {{ SITE.license }}
-        </ULink>
+        <div class="flex items-center gap-4">
+          <ClientOnly>
+            <button
+              v-if="consentApplicable && consentChoice"
+              type="button"
+              class="rounded hover:text-highlighted"
+              @click="resetConsent"
+            >
+              {{ t('consent.manage') }}
+            </button>
+          </ClientOnly>
+          <ULink
+            :to="`${SITE.repoUrl}/blob/main/LICENSE`"
+            target="_blank"
+            class="font-mono hover:text-highlighted"
+          >
+            {{ SITE.license }}
+          </ULink>
+        </div>
       </div>
     </UContainer>
   </footer>

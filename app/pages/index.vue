@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { docSlug } from '#shared/docs'
 import { FEATURES, MODES, OUTPUT_FILE_PATTERN } from '~/content'
 import { formatDate } from '~/utils/format'
 import { releaseExcerpt } from '~/utils/markdown'
@@ -162,7 +163,7 @@ const badges = ['qes', 'pades', 'batch', 'standalone'] as const
         </div>
 
         <UButton
-          :to="`${localePath('/docs')}#modes`"
+          :to="`${localePath('/docs')}/${docSlug('modes', locale)}`"
           color="neutral"
           variant="link"
           class="mt-6 px-0"

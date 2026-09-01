@@ -97,14 +97,25 @@
   "docs": {
     "title": "Documentación",
     "lead": "Qué hace Cachet, qué garantiza realmente cada nivel de firma y cómo firmar un lote de documentos de principio a fin.",
-    "toc": "En esta página",
     "onGitHub": "Documentación en GitHub",
     "onGitHubLead": "El repositorio contiene la documentación técnica de referencia, siempre a la par del código.",
     "links": {
-      "readme": { "title": "README", "text": "Referencia completa de opciones y modos" },
-      "build": { "title": "BUILD.md", "text": "Empaquetado: compilación nativa, Wine y CI" },
-      "spec": { "title": "specifications.md", "text": "La especificación del paso a PAdES B-LTA" },
-      "issues": { "title": "Issues", "text": "Informar de un error o plantear una duda" }
+      "readme": {
+        "title": "README",
+        "text": "Referencia completa de opciones y modos"
+      },
+      "build": {
+        "title": "BUILD.md",
+        "text": "Empaquetado: compilación nativa, Wine y CI"
+      },
+      "spec": {
+        "title": "specifications.md",
+        "text": "La especificación del paso a PAdES B-LTA"
+      },
+      "issues": {
+        "title": "Issues",
+        "text": "Informar de un error o plantear una duda"
+      }
     },
     "sections": {
       "overview": "Visión general",
@@ -127,18 +138,54 @@
       "quote": "El modo eID utiliza el certificado de no repudio de la tarjeta, jurídicamente equivalente a una firma manuscrita."
     },
     "features": {
-      "batch": { "title": "Lotes enteros de una vez", "text": "Indique a Cachet archivos o carpetas. La misma marca, la misma página y la misma posición se aplican a todos los documentos del lote." },
-      "modes": { "title": "Tres modos de firma", "text": "Una firma eID cualificada, una firma avanzada desde Azure Key Vault o un simple sello de imagen sin valor jurídico." },
-      "pades": { "title": "PAdES hasta B-LTA", "text": "Niveles b-b, b-t, b-lt y b-lta, seleccionables en cada ejecución. b-lta es el predeterminado: el más fuerte y el más duradero." },
-      "timestamp": { "title": "Sellado de tiempo de confianza", "text": "Una autoridad de sellado de tiempo RFC 3161 acredita cuándo firmó. Apúntela a una TSA cualificada cuando se exija una conservación cualificada según eIDAS." },
-      "ltv": { "title": "Validación a largo plazo", "text": "Los certificados de la AC y las respuestas OCSP/CRL se incrustan al firmar, de modo que el PDF sigue siendo verificable tras la caducidad de los certificados." },
-      "verify": { "title": "Verificado en el acto", "text": "Cada archivo firmado se vuelve a abrir y validar, y se informa del nivel alcanzado. Los niveles nunca se degradan en silencio." },
-      "template": { "title": "Validación con plantilla", "text": "Un documento solo se acepta si su número de páginas y las dimensiones de cada una coinciden exactamente con un PDF de plantilla. Los archivos rechazados nunca se firman." },
-      "placement": { "title": "Colocar con un clic", "text": "Una vista previa real de la página de destino, generada por el motor PDFium incorporado. Haga clic donde deba ir la marca: ahí es donde se firma." },
-      "vignette": { "title": "Marca de firma visible", "text": "Las firmas eID estampan la foto del titular, su nombre y la fecha; las firmas de Azure estampan el nombre y la fecha." },
-      "safety": { "title": "No se sobrescribe nada", "text": "El resultado se escribe como `{pattern}` en la carpeta que elija, y los archivos existentes nunca se reemplazan." },
-      "i18n": { "title": "Seis idiomas en la aplicación", "text": "El asistente habla inglés, francés, neerlandés, alemán, español y portugués, y sigue de forma predeterminada el idioma del sistema." },
-      "standalone": { "title": "Ejecutables autónomos", "text": "Una aplicación con ventana y una herramienta de consola por plataforma, para Linux y Windows. No hay nada que instalar salvo el middleware eID." }
+      "batch": {
+        "title": "Lotes enteros de una vez",
+        "text": "Indique a Cachet archivos o carpetas. La misma marca, la misma página y la misma posición se aplican a todos los documentos del lote."
+      },
+      "modes": {
+        "title": "Tres modos de firma",
+        "text": "Una firma eID cualificada, una firma avanzada desde Azure Key Vault o un simple sello de imagen sin valor jurídico."
+      },
+      "pades": {
+        "title": "PAdES hasta B-LTA",
+        "text": "Niveles b-b, b-t, b-lt y b-lta, seleccionables en cada ejecución. b-lta es el predeterminado: el más fuerte y el más duradero."
+      },
+      "timestamp": {
+        "title": "Sellado de tiempo de confianza",
+        "text": "Una autoridad de sellado de tiempo RFC 3161 acredita cuándo firmó. Apúntela a una TSA cualificada cuando se exija una conservación cualificada según eIDAS."
+      },
+      "ltv": {
+        "title": "Validación a largo plazo",
+        "text": "Los certificados de la AC y las respuestas OCSP/CRL se incrustan al firmar, de modo que el PDF sigue siendo verificable tras la caducidad de los certificados."
+      },
+      "verify": {
+        "title": "Verificado en el acto",
+        "text": "Cada archivo firmado se vuelve a abrir y validar, y se informa del nivel alcanzado. Los niveles nunca se degradan en silencio."
+      },
+      "template": {
+        "title": "Validación con plantilla",
+        "text": "Un documento solo se acepta si su número de páginas y las dimensiones de cada una coinciden exactamente con un PDF de plantilla. Los archivos rechazados nunca se firman."
+      },
+      "placement": {
+        "title": "Colocar con un clic",
+        "text": "Una vista previa real de la página de destino, generada por el motor PDFium incorporado. Haga clic donde deba ir la marca: ahí es donde se firma."
+      },
+      "vignette": {
+        "title": "Marca de firma visible",
+        "text": "Las firmas eID estampan la foto del titular, su nombre y la fecha; las firmas de Azure estampan el nombre y la fecha."
+      },
+      "safety": {
+        "title": "No se sobrescribe nada",
+        "text": "El resultado se escribe como `{pattern}` en la carpeta que elija, y los archivos existentes nunca se reemplazan."
+      },
+      "i18n": {
+        "title": "Seis idiomas en la aplicación",
+        "text": "El asistente habla inglés, francés, neerlandés, alemán, español y portugués, y sigue de forma predeterminada el idioma del sistema."
+      },
+      "standalone": {
+        "title": "Ejecutables autónomos",
+        "text": "Una aplicación con ventana y una herramienta de consola por plataforma, para Linux y Windows. No hay nada que instalar salvo el middleware eID."
+      }
     },
     "modes": {
       "lead": "Los tres modos estampan una marca visible y procesan el lote de forma idéntica. Lo que cambia es el peso jurídico de lo que producen.",
@@ -180,15 +227,41 @@
       "welcomeAlt": "La pantalla de bienvenida de Cachet, con el selector de idioma y el botón Empezar",
       "shotNote": "Las capturas muestran la interfaz en inglés; el asistente también habla español, francés, neerlandés, alemán y portugués.",
       "steps": {
-        "template": { "title": "Elegir una plantilla", "text": "Seleccione un PDF de plantilla con el que deba coincidir cada documento del lote. ¿Solo firma un documento? Elija ese mismo documento como plantilla." },
-        "documents": { "title": "Añadir los documentos", "text": "Seleccione archivos sueltos o carpetas enteras. En las carpetas se buscan los PDF automáticamente." },
-        "validation": { "title": "Validar con la plantilla", "text": "Cada archivo se comprueba: mismo número de páginas y dimensiones de página exactamente idénticas. Una tabla muestra el resultado, y los archivos rechazados nunca se firman. Si algunos archivos tienen un número de páginas distinto —anexos escaneados añadidos, por ejemplo— aparece un selector para firmar cada archivo en su propia primera o última página." },
-        "output": { "title": "Elegir una carpeta de salida", "text": "Los archivos firmados se escriben como `{pattern}`. Los archivos existentes nunca se sobrescriben: si el nombre coincide, se añade ` - 1`, ` - 2`, etc." },
-        "type": { "title": "Elegir el tipo de firma", "text": "eID, Azure o imagen, más el nivel PAdES (b-lta de forma predeterminada). En el modo Azure, un panel recoge la configuración del almacén y ofrece la acción «Iniciar sesión con Microsoft». Un botón «Documentación completa» abre esta misma referencia dentro de la aplicación." },
-        "placement": { "title": "Colocar la marca", "text": "La página de destino se muestra realmente. Haga clic donde deba situarse la marca: en los modos eID y Azure, la viñeta visible se firma exactamente ahí. Hay un campo manual de página, y cuando el número de páginas difiere, el selector de primera/última también aparece aquí." },
-        "signing": { "title": "Firmar", "text": "Un resumen de todo lo elegido, un recordatorio de insertar la tarjeta eID en el modo eID, y después el progreso conforme se firma cada documento. En el modo eID el PIN se solicita una vez por documento; en el modo Azure inició sesión una sola vez para todo el lote." },
-        "report": { "title": "Leer el informe", "text": "Una tabla de resultados documento por documento, con el nivel realmente alcanzado por cada archivo —por ejemplo «PAdES-B-LTA, LTV ok»— y un botón que abre la carpeta de salida." }
-      }
+        "template": {
+          "title": "Elegir una plantilla",
+          "text": "Seleccione un PDF de plantilla con el que deba coincidir cada documento del lote. ¿Solo firma un documento? Elija ese mismo documento como plantilla."
+        },
+        "documents": {
+          "title": "Añadir los documentos",
+          "text": "Seleccione archivos sueltos o carpetas enteras. En las carpetas se buscan los PDF automáticamente."
+        },
+        "validation": {
+          "title": "Validar con la plantilla",
+          "text": "Cada archivo se comprueba: mismo número de páginas y dimensiones de página exactamente idénticas. Una tabla muestra el resultado, y los archivos rechazados nunca se firman. Si algunos archivos tienen un número de páginas distinto —anexos escaneados añadidos, por ejemplo— aparece un selector para firmar cada archivo en su propia primera o última página."
+        },
+        "output": {
+          "title": "Elegir una carpeta de salida",
+          "text": "Los archivos firmados se escriben como `{pattern}`. Los archivos existentes nunca se sobrescriben: si el nombre coincide, se añade ` - 1`, ` - 2`, etc."
+        },
+        "type": {
+          "title": "Elegir el tipo de firma",
+          "text": "eID, Azure o imagen, más el nivel PAdES (b-lta de forma predeterminada). En el modo Azure, un panel recoge la configuración del almacén y ofrece la acción «Iniciar sesión con Microsoft». Un botón «Documentación completa» abre esta misma referencia dentro de la aplicación."
+        },
+        "placement": {
+          "title": "Colocar la marca",
+          "text": "La página de destino se muestra realmente. Haga clic donde deba situarse la marca: en los modos eID y Azure, la viñeta visible se firma exactamente ahí. Hay un campo manual de página, y cuando el número de páginas difiere, el selector de primera/última también aparece aquí."
+        },
+        "signing": {
+          "title": "Firmar",
+          "text": "Un resumen de todo lo elegido, un recordatorio de insertar la tarjeta eID en el modo eID, y después el progreso conforme se firma cada documento. En el modo eID el PIN se solicita una vez por documento; en el modo Azure inició sesión una sola vez para todo el lote."
+        },
+        "report": {
+          "title": "Leer el informe",
+          "text": "Una tabla de resultados documento por documento, con el nivel realmente alcanzado por cada archivo —por ejemplo «PAdES-B-LTA, LTV ok»— y un botón que abre la carpeta de salida."
+        }
+      },
+      "viewFullSize": "Abrir «{title}» a tamaño completo",
+      "fullSize": "Tamaño completo"
     },
     "cli": {
       "lead": "La herramienta de consola comparte todo su núcleo con el asistente, así que todo lo que hace la interfaz está a un comando de distancia. Estos ejemplos suponen una instalación desde el código fuente; con un ejecutable descargado, sustituya la llamada al intérprete por `cachet-cli`.",
@@ -300,6 +373,25 @@
         "title": "Las cadenas B-LTA hay que renovarlas",
         "text": "La cadena de sellos de archivo mantiene la prueba demostrable con el paso del tiempo, pero un archivado realmente duradero exige renovar esa cadena periódicamente. BUILD.md explica lo que ello supone."
       }
+    },
+    "navTitle": "Secciones",
+    "navLead": "Cada sección es una página propia. Léalas seguidas, o vaya directamente a la que necesite.",
+    "breadcrumb": "Ruta de navegación",
+    "pagerLabel": "Navegación entre secciones",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "descriptions": {
+      "features": "Qué hace Cachet, punto por punto: lotes enteros de una vez, tres modos de firma, niveles PAdES, validación con plantilla y resultado verificado en el acto.",
+      "modes": "La tarjeta eID, un certificado de Azure Key Vault o un simple sello de imagen: qué exige cada uno y qué peso jurídico aporta.",
+      "walkthrough": "Los ocho pasos del asistente gráfico, desde elegir una plantilla hasta leer el informe, con una captura de cada uno.",
+      "cli": "La herramienta de consola: los comandos que necesita la mayoría de los lotes y las opciones que los acompañan.",
+      "levels": "PAdES b-b, b-t, b-lt y b-lta: qué añade cada nivel y cuáles necesitan acceso a la red.",
+      "tiers": "Firmas simple, avanzada y cualificada según eIDAS, y cuál necesitan realmente sus documentos.",
+      "requirements": "Lo que necesita cada modo en ejecución: middleware y lector de tarjetas, acceso saliente a la red, o nada en absoluto.",
+      "install": "Descargue un ejecutable autónomo para Linux o Windows, o ejecute Cachet desde el código fuente.",
+      "glossary": "Los términos que emplea Cachet, de PAdES y LTV al número de registro nacional incrustado en cada firma eID.",
+      "sources": "Las normas y servicios en los que se apoyan las firmas, con enlaces a los documentos originales.",
+      "legal": "Lo que conviene saber antes de firmar: el número de registro nacional, sellos de tiempo gratuitos frente a cualificados, y los límites de una firma avanzada."
     }
   },
   "news": {
@@ -364,5 +456,12 @@
     "currentPage": "Página actual",
     "loading": "Cargando",
     "copy": "Copiar"
+  },
+  "consent": {
+    "title": "¿Podemos contar su visita?",
+    "body": "Nos gustaría usar Google Analytics para ver qué páginas se leen y en qué idiomas. No se carga nada ni se instala ninguna cookie sin su acuerdo, y puede cambiar de opinión en cualquier momento al pie de cualquier página.",
+    "accept": "De acuerdo",
+    "decline": "No, gracias",
+    "manage": "Preferencia de analítica"
   }
 }

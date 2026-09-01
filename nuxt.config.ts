@@ -1,4 +1,5 @@
-import { GTM_ID, LOCALES, LOCALE_COOKIE, SITE } from './shared/site'
+import { allDocRoutes } from './shared/docs'
+import { LOCALES, LOCALE_COOKIE, SITE } from './shared/site'
 
 /**
  * Pre-hydration language redirect.
@@ -23,17 +24,6 @@ if(codes.indexOf(tag)>-1)target=tag;}}
 if(!target||target==='en')return;
 location.replace('/'+target+location.search+location.hash);
 }catch(e){}})();`
-
-/**
- * Google Tag Manager loader, as issued for the container — kept byte-for-byte
- * rather than reconstructed, so it stays comparable with what Tag Manager
- * shows in its install instructions.
- */
-const GTM_SCRIPT = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','${GTM_ID}');`
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -81,30 +71,14 @@ export default defineNuxtConfig({
           // Runs only on the site root, only when no choice has been stored,
           // and only towards a locale it actually has — so it cannot loop, and
           // it never overrides a language the visitor picked themselves.
-          //
-          // Ordered ahead of Tag Manager on purpose: this calls
-          // `location.replace`, so a redirected visitor never finishes loading
-          // `/`. Firing the tag first would count a pageview for a page nobody
-          // saw, then a second one for the page they actually got.
           innerHTML: LOCALE_REDIRECT_SCRIPT,
-          tagPosition: 'head' as const,
-          tagPriority: 1
-        },
-        ...(GTM_ID
-          ? [{
-              innerHTML: GTM_SCRIPT,
-              tagPosition: 'head' as const,
-              tagPriority: 2
-            }]
-          : [])
-      ],
-      noscript: GTM_ID
-        ? [{
-            // Tag Manager's fallback frame, first thing inside <body>.
-            innerHTML: `<iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
-            tagPosition: 'bodyOpen' as const
-          }]
-        : []
+          tagPosition: 'head' as const
+        }
+      ]
+      // No Tag Manager tags here, and no `<noscript>` frame either: the
+      // container is loaded from `plugins/gtm.client.ts` once the visitor
+      // agrees. The noscript frame would fire for visitors who cannot be
+      // shown a banner at all, which is exactly who must not be tracked.
     }
   },
 
@@ -155,15 +129,16 @@ export default defineNuxtConfig({
       failOnError: false,
       routes: [
         '/',
-        '/docs',
         '/news',
         '/feed.xml',
         ...LOCALES.filter(l => l.code !== 'en').flatMap(l => [
           `/${l.code}`,
-          `/${l.code}/docs`,
           `/${l.code}/news`,
           `/${l.code}/feed.xml`
-        ])
+        ]),
+        // /docs plus one page per section, in every language: the slugs are
+        // localized, so the crawler cannot guess them from the route pattern.
+        ...allDocRoutes()
       ]
     }
   },

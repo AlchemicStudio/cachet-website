@@ -97,14 +97,25 @@
   "docs": {
     "title": "Documentatie",
     "lead": "Wat Cachet doet, wat elk handtekeningniveau werkelijk garandeert, en hoe u een batch documenten van begin tot eind ondertekent.",
-    "toc": "Op deze pagina",
     "onGitHub": "Documentatie op GitHub",
     "onGitHubLead": "De repository bevat de technische referentiedocumentatie, die gelijk loopt met de code.",
     "links": {
-      "readme": { "title": "README", "text": "Volledige referentie van opties en modi" },
-      "build": { "title": "BUILD.md", "text": "Verpakking: native builds, Wine en CI" },
-      "spec": { "title": "specifications.md", "text": "De specificatie van de overstap naar PAdES B-LTA" },
-      "issues": { "title": "Issues", "text": "Een bug melden of een vraag stellen" }
+      "readme": {
+        "title": "README",
+        "text": "Volledige referentie van opties en modi"
+      },
+      "build": {
+        "title": "BUILD.md",
+        "text": "Verpakking: native builds, Wine en CI"
+      },
+      "spec": {
+        "title": "specifications.md",
+        "text": "De specificatie van de overstap naar PAdES B-LTA"
+      },
+      "issues": {
+        "title": "Issues",
+        "text": "Een bug melden of een vraag stellen"
+      }
     },
     "sections": {
       "overview": "Overzicht",
@@ -127,18 +138,54 @@
       "quote": "De eID-modus gebruikt het onweerlegbaarheidscertificaat van de kaart, dat juridisch gelijkwaardig is aan een handgeschreven handtekening."
     },
     "features": {
-      "batch": { "title": "Volledige batches in één keer", "text": "Wijs Cachet bestanden of mappen aan. Hetzelfde merkteken, dezelfde pagina en dezelfde positie worden op elk document in de batch toegepast." },
-      "modes": { "title": "Drie ondertekenmodi", "text": "Een gekwalificeerde eID-handtekening, een geavanceerde handtekening uit Azure Key Vault, of een eenvoudige afbeeldingsstempel zonder juridische waarde." },
-      "pades": { "title": "PAdES tot en met B-LTA", "text": "Niveaus b-b, b-t, b-lt en b-lta, per uitvoering te kiezen. b-lta is de standaard — het sterkste en het duurzaamste." },
-      "timestamp": { "title": "Betrouwbare tijdstempels", "text": "Een RFC 3161-tijdstempelautoriteit bewijst wanneer u ondertekende. Wijs die naar een gekwalificeerde TSA wanneer eIDAS-gekwalificeerde bewaring vereist is." },
-      "ltv": { "title": "Validatie op lange termijn", "text": "CA-certificaten en OCSP/CRL-antwoorden worden bij het ondertekenen ingesloten, zodat de PDF verifieerbaar blijft nadat de certificaten verlopen zijn." },
-      "verify": { "title": "Meteen geverifieerd", "text": "Elk ondertekend bestand wordt opnieuw geopend en gevalideerd, en het bereikte niveau wordt gerapporteerd. Niveaus worden nooit stilzwijgend verlaagd." },
-      "template": { "title": "Validatie tegen een sjabloon", "text": "Documenten worden alleen aanvaard als hun paginaaantal en de afmetingen van elke pagina exact overeenkomen met een sjabloon-PDF. Afgewezen bestanden worden nooit ondertekend." },
-      "placement": { "title": "Plaatsen met een klik", "text": "Een echte voorvertoning van de doelpagina, weergegeven door de meegeleverde PDFium-engine. Klik waar het merkteken hoort — daar wordt het ondertekend." },
-      "vignette": { "title": "Zichtbaar handtekeningmerk", "text": "eID-handtekeningen stempelen de foto van de kaarthouder, de naam en de datum; Azure-handtekeningen stempelen de naam en de datum." },
-      "safety": { "title": "Niets wordt overschreven", "text": "De uitvoer wordt weggeschreven als `{pattern}` in een map naar keuze, en bestaande bestanden worden nooit vervangen." },
-      "i18n": { "title": "Zes talen in de toepassing", "text": "De assistent spreekt Engels, Frans, Nederlands, Duits, Spaans en Portugees, en volgt standaard de taal van uw systeem." },
-      "standalone": { "title": "Zelfstandige programma's", "text": "Eén venstertoepassing en één console-programma per platform, voor Linux en Windows. Er valt niets te installeren behalve de eID-middleware." }
+      "batch": {
+        "title": "Volledige batches in één keer",
+        "text": "Wijs Cachet bestanden of mappen aan. Hetzelfde merkteken, dezelfde pagina en dezelfde positie worden op elk document in de batch toegepast."
+      },
+      "modes": {
+        "title": "Drie ondertekenmodi",
+        "text": "Een gekwalificeerde eID-handtekening, een geavanceerde handtekening uit Azure Key Vault, of een eenvoudige afbeeldingsstempel zonder juridische waarde."
+      },
+      "pades": {
+        "title": "PAdES tot en met B-LTA",
+        "text": "Niveaus b-b, b-t, b-lt en b-lta, per uitvoering te kiezen. b-lta is de standaard — het sterkste en het duurzaamste."
+      },
+      "timestamp": {
+        "title": "Betrouwbare tijdstempels",
+        "text": "Een RFC 3161-tijdstempelautoriteit bewijst wanneer u ondertekende. Wijs die naar een gekwalificeerde TSA wanneer eIDAS-gekwalificeerde bewaring vereist is."
+      },
+      "ltv": {
+        "title": "Validatie op lange termijn",
+        "text": "CA-certificaten en OCSP/CRL-antwoorden worden bij het ondertekenen ingesloten, zodat de PDF verifieerbaar blijft nadat de certificaten verlopen zijn."
+      },
+      "verify": {
+        "title": "Meteen geverifieerd",
+        "text": "Elk ondertekend bestand wordt opnieuw geopend en gevalideerd, en het bereikte niveau wordt gerapporteerd. Niveaus worden nooit stilzwijgend verlaagd."
+      },
+      "template": {
+        "title": "Validatie tegen een sjabloon",
+        "text": "Documenten worden alleen aanvaard als hun paginaaantal en de afmetingen van elke pagina exact overeenkomen met een sjabloon-PDF. Afgewezen bestanden worden nooit ondertekend."
+      },
+      "placement": {
+        "title": "Plaatsen met een klik",
+        "text": "Een echte voorvertoning van de doelpagina, weergegeven door de meegeleverde PDFium-engine. Klik waar het merkteken hoort — daar wordt het ondertekend."
+      },
+      "vignette": {
+        "title": "Zichtbaar handtekeningmerk",
+        "text": "eID-handtekeningen stempelen de foto van de kaarthouder, de naam en de datum; Azure-handtekeningen stempelen de naam en de datum."
+      },
+      "safety": {
+        "title": "Niets wordt overschreven",
+        "text": "De uitvoer wordt weggeschreven als `{pattern}` in een map naar keuze, en bestaande bestanden worden nooit vervangen."
+      },
+      "i18n": {
+        "title": "Zes talen in de toepassing",
+        "text": "De assistent spreekt Engels, Frans, Nederlands, Duits, Spaans en Portugees, en volgt standaard de taal van uw systeem."
+      },
+      "standalone": {
+        "title": "Zelfstandige programma's",
+        "text": "Eén venstertoepassing en één console-programma per platform, voor Linux en Windows. Er valt niets te installeren behalve de eID-middleware."
+      }
     },
     "modes": {
       "lead": "Alle drie de modi zetten een zichtbaar merkteken en verwerken de hele batch op dezelfde manier. Wat verschilt, is het juridische gewicht van wat ze opleveren.",
@@ -180,15 +227,41 @@
       "welcomeAlt": "Het welkomstscherm van Cachet, met de taalkiezer en de knop Starten",
       "shotNote": "De schermafbeeldingen tonen de Engelse interface; de assistent spreekt ook Nederlands, Frans, Duits, Spaans en Portugees.",
       "steps": {
-        "template": { "title": "Kies een sjabloon", "text": "Kies een sjabloon-PDF waarmee elk document in de batch moet overeenkomen. Ondertekent u één enkel document? Kies dat document zelf als sjabloon." },
-        "documents": { "title": "Voeg de documenten toe", "text": "Selecteer afzonderlijke bestanden of hele mappen. Mappen worden automatisch op PDF's doorzocht." },
-        "validation": { "title": "Valideren tegen het sjabloon", "text": "Elk bestand wordt gecontroleerd op hetzelfde paginaaantal en exact gelijke pagina-afmetingen. Een tabel toont het resultaat, en afgewezen bestanden worden nooit ondertekend. Hebben sommige bestanden een ander paginaaantal — bijvoorbeeld toegevoegde gescande bijlagen — dan verschijnt er een keuzemenu om elk bestand op zijn eigen eerste of laatste pagina te ondertekenen." },
-        "output": { "title": "Kies een uitvoermap", "text": "Ondertekende bestanden worden weggeschreven als `{pattern}`. Bestaande bestanden worden nooit overschreven: bij een naamsconflict komt er ` - 1`, ` - 2`, enzovoort achter." },
-        "type": { "title": "Kies het handtekeningtype", "text": "eID, Azure of afbeelding, plus het PAdES-niveau (standaard b-lta). In de Azure-modus verzamelt een paneel de kluisinstellingen en biedt het een actie \"Aanmelden met Microsoft\". Een knop \"Volledige documentatie\" opent dezelfde referentie binnen de toepassing." },
-        "placement": { "title": "Plaats het merkteken", "text": "De doelpagina wordt echt weergegeven. Klik waar het merkteken moet komen — in de eID- en Azure-modus wordt het zichtbare vignet precies daar ondertekend. Er is een handmatig paginaveld, en wanneer de paginaaantallen verschillen, verschijnt de eerste/laatste-keuze ook hier." },
-        "signing": { "title": "Ondertekenen", "text": "Een samenvatting van alle keuzes, in de eID-modus een herinnering om de eID-kaart in te steken, en dan de voortgang terwijl elk document ondertekend wordt. In de eID-modus wordt de pincode één keer per document gevraagd; in de Azure-modus meldde u zich één keer aan voor de hele batch." },
-        "report": { "title": "Lees het rapport", "text": "Een resultatentabel per document met het niveau dat elk bestand werkelijk bereikte — bijvoorbeeld \"PAdES-B-LTA, LTV ok\" — en een knop die de uitvoermap opent." }
-      }
+        "template": {
+          "title": "Kies een sjabloon",
+          "text": "Kies een sjabloon-PDF waarmee elk document in de batch moet overeenkomen. Ondertekent u één enkel document? Kies dat document zelf als sjabloon."
+        },
+        "documents": {
+          "title": "Voeg de documenten toe",
+          "text": "Selecteer afzonderlijke bestanden of hele mappen. Mappen worden automatisch op PDF's doorzocht."
+        },
+        "validation": {
+          "title": "Valideren tegen het sjabloon",
+          "text": "Elk bestand wordt gecontroleerd op hetzelfde paginaaantal en exact gelijke pagina-afmetingen. Een tabel toont het resultaat, en afgewezen bestanden worden nooit ondertekend. Hebben sommige bestanden een ander paginaaantal — bijvoorbeeld toegevoegde gescande bijlagen — dan verschijnt er een keuzemenu om elk bestand op zijn eigen eerste of laatste pagina te ondertekenen."
+        },
+        "output": {
+          "title": "Kies een uitvoermap",
+          "text": "Ondertekende bestanden worden weggeschreven als `{pattern}`. Bestaande bestanden worden nooit overschreven: bij een naamsconflict komt er ` - 1`, ` - 2`, enzovoort achter."
+        },
+        "type": {
+          "title": "Kies het handtekeningtype",
+          "text": "eID, Azure of afbeelding, plus het PAdES-niveau (standaard b-lta). In de Azure-modus verzamelt een paneel de kluisinstellingen en biedt het een actie \"Aanmelden met Microsoft\". Een knop \"Volledige documentatie\" opent dezelfde referentie binnen de toepassing."
+        },
+        "placement": {
+          "title": "Plaats het merkteken",
+          "text": "De doelpagina wordt echt weergegeven. Klik waar het merkteken moet komen — in de eID- en Azure-modus wordt het zichtbare vignet precies daar ondertekend. Er is een handmatig paginaveld, en wanneer de paginaaantallen verschillen, verschijnt de eerste/laatste-keuze ook hier."
+        },
+        "signing": {
+          "title": "Ondertekenen",
+          "text": "Een samenvatting van alle keuzes, in de eID-modus een herinnering om de eID-kaart in te steken, en dan de voortgang terwijl elk document ondertekend wordt. In de eID-modus wordt de pincode één keer per document gevraagd; in de Azure-modus meldde u zich één keer aan voor de hele batch."
+        },
+        "report": {
+          "title": "Lees het rapport",
+          "text": "Een resultatentabel per document met het niveau dat elk bestand werkelijk bereikte — bijvoorbeeld \"PAdES-B-LTA, LTV ok\" — en een knop die de uitvoermap opent."
+        }
+      },
+      "viewFullSize": "'{title}' op volledige grootte openen",
+      "fullSize": "Volledige grootte"
     },
     "cli": {
       "lead": "Het console-programma deelt zijn volledige kern met de assistent: alles wat de interface kan, ligt op één opdracht afstand. Deze voorbeelden gaan uit van een installatie vanaf de broncode; met een gedownloade build vervangt u de aanroep van de interpreter door `cachet-cli`.",
@@ -300,6 +373,25 @@
         "title": "B-LTA-ketens moeten vernieuwd worden",
         "text": "De keten van archieftijdstempels houdt het bewijs door de tijd heen aantoonbaar, maar echte archivering op lange termijn vraagt om die keten periodiek te vernieuwen. BUILD.md legt uit wat daarbij komt kijken."
       }
+    },
+    "navTitle": "Onderdelen",
+    "navLead": "Elk onderdeel is een eigen pagina. Lees ze achter elkaar, of ga meteen naar wat u zoekt.",
+    "breadcrumb": "Kruimelpad",
+    "pagerLabel": "Navigatie tussen onderdelen",
+    "previous": "Vorige",
+    "next": "Volgende",
+    "descriptions": {
+      "features": "Wat Cachet doet, punt voor punt: volledige batches in één keer, drie ondertekenmodi, PAdES-niveaus, validatie tegen een sjabloon en meteen geverifieerde uitvoer.",
+      "modes": "De eID-kaart, een certificaat uit Azure Key Vault of een eenvoudige afbeeldingsstempel — wat elk ervan vraagt, en welk juridisch gewicht het draagt.",
+      "walkthrough": "De acht stappen van de grafische assistent, van het kiezen van een sjabloon tot het lezen van het rapport, met van elke stap een schermafbeelding.",
+      "cli": "Het console-programma: de opdrachten die de meeste batches nodig hebben, en de opties erachter.",
+      "levels": "PAdES b-b, b-t, b-lt en b-lta — wat elk niveau toevoegt, en welke netwerktoegang vragen.",
+      "tiers": "Eenvoudige, geavanceerde en gekwalificeerde handtekeningen volgens eIDAS, en welke uw documenten werkelijk nodig hebben.",
+      "requirements": "Wat elke modus nodig heeft tijdens het draaien: middleware en een kaartlezer, uitgaande netwerktoegang, of helemaal niets.",
+      "install": "Download een zelfstandige build voor Linux of Windows, of draai Cachet vanaf de broncode.",
+      "glossary": "De termen die Cachet gebruikt, van PAdES en LTV tot het rijksregisternummer dat in elke eID-handtekening zit.",
+      "sources": "De normen en diensten waarop de handtekeningen steunen, met links naar de oorspronkelijke documenten.",
+      "legal": "Wat u moet weten voor u ondertekent: het rijksregisternummer, gratis tegenover gekwalificeerde tijdstempels, en de grenzen van een geavanceerde handtekening."
     }
   },
   "news": {
@@ -364,5 +456,12 @@
     "currentPage": "Huidige pagina",
     "loading": "Bezig met laden",
     "copy": "Kopiëren"
+  },
+  "consent": {
+    "title": "Mogen we uw bezoek meetellen?",
+    "body": "We zouden Google Analytics willen gebruiken om te zien welke pagina's gelezen worden, en in welke talen. Er wordt niets geladen en geen cookie geplaatst zonder uw akkoord — en u kunt onderaan elke pagina van gedachten veranderen.",
+    "accept": "Akkoord",
+    "decline": "Nee, bedankt",
+    "manage": "Keuze over statistieken"
   }
 }

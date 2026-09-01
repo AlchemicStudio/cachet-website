@@ -7,8 +7,16 @@ Nuxt UI, generated as a fully static site and served from GitHub Pages at
 
 ## What it is
 
-Three pages — `/`, `/docs` and `/news` — in **seven languages**: English (at
-the root), then `/fr/`, `/nl/`, `/de/`, `/es/`, `/pt/` and `/it/`.
+`/`, `/news`, and a documentation section that is **one page per topic at a
+URL written in the reader's language** — `/docs/the-three-modes`,
+`/de/docs/die-drei-modi`, `/fr/docs/les-trois-modes`. All of it in **seven
+languages**: English at the root, then `/fr/`, `/nl/`, `/de/`, `/es/`, `/pt/`
+and `/it/`. 99 pages in all, every one prerendered.
+
+The slugs live in `shared/docs.ts`, which is the single place that knows them:
+`nuxt.config.ts` reads it to enumerate what to prerender, `[slug].vue` reads it
+to resolve a URL back to a section, and the language switcher reads it to
+rewrite the slug when you change language mid-page.
 
 Download links and the release list come **live from the GitHub API on every
 page load**. Because the site is static, the same data is also prerendered into
@@ -31,6 +39,8 @@ pnpm generate       # static output in .output/public
 | Content | Source | How to change it |
 |---|---|---|
 | Interface strings, home page, feature list, walkthrough, CLI reference | `i18n/locales/<locale>.json` | Edit `en.json`, then the six others; run `pnpm check:locales` |
+| Documentation URLs | `shared/docs.ts` | Add the slug in all seven languages; the routes follow automatically |
+| A documentation section's markup | `app/components/docs/<Name>.vue` | One component per section, rendered by `app/pages/docs/[slug].vue` |
 | The reference sections on `/docs` (modes, PAdES levels, AES vs QES, glossary, sources) | `i18n/docs/<locale>.json` | **Generated** — edit `i18n_docs.py` in the app, then re-run `pnpm docs` |
 | Ordering, icons, anchors, CLI examples | `app/content.ts` | Edit directly; prose stays in the catalogs |
 | Release data | GitHub API | Nothing to edit; `pnpm snapshot` refreshes the offline fallback |
@@ -110,11 +120,28 @@ The plugin deliberately does not fire on the initial load (the container
 already counted it), on `/it/` → `/it` trailing-slash redirects, or on in-page
 anchors like `#glossary` — each of those would otherwise inflate the numbers.
 
-> **Consent.** The tag currently loads for everyone, on first paint. Visitors
-> in the EU are covered by the ePrivacy directive, under which analytics
-> cookies generally need consent *before* they are set. If that matters for
-> this audience, the tag needs to move behind a consent banner — see the note
-> in `shared/site.ts`.
+### Consent
+
+**Nothing is requested from Google until the visitor agrees.** No container, no
+`<noscript>` frame, no cookie. `ConsentBanner.vue` asks, `useConsent.ts` records
+the answer in a first-party cookie, and `plugins/gtm.client.ts` loads the
+container only once that says `granted`. Declining is one click in a button of
+the same weight as accepting, and the choice is revocable from the footer of
+every page.
+
+That is a stricter reading than Google's Consent Mode, which loads the
+container and tells it what it may do. Under the ePrivacy directive the storage
+has to wait for the answer, so here it does.
+
+Two consequences worth knowing:
+
+- **There is no `<noscript>` frame.** It would fire for visitors who cannot be
+  shown a banner at all — exactly the people who cannot consent.
+- **The consent state must never be seeded inside `useState`.** The pages are
+  prerendered, so an initialiser reading the cookie runs at build time with no
+  visitor and no cookie, and the resulting `null` is serialized into the payload
+  and restored over the real answer on hydration. `plugins/consent.client.ts`
+  fills it in from `document.cookie` on the client instead.
 
 ## Deployment
 

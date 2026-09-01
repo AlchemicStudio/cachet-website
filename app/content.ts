@@ -86,23 +86,25 @@ export const DOC_LINKS = [
   { id: 'issues', url: `${SITE.repoUrl}/issues`, icon: 'i-lucide-circle-dot' }
 ] as const
 
-/** Sections of `/docs`, used to build the table of contents and the anchors. */
-export const DOC_SECTIONS = [
-  'overview',
-  'features',
-  'modes',
-  'walkthrough',
-  'cli',
-  'levels',
-  'tiers',
-  'requirements',
-  'install',
-  'glossary',
-  'sources',
-  'legal'
-] as const
-
-export type DocSection = (typeof DOC_SECTIONS)[number]
+/**
+ * Icon per documentation section, for the index cards and each section's own
+ * heading. The sections themselves — and the localized URL each one lives at —
+ * are in `shared/docs.ts`, which `nuxt.config.ts` reads too.
+ */
+export const SECTION_ICONS: Record<string, string> = {
+  overview: 'i-lucide-compass',
+  features: 'i-lucide-sparkles',
+  modes: 'i-lucide-git-fork',
+  walkthrough: 'i-lucide-footprints',
+  cli: 'i-lucide-terminal',
+  levels: 'i-lucide-shield-check',
+  tiers: 'i-lucide-scale',
+  requirements: 'i-lucide-clipboard-list',
+  install: 'i-lucide-download',
+  glossary: 'i-lucide-book-open',
+  sources: 'i-lucide-library',
+  legal: 'i-lucide-shield-alert'
+}
 
 /**
  * Locales that have the application's reference documentation.

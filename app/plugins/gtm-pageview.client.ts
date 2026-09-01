@@ -48,11 +48,20 @@ function normalise(path: string): string {
 export default defineNuxtPlugin(nuxtApp => {
   if (!GTM_ID) return
 
+  const { granted } = useConsent()
   const router = useRouter()
   let previousPath = ''
 
   router.afterEach(async (to, from) => {
     const path = normalise(to.path)
+
+    // Nothing is reported to a visitor who declined, and nothing is queued for
+    // one who has not answered: a later "yes" must not backfill the pages they
+    // read while the banner was still up.
+    if (!granted.value) {
+      previousPath = path
+      return
+    }
 
     // `from.name` is undefined only for the initial navigation, which the
     // container already counted as the document's page view.

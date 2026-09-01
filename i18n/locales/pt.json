@@ -97,14 +97,25 @@
   "docs": {
     "title": "Documentação",
     "lead": "O que o Cachet faz, o que cada nível de assinatura realmente garante, e como assinar um lote de documentos do início ao fim.",
-    "toc": "Nesta página",
     "onGitHub": "Documentação no GitHub",
     "onGitHubLead": "O repositório contém a documentação técnica de referência, mantida a par do código.",
     "links": {
-      "readme": { "title": "README", "text": "Referência completa das opções e dos modos" },
-      "build": { "title": "BUILD.md", "text": "Empacotamento: compilação nativa, Wine e CI" },
-      "spec": { "title": "specifications.md", "text": "A especificação da passagem a PAdES B-LTA" },
-      "issues": { "title": "Issues", "text": "Comunicar um erro ou colocar uma questão" }
+      "readme": {
+        "title": "README",
+        "text": "Referência completa das opções e dos modos"
+      },
+      "build": {
+        "title": "BUILD.md",
+        "text": "Empacotamento: compilação nativa, Wine e CI"
+      },
+      "spec": {
+        "title": "specifications.md",
+        "text": "A especificação da passagem a PAdES B-LTA"
+      },
+      "issues": {
+        "title": "Issues",
+        "text": "Comunicar um erro ou colocar uma questão"
+      }
     },
     "sections": {
       "overview": "Visão geral",
@@ -127,18 +138,54 @@
       "quote": "O modo eID utiliza o certificado de não repúdio do cartão, juridicamente equivalente a uma assinatura manuscrita."
     },
     "features": {
-      "batch": { "title": "Lotes inteiros de uma vez", "text": "Indique ao Cachet ficheiros ou pastas. A mesma marca, a mesma página e a mesma posição são aplicadas a todos os documentos do lote." },
-      "modes": { "title": "Três modos de assinatura", "text": "Uma assinatura eID qualificada, uma assinatura avançada a partir do Azure Key Vault, ou um simples carimbo de imagem sem valor jurídico." },
-      "pades": { "title": "PAdES até B-LTA", "text": "Níveis b-b, b-t, b-lt e b-lta, selecionáveis em cada execução. b-lta é a predefinição — o mais forte e o mais duradouro." },
-      "timestamp": { "title": "Selagem temporal de confiança", "text": "Uma autoridade de selagem temporal RFC 3161 prova quando assinou. Aponte-a para uma TSA qualificada quando for exigida uma conservação qualificada segundo o eIDAS." },
-      "ltv": { "title": "Validação a longo prazo", "text": "Os certificados da AC e as respostas OCSP/CRL são incorporados no momento da assinatura, pelo que o PDF continua verificável depois de os certificados expirarem." },
-      "verify": { "title": "Verificado no momento", "text": "Cada ficheiro assinado é reaberto e validado, e o nível atingido é comunicado. Os níveis nunca são reduzidos em silêncio." },
-      "template": { "title": "Validação por modelo", "text": "Um documento só é aceite se o seu número de páginas e as dimensões de cada uma corresponderem exatamente a um PDF-modelo. Os ficheiros rejeitados nunca são assinados." },
-      "placement": { "title": "Colocar com um clique", "text": "Uma pré-visualização real da página de destino, desenhada pelo motor PDFium incorporado. Clique onde a marca deve ficar — é aí que fica assinada." },
-      "vignette": { "title": "Marca de assinatura visível", "text": "As assinaturas eID carimbam a fotografia do titular, o nome e a data; as assinaturas Azure carimbam o nome e a data." },
-      "safety": { "title": "Nada é substituído", "text": "O resultado é escrito como `{pattern}` numa pasta à sua escolha, e os ficheiros existentes nunca são substituídos." },
-      "i18n": { "title": "Seis idiomas na aplicação", "text": "O assistente fala inglês, francês, neerlandês, alemão, espanhol e português, e segue por predefinição o idioma do sistema." },
-      "standalone": { "title": "Executáveis autónomos", "text": "Uma aplicação com janela e uma ferramenta de consola por plataforma, para Linux e Windows. Não há nada a instalar além do middleware eID." }
+      "batch": {
+        "title": "Lotes inteiros de uma vez",
+        "text": "Indique ao Cachet ficheiros ou pastas. A mesma marca, a mesma página e a mesma posição são aplicadas a todos os documentos do lote."
+      },
+      "modes": {
+        "title": "Três modos de assinatura",
+        "text": "Uma assinatura eID qualificada, uma assinatura avançada a partir do Azure Key Vault, ou um simples carimbo de imagem sem valor jurídico."
+      },
+      "pades": {
+        "title": "PAdES até B-LTA",
+        "text": "Níveis b-b, b-t, b-lt e b-lta, selecionáveis em cada execução. b-lta é a predefinição — o mais forte e o mais duradouro."
+      },
+      "timestamp": {
+        "title": "Selagem temporal de confiança",
+        "text": "Uma autoridade de selagem temporal RFC 3161 prova quando assinou. Aponte-a para uma TSA qualificada quando for exigida uma conservação qualificada segundo o eIDAS."
+      },
+      "ltv": {
+        "title": "Validação a longo prazo",
+        "text": "Os certificados da AC e as respostas OCSP/CRL são incorporados no momento da assinatura, pelo que o PDF continua verificável depois de os certificados expirarem."
+      },
+      "verify": {
+        "title": "Verificado no momento",
+        "text": "Cada ficheiro assinado é reaberto e validado, e o nível atingido é comunicado. Os níveis nunca são reduzidos em silêncio."
+      },
+      "template": {
+        "title": "Validação por modelo",
+        "text": "Um documento só é aceite se o seu número de páginas e as dimensões de cada uma corresponderem exatamente a um PDF-modelo. Os ficheiros rejeitados nunca são assinados."
+      },
+      "placement": {
+        "title": "Colocar com um clique",
+        "text": "Uma pré-visualização real da página de destino, desenhada pelo motor PDFium incorporado. Clique onde a marca deve ficar — é aí que fica assinada."
+      },
+      "vignette": {
+        "title": "Marca de assinatura visível",
+        "text": "As assinaturas eID carimbam a fotografia do titular, o nome e a data; as assinaturas Azure carimbam o nome e a data."
+      },
+      "safety": {
+        "title": "Nada é substituído",
+        "text": "O resultado é escrito como `{pattern}` numa pasta à sua escolha, e os ficheiros existentes nunca são substituídos."
+      },
+      "i18n": {
+        "title": "Seis idiomas na aplicação",
+        "text": "O assistente fala inglês, francês, neerlandês, alemão, espanhol e português, e segue por predefinição o idioma do sistema."
+      },
+      "standalone": {
+        "title": "Executáveis autónomos",
+        "text": "Uma aplicação com janela e uma ferramenta de consola por plataforma, para Linux e Windows. Não há nada a instalar além do middleware eID."
+      }
     },
     "modes": {
       "lead": "Os três modos aplicam uma marca visível e processam o lote de forma idêntica. O que difere é o peso jurídico daquilo que produzem.",
@@ -180,15 +227,41 @@
       "welcomeAlt": "O ecrã de boas-vindas do Cachet, com o seletor de idioma e o botão Começar",
       "shotNote": "As capturas mostram a interface em inglês; o assistente também fala português, francês, neerlandês, alemão e espanhol.",
       "steps": {
-        "template": { "title": "Escolher um modelo", "text": "Selecione um PDF-modelo com o qual cada documento do lote deve corresponder. Está a assinar apenas um documento? Escolha esse mesmo documento como modelo." },
-        "documents": { "title": "Acrescentar os documentos", "text": "Selecione ficheiros individuais ou pastas inteiras. Nas pastas procuram-se automaticamente os PDF." },
-        "validation": { "title": "Validar face ao modelo", "text": "Cada ficheiro é verificado: o mesmo número de páginas e dimensões de página exatamente iguais. Uma tabela mostra o resultado, e os ficheiros rejeitados nunca são assinados. Se alguns ficheiros tiverem um número de páginas diferente — anexos digitalizados acrescentados, por exemplo — aparece um seletor para assinar cada ficheiro na sua própria primeira ou última página." },
-        "output": { "title": "Escolher uma pasta de destino", "text": "Os ficheiros assinados são escritos como `{pattern}`. Os ficheiros existentes nunca são substituídos: se o nome coincidir, acrescenta-se ` - 1`, ` - 2`, e assim por diante." },
-        "type": { "title": "Escolher o tipo de assinatura", "text": "eID, Azure ou imagem, mais o nível PAdES (b-lta por predefinição). No modo Azure, um painel recolhe as definições do cofre e oferece a ação «Iniciar sessão com a Microsoft». Um botão «Documentação completa» abre esta mesma referência dentro da aplicação." },
-        "placement": { "title": "Colocar a marca", "text": "A página de destino é realmente apresentada. Clique onde a marca deve ficar — nos modos eID e Azure, a vinheta visível é assinada exatamente aí. Há um campo manual de página, e quando o número de páginas difere, o seletor de primeira/última também aparece aqui." },
-        "signing": { "title": "Assinar", "text": "Um resumo de tudo o que foi escolhido, um lembrete para inserir o cartão eID no modo eID, e depois o progresso à medida que cada documento é assinado. No modo eID, o PIN é pedido uma vez por documento; no modo Azure, iniciou sessão uma só vez para todo o lote." },
-        "report": { "title": "Ler o relatório", "text": "Uma tabela de resultados documento a documento, com o nível realmente atingido por cada ficheiro — por exemplo «PAdES-B-LTA, LTV ok» — e um botão que abre a pasta de destino." }
-      }
+        "template": {
+          "title": "Escolher um modelo",
+          "text": "Selecione um PDF-modelo com o qual cada documento do lote deve corresponder. Está a assinar apenas um documento? Escolha esse mesmo documento como modelo."
+        },
+        "documents": {
+          "title": "Acrescentar os documentos",
+          "text": "Selecione ficheiros individuais ou pastas inteiras. Nas pastas procuram-se automaticamente os PDF."
+        },
+        "validation": {
+          "title": "Validar face ao modelo",
+          "text": "Cada ficheiro é verificado: o mesmo número de páginas e dimensões de página exatamente iguais. Uma tabela mostra o resultado, e os ficheiros rejeitados nunca são assinados. Se alguns ficheiros tiverem um número de páginas diferente — anexos digitalizados acrescentados, por exemplo — aparece um seletor para assinar cada ficheiro na sua própria primeira ou última página."
+        },
+        "output": {
+          "title": "Escolher uma pasta de destino",
+          "text": "Os ficheiros assinados são escritos como `{pattern}`. Os ficheiros existentes nunca são substituídos: se o nome coincidir, acrescenta-se ` - 1`, ` - 2`, e assim por diante."
+        },
+        "type": {
+          "title": "Escolher o tipo de assinatura",
+          "text": "eID, Azure ou imagem, mais o nível PAdES (b-lta por predefinição). No modo Azure, um painel recolhe as definições do cofre e oferece a ação «Iniciar sessão com a Microsoft». Um botão «Documentação completa» abre esta mesma referência dentro da aplicação."
+        },
+        "placement": {
+          "title": "Colocar a marca",
+          "text": "A página de destino é realmente apresentada. Clique onde a marca deve ficar — nos modos eID e Azure, a vinheta visível é assinada exatamente aí. Há um campo manual de página, e quando o número de páginas difere, o seletor de primeira/última também aparece aqui."
+        },
+        "signing": {
+          "title": "Assinar",
+          "text": "Um resumo de tudo o que foi escolhido, um lembrete para inserir o cartão eID no modo eID, e depois o progresso à medida que cada documento é assinado. No modo eID, o PIN é pedido uma vez por documento; no modo Azure, iniciou sessão uma só vez para todo o lote."
+        },
+        "report": {
+          "title": "Ler o relatório",
+          "text": "Uma tabela de resultados documento a documento, com o nível realmente atingido por cada ficheiro — por exemplo «PAdES-B-LTA, LTV ok» — e um botão que abre a pasta de destino."
+        }
+      },
+      "viewFullSize": "Abrir «{title}» em tamanho real",
+      "fullSize": "Tamanho real"
     },
     "cli": {
       "lead": "A ferramenta de consola partilha todo o seu núcleo com o assistente, pelo que tudo o que a interface faz está a um comando de distância. Estes exemplos pressupõem uma instalação a partir do código-fonte; com um executável transferido, substitua a chamada ao interpretador por `cachet-cli`.",
@@ -300,6 +373,25 @@
         "title": "As cadeias B-LTA precisam de renovação",
         "text": "A cadeia de selos de arquivo mantém a prova demonstrável ao longo do tempo, mas um arquivo verdadeiramente duradouro exige renovar essa cadeia periodicamente. O BUILD.md explica o que isso implica."
       }
+    },
+    "navTitle": "Secções",
+    "navLead": "Cada secção é uma página própria. Leia-as de seguida, ou vá directamente à que precisa.",
+    "breadcrumb": "Trilho de navegação",
+    "pagerLabel": "Navegação entre secções",
+    "previous": "Anterior",
+    "next": "Seguinte",
+    "descriptions": {
+      "features": "O que o Cachet faz, ponto por ponto: lotes inteiros de uma vez, três modos de assinatura, níveis PAdES, validação por modelo e resultado verificado no momento.",
+      "modes": "O cartão eID, um certificado do Azure Key Vault ou um simples carimbo de imagem: o que cada um exige e que peso jurídico confere.",
+      "walkthrough": "Os oito passos do assistente gráfico, desde escolher um modelo até ler o relatório, com uma captura de ecrã de cada um.",
+      "cli": "A ferramenta de consola: os comandos de que a maioria dos lotes precisa e as opções que os acompanham.",
+      "levels": "PAdES b-b, b-t, b-lt e b-lta: o que cada nível acrescenta e quais precisam de acesso à rede.",
+      "tiers": "Assinaturas simples, avançada e qualificada segundo o eIDAS, e qual delas os seus documentos realmente precisam.",
+      "requirements": "O que cada modo precisa em execução: middleware e leitor de cartões, acesso de saída à rede, ou nada.",
+      "install": "Transfira um executável autónomo para Linux ou Windows, ou execute o Cachet a partir do código-fonte.",
+      "glossary": "Os termos que o Cachet usa, de PAdES e LTV ao número de registo nacional incorporado em cada assinatura eID.",
+      "sources": "As normas e os serviços em que as assinaturas assentam, com ligações aos documentos originais.",
+      "legal": "O que saber antes de assinar: o número de registo nacional, selos temporais gratuitos face a qualificados, e os limites de uma assinatura avançada."
     }
   },
   "news": {
@@ -364,5 +456,12 @@
     "currentPage": "Página atual",
     "loading": "A carregar",
     "copy": "Copiar"
+  },
+  "consent": {
+    "title": "Podemos contar a sua visita?",
+    "body": "Gostaríamos de usar o Google Analytics para ver que páginas são lidas e em que idiomas. Nada é carregado nem é colocado qualquer cookie sem o seu acordo — e pode mudar de ideias a qualquer momento no fundo de qualquer página.",
+    "accept": "Aceito",
+    "decline": "Não, obrigado",
+    "manage": "Escolha de estatísticas"
   }
 }

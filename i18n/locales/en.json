@@ -97,7 +97,6 @@
   "docs": {
     "title": "Documentation",
     "lead": "What Cachet does, what each signature level actually guarantees, and how to sign a batch of documents from start to finish.",
-    "toc": "On this page",
     "onGitHub": "Documentation on GitHub",
     "onGitHubLead": "The repository carries the canonical technical documentation, kept in step with the code.",
     "links": {
@@ -260,7 +259,9 @@
         }
       },
       "welcomeAlt": "The Cachet welcome screen, with the language selector and the Start button",
-      "shotNote": "Screenshots are of the English interface; the wizard also speaks French, Dutch, German, Spanish and Portuguese."
+      "shotNote": "Screenshots are of the English interface; the wizard also speaks French, Dutch, German, Spanish and Portuguese.",
+      "viewFullSize": "Open \"{title}\" at full size",
+      "fullSize": "Full size"
     },
     "cli": {
       "lead": "The console tool shares its entire core with the wizard, so anything the interface can do is one command away. These examples assume a source checkout; with a downloaded build, replace the interpreter call with `cachet-cli`.",
@@ -372,6 +373,25 @@
         "title": "B-LTA chains need renewing",
         "text": "The archival timestamp chain keeps the evidence provable over time, but for genuine long-term archival that chain has to be renewed periodically. BUILD.md explains what that involves."
       }
+    },
+    "navTitle": "Sections",
+    "navLead": "Each section is its own page. Read straight through, or go to the one you need.",
+    "breadcrumb": "Breadcrumb",
+    "pagerLabel": "Section navigation",
+    "previous": "Previous",
+    "next": "Next",
+    "descriptions": {
+      "features": "What Cachet does, point by point: whole batches at once, three signing modes, PAdES levels, template validation and output verified on the spot.",
+      "modes": "The eID card, an Azure Key Vault certificate or a plain image stamp — what each one requires, and what legal weight it carries.",
+      "walkthrough": "The eight steps of the graphical wizard, from choosing a template to reading the report, with a screenshot of each.",
+      "cli": "The console tool: the commands most batches need, and the options behind them.",
+      "levels": "PAdES b-b, b-t, b-lt and b-lta — what each level adds, and which ones need network access.",
+      "tiers": "Simple, advanced and qualified signatures under eIDAS, and which one your documents actually need.",
+      "requirements": "What each mode needs at runtime: middleware and a card reader, outbound network access, or nothing at all.",
+      "install": "Download a standalone build for Linux or Windows, or run Cachet from source.",
+      "glossary": "The terms Cachet uses, from PAdES and LTV to the national register number embedded in every eID signature.",
+      "sources": "The standards and services the signatures rest on, with links to the original documents.",
+      "legal": "What to know before you sign: the national register number, free versus qualified timestamps, and the limits of an advanced signature."
     }
   },
   "news": {
@@ -436,5 +456,12 @@
     "currentPage": "Current page",
     "loading": "Loading",
     "copy": "Copy"
+  },
+  "consent": {
+    "title": "May we count your visit?",
+    "body": "We would like to use Google Analytics to see which pages get read, and in which languages. Nothing is loaded and no cookie is set unless you agree — and you can change your mind at any time from the bottom of any page.",
+    "accept": "Agree",
+    "decline": "No thanks",
+    "manage": "Analytics choice"
   }
 }

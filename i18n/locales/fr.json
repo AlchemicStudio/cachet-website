@@ -97,14 +97,25 @@
   "docs": {
     "title": "Documentation",
     "lead": "Ce que fait Cachet, ce que chaque niveau de signature garantit réellement, et comment signer un lot de documents du début à la fin.",
-    "toc": "Sur cette page",
     "onGitHub": "Documentation sur GitHub",
     "onGitHubLead": "Le dépôt contient la documentation technique de référence, tenue à jour avec le code.",
     "links": {
-      "readme": { "title": "README", "text": "Référence complète des options et des modes" },
-      "build": { "title": "BUILD.md", "text": "Empaquetage : compilation native, Wine et CI" },
-      "spec": { "title": "specifications.md", "text": "La spécification du passage à PAdES B-LTA" },
-      "issues": { "title": "Issues", "text": "Signaler un bug ou poser une question" }
+      "readme": {
+        "title": "README",
+        "text": "Référence complète des options et des modes"
+      },
+      "build": {
+        "title": "BUILD.md",
+        "text": "Empaquetage : compilation native, Wine et CI"
+      },
+      "spec": {
+        "title": "specifications.md",
+        "text": "La spécification du passage à PAdES B-LTA"
+      },
+      "issues": {
+        "title": "Issues",
+        "text": "Signaler un bug ou poser une question"
+      }
     },
     "sections": {
       "overview": "Vue d'ensemble",
@@ -127,18 +138,54 @@
       "quote": "Le mode eID utilise le certificat de non-répudiation de la carte, juridiquement équivalent à une signature manuscrite."
     },
     "features": {
-      "batch": { "title": "Des lots entiers d'un coup", "text": "Indiquez à Cachet des fichiers ou des dossiers. La même marque, la même page et la même position sont appliquées à chaque document du lot." },
-      "modes": { "title": "Trois modes de signature", "text": "Une signature eID qualifiée, une signature avancée depuis Azure Key Vault, ou un simple tampon image sans valeur juridique." },
-      "pades": { "title": "PAdES jusqu'à B-LTA", "text": "Niveaux b-b, b-t, b-lt et b-lta, sélectionnables à chaque exécution. b-lta est le niveau par défaut — le plus fort et le plus durable." },
-      "timestamp": { "title": "Horodatage de confiance", "text": "Une autorité d'horodatage RFC 3161 prouve quand vous avez signé. Pointez-la vers une TSA qualifiée lorsqu'une conservation qualifiée eIDAS est requise." },
-      "ltv": { "title": "Validation à long terme", "text": "Les certificats d'AC et les réponses OCSP/CRL sont intégrés au moment de la signature : le PDF reste vérifiable après l'expiration des certificats." },
-      "verify": { "title": "Vérifié sur-le-champ", "text": "Chaque fichier signé est rouvert et validé, et le niveau atteint est rapporté. Les niveaux ne sont jamais dégradés en silence." },
-      "template": { "title": "Validation par modèle", "text": "Un document n'est accepté que si son nombre de pages et les dimensions de chacune correspondent exactement à un PDF modèle. Les fichiers rejetés ne sont jamais signés." },
-      "placement": { "title": "Placement au clic", "text": "Un véritable aperçu de la page cible, rendu par le moteur PDFium embarqué. Cliquez à l'endroit voulu : c'est là que la marque est signée." },
-      "vignette": { "title": "Marque de signature visible", "text": "Les signatures eID apposent la photo du titulaire, son nom et la date ; les signatures Azure apposent le nom et la date." },
-      "safety": { "title": "Rien n'est écrasé", "text": "Le résultat est écrit sous la forme `{pattern}` dans un dossier de votre choix, et les fichiers existants ne sont jamais remplacés." },
-      "i18n": { "title": "Six langues dans l'application", "text": "L'assistant parle anglais, français, néerlandais, allemand, espagnol et portugais, et suit par défaut la langue du système." },
-      "standalone": { "title": "Exécutables autonomes", "text": "Une application fenêtrée et un outil console par plateforme, pour Linux et Windows. Rien à installer, hormis le middleware eID." }
+      "batch": {
+        "title": "Des lots entiers d'un coup",
+        "text": "Indiquez à Cachet des fichiers ou des dossiers. La même marque, la même page et la même position sont appliquées à chaque document du lot."
+      },
+      "modes": {
+        "title": "Trois modes de signature",
+        "text": "Une signature eID qualifiée, une signature avancée depuis Azure Key Vault, ou un simple tampon image sans valeur juridique."
+      },
+      "pades": {
+        "title": "PAdES jusqu'à B-LTA",
+        "text": "Niveaux b-b, b-t, b-lt et b-lta, sélectionnables à chaque exécution. b-lta est le niveau par défaut — le plus fort et le plus durable."
+      },
+      "timestamp": {
+        "title": "Horodatage de confiance",
+        "text": "Une autorité d'horodatage RFC 3161 prouve quand vous avez signé. Pointez-la vers une TSA qualifiée lorsqu'une conservation qualifiée eIDAS est requise."
+      },
+      "ltv": {
+        "title": "Validation à long terme",
+        "text": "Les certificats d'AC et les réponses OCSP/CRL sont intégrés au moment de la signature : le PDF reste vérifiable après l'expiration des certificats."
+      },
+      "verify": {
+        "title": "Vérifié sur-le-champ",
+        "text": "Chaque fichier signé est rouvert et validé, et le niveau atteint est rapporté. Les niveaux ne sont jamais dégradés en silence."
+      },
+      "template": {
+        "title": "Validation par modèle",
+        "text": "Un document n'est accepté que si son nombre de pages et les dimensions de chacune correspondent exactement à un PDF modèle. Les fichiers rejetés ne sont jamais signés."
+      },
+      "placement": {
+        "title": "Placement au clic",
+        "text": "Un véritable aperçu de la page cible, rendu par le moteur PDFium embarqué. Cliquez à l'endroit voulu : c'est là que la marque est signée."
+      },
+      "vignette": {
+        "title": "Marque de signature visible",
+        "text": "Les signatures eID apposent la photo du titulaire, son nom et la date ; les signatures Azure apposent le nom et la date."
+      },
+      "safety": {
+        "title": "Rien n'est écrasé",
+        "text": "Le résultat est écrit sous la forme `{pattern}` dans un dossier de votre choix, et les fichiers existants ne sont jamais remplacés."
+      },
+      "i18n": {
+        "title": "Six langues dans l'application",
+        "text": "L'assistant parle anglais, français, néerlandais, allemand, espagnol et portugais, et suit par défaut la langue du système."
+      },
+      "standalone": {
+        "title": "Exécutables autonomes",
+        "text": "Une application fenêtrée et un outil console par plateforme, pour Linux et Windows. Rien à installer, hormis le middleware eID."
+      }
     },
     "modes": {
       "lead": "Les trois modes apposent une marque visible et traitent le lot de façon identique. Ce qui les distingue, c'est la portée juridique de ce qu'ils produisent.",
@@ -180,15 +227,41 @@
       "welcomeAlt": "L'écran d'accueil de Cachet, avec le sélecteur de langue et le bouton Démarrer",
       "shotNote": "Les captures montrent l'interface en anglais ; l'assistant parle aussi français, néerlandais, allemand, espagnol et portugais.",
       "steps": {
-        "template": { "title": "Choisir un modèle", "text": "Sélectionnez un PDF modèle auquel chaque document du lot devra correspondre. Vous ne signez qu'un seul document ? Choisissez ce document lui-même comme modèle." },
-        "documents": { "title": "Ajouter les documents", "text": "Sélectionnez des fichiers isolés ou des dossiers entiers. Les dossiers sont parcourus automatiquement à la recherche de PDF." },
-        "validation": { "title": "Valider par rapport au modèle", "text": "Chaque fichier est contrôlé : même nombre de pages et dimensions de pages strictement identiques. Un tableau indique le résultat, et les fichiers rejetés ne sont jamais signés. Si certains fichiers ont un nombre de pages différent — des annexes numérisées ajoutées, par exemple — un sélecteur apparaît pour signer chaque fichier sur sa propre première ou dernière page." },
-        "output": { "title": "Choisir un dossier de sortie", "text": "Les fichiers signés sont écrits sous la forme `{pattern}`. Les fichiers existants ne sont jamais écrasés : en cas de collision de nom, ` - 1`, ` - 2`, etc. sont ajoutés." },
-        "type": { "title": "Choisir le type de signature", "text": "eID, Azure ou image, ainsi que le niveau PAdES (b-lta par défaut). En mode Azure, un panneau recueille les paramètres du coffre et propose une action « Se connecter avec Microsoft ». Un bouton « Documentation complète » ouvre cette même référence dans l'application." },
-        "placement": { "title": "Placer la marque", "text": "La page cible est réellement affichée. Cliquez à l'endroit où la marque doit apparaître : en modes eID et Azure, la vignette visible est signée exactement là. Un champ de page manuel est disponible, et lorsque les nombres de pages diffèrent, le sélecteur première/dernière apparaît également ici." },
-        "signing": { "title": "Signer", "text": "Un récapitulatif de tous les choix, un rappel d'insérer la carte eID en mode eID, puis la progression au fil de la signature de chaque document. En mode eID, le code PIN est demandé une fois par document ; en mode Azure, vous vous êtes connecté une seule fois pour tout le lot." },
-        "report": { "title": "Lire le rapport", "text": "Un tableau des résultats document par document, avec le niveau réellement atteint pour chaque fichier — par exemple « PAdES-B-LTA, LTV ok » — et un bouton qui ouvre le dossier de sortie." }
-      }
+        "template": {
+          "title": "Choisir un modèle",
+          "text": "Sélectionnez un PDF modèle auquel chaque document du lot devra correspondre. Vous ne signez qu'un seul document ? Choisissez ce document lui-même comme modèle."
+        },
+        "documents": {
+          "title": "Ajouter les documents",
+          "text": "Sélectionnez des fichiers isolés ou des dossiers entiers. Les dossiers sont parcourus automatiquement à la recherche de PDF."
+        },
+        "validation": {
+          "title": "Valider par rapport au modèle",
+          "text": "Chaque fichier est contrôlé : même nombre de pages et dimensions de pages strictement identiques. Un tableau indique le résultat, et les fichiers rejetés ne sont jamais signés. Si certains fichiers ont un nombre de pages différent — des annexes numérisées ajoutées, par exemple — un sélecteur apparaît pour signer chaque fichier sur sa propre première ou dernière page."
+        },
+        "output": {
+          "title": "Choisir un dossier de sortie",
+          "text": "Les fichiers signés sont écrits sous la forme `{pattern}`. Les fichiers existants ne sont jamais écrasés : en cas de collision de nom, ` - 1`, ` - 2`, etc. sont ajoutés."
+        },
+        "type": {
+          "title": "Choisir le type de signature",
+          "text": "eID, Azure ou image, ainsi que le niveau PAdES (b-lta par défaut). En mode Azure, un panneau recueille les paramètres du coffre et propose une action « Se connecter avec Microsoft ». Un bouton « Documentation complète » ouvre cette même référence dans l'application."
+        },
+        "placement": {
+          "title": "Placer la marque",
+          "text": "La page cible est réellement affichée. Cliquez à l'endroit où la marque doit apparaître : en modes eID et Azure, la vignette visible est signée exactement là. Un champ de page manuel est disponible, et lorsque les nombres de pages diffèrent, le sélecteur première/dernière apparaît également ici."
+        },
+        "signing": {
+          "title": "Signer",
+          "text": "Un récapitulatif de tous les choix, un rappel d'insérer la carte eID en mode eID, puis la progression au fil de la signature de chaque document. En mode eID, le code PIN est demandé une fois par document ; en mode Azure, vous vous êtes connecté une seule fois pour tout le lot."
+        },
+        "report": {
+          "title": "Lire le rapport",
+          "text": "Un tableau des résultats document par document, avec le niveau réellement atteint pour chaque fichier — par exemple « PAdES-B-LTA, LTV ok » — et un bouton qui ouvre le dossier de sortie."
+        }
+      },
+      "viewFullSize": "Ouvrir « {title} » en taille réelle",
+      "fullSize": "Taille réelle"
     },
     "cli": {
       "lead": "L'outil console partage tout son cœur avec l'assistant : tout ce que fait l'interface est à une commande près. Ces exemples supposent une installation depuis les sources ; avec un exécutable téléchargé, remplacez l'appel à l'interpréteur par `cachet-cli`.",
@@ -300,6 +373,25 @@
         "title": "Les chaînes B-LTA doivent être renouvelées",
         "text": "La chaîne d'horodatages d'archivage maintient la preuve démontrable dans le temps, mais un archivage réellement durable suppose de renouveler cette chaîne périodiquement. BUILD.md explique ce que cela implique."
       }
+    },
+    "navTitle": "Sections",
+    "navLead": "Chaque section est une page à part entière. Lisez-les à la suite, ou allez droit à celle qu'il vous faut.",
+    "breadcrumb": "Fil d'Ariane",
+    "pagerLabel": "Navigation entre les sections",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "descriptions": {
+      "features": "Ce que fait Cachet, point par point : des lots entiers d'un coup, trois modes de signature, les niveaux PAdES, la validation par modèle et un résultat vérifié sur-le-champ.",
+      "modes": "La carte eID, un certificat Azure Key Vault ou un simple tampon image — ce que chacun exige, et la portée juridique qu'il confère.",
+      "walkthrough": "Les huit étapes de l'assistant graphique, du choix du modèle à la lecture du rapport, avec une capture d'écran de chacune.",
+      "cli": "L'outil en ligne de commande : les commandes dont la plupart des lots ont besoin, et les options qui les accompagnent.",
+      "levels": "PAdES b-b, b-t, b-lt et b-lta — ce que chaque niveau ajoute, et lesquels nécessitent un accès réseau.",
+      "tiers": "Signatures simple, avancée et qualifiée au sens d'eIDAS, et celle dont vos documents ont réellement besoin.",
+      "requirements": "Ce dont chaque mode a besoin à l'exécution : middleware et lecteur de cartes, accès réseau sortant, ou rien du tout.",
+      "install": "Téléchargez un exécutable autonome pour Linux ou Windows, ou lancez Cachet depuis les sources.",
+      "glossary": "Les termes employés par Cachet, de PAdES et LTV au numéro de registre national inscrit dans chaque signature eID.",
+      "sources": "Les normes et services sur lesquels reposent les signatures, avec des liens vers les documents d'origine.",
+      "legal": "À savoir avant de signer : le numéro de registre national, horodatage gratuit ou qualifié, et les limites d'une signature avancée."
     }
   },
   "news": {
@@ -364,5 +456,12 @@
     "currentPage": "Page actuelle",
     "loading": "Chargement",
     "copy": "Copier"
+  },
+  "consent": {
+    "title": "Pouvons-nous compter votre visite ?",
+    "body": "Nous aimerions utiliser Google Analytics pour savoir quelles pages sont lues, et dans quelles langues. Rien n'est chargé et aucun cookie n'est déposé sans votre accord — et vous pouvez changer d'avis à tout moment depuis le bas de n'importe quelle page.",
+    "accept": "J'accepte",
+    "decline": "Non merci",
+    "manage": "Choix analytique"
   }
 }

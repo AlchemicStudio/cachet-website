@@ -18,5 +18,7 @@ const { t } = useI18n()
     </main>
 
     <AppFooter />
+
+    <ConsentBanner />
   </div>
 </template>

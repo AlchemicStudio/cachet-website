@@ -37,8 +37,14 @@ export const GITHUB_API = 'https://api.github.com'
 export const LOCALE_COOKIE = 'cachet_locale'
 
 /**
- * Google Tag Manager container. Empty disables the tag entirely — neither
- * the loader nor the noscript frame is emitted — which is what local builds
- * and forks should run with.
+ * Google Tag Manager container. Empty disables analytics entirely — the
+ * consent banner does not appear and nothing is ever requested from Google —
+ * which is what forks should run with.
+ *
+ * The container is never loaded on its own: `plugins/gtm.client.ts` waits for
+ * the visitor to agree. See `composables/useConsent.ts`.
  */
 export const GTM_ID = 'GTM-PS4XN2Z2'
+
+/** Records whether the visitor agreed to analytics. */
+export const CONSENT_COOKIE = 'cachet_consent'

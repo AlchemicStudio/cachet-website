@@ -1,0 +1,587 @@
+{
+  "_generated": "Italian is not among the app's six languages, so this file is NOT produced by scripts/extract_app_docs.py — it is translated by hand from en.json and must be updated alongside i18n_docs.py.",
+  "sections": [
+    {
+      "id": "modes",
+      "title": "LE TRE MODALITÀ",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cachet firma un intero blocco di PDF allo stesso modo. Scelga la modalità corrispondente al peso giuridico che le serve."
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "term": "BEID — la sua carta eID belga",
+              "text": "",
+              "lines": [
+                {
+                  "label": "Che cos'è",
+                  "text": "una firma elettronica qualificata (QES), il grado giuridico più elevato, equivalente a una firma autografa.",
+                  "bullet": false
+                },
+                {
+                  "label": "Richiede",
+                  "text": "un lettore di carte, la sua carta eID e l'inserimento del PIN per ogni documento. Viene aggiunta una vignetta visibile (la sua fotografia, il nome e la data).",
+                  "bullet": false
+                },
+                {
+                  "label": "Da usare quando",
+                  "text": "un documento deve essere giuridicamente vincolante e dimostrabilmente firmato da lei in prima persona.",
+                  "bullet": false
+                },
+                {
+                  "label": "Nota",
+                  "text": "il suo numero di registro nazionale (NRN) è incorporato in ogni firma: condivida i file firmati con attenzione.",
+                  "bullet": false
+                }
+              ]
+            },
+            {
+              "term": "AZURE — il suo certificato personale in Azure Key Vault",
+              "text": "",
+              "lines": [
+                {
+                  "label": "Che cos'è",
+                  "text": "una firma elettronica avanzata (AES). Solida e verificabile, ma di un grado inferiore alla QES.",
+                  "bullet": false
+                },
+                {
+                  "label": "Richiede",
+                  "text": "un accesso Microsoft per blocco (non per documento). Dalla sua macchina esce solo l'impronta del documento; la chiave privata non esce mai. La fiducia è ancorata alla CA interna della sua organizzazione.",
+                  "bullet": false
+                },
+                {
+                  "label": "Da usare quando",
+                  "text": "le serve una vera firma crittografica per molti file rapidamente, senza la carta fisica.",
+                  "bullet": false
+                }
+              ]
+            },
+            {
+              "term": "IMAGE — solo un'immagine incollata",
+              "text": "",
+              "lines": [
+                {
+                  "label": "Che cos'è",
+                  "text": "un timbro visivo, NON una firma crittografica. Nessun valore legale.",
+                  "bullet": false
+                },
+                {
+                  "label": "Richiede",
+                  "text": "nulla; funziona interamente senza connessione.",
+                  "bullet": false
+                },
+                {
+                  "label": "Da usare quando",
+                  "text": "le basta che un documento sembri firmato, senza alcun effetto giuridico.",
+                  "bullet": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Raccomandazione:** usi BEID per i documenti giuridicamente vincolanti, AZURE per i blocchi voluminosi e IMAGE solo per l'aspetto."
+        }
+      ]
+    },
+    {
+      "id": "levels",
+      "title": "LIVELLI PAdES",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "I livelli PAdES (ETSI EN 319 142-1) descrivono quanto la sua firma sia duratura e verificabile. Ogni livello si appoggia al precedente. Cachet usa b-lta come impostazione predefinita e non scende mai in silenzio a un livello inferiore se la rete non risponde."
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "term": "B-B (di base)",
+              "text": "La firma essenziale: prova chi ha firmato e che il documento non è cambiato. Funziona interamente senza connessione. La scelga solo per bozze interne rapide, in cui la prova a lungo termine e un orario attendibile non contano.",
+              "lines": []
+            },
+            {
+              "term": "B-T (+ marca temporale)",
+              "text": "Aggiunge una marca temporale attendibile emessa da un'autorità di marcatura temporale (TSA), che prova QUANDO ha firmato. Richiede l'accesso alla rete. La scelga quando la data della firma deve essere dimostrabile ma non serve una conservazione a lungo termine.",
+              "lines": []
+            },
+            {
+              "term": "B-LT (+ convalida a lungo termine)",
+              "text": "Incorpora nel PDF i dati di revoca (OCSP/CRL) e i certificati della CA (LTV). La firma resta verificabile anche dopo la scadenza dei certificati. Richiede l'accesso alla rete. La scelga per i documenti che deve conservare e poter verificare anni dopo.",
+              "lines": []
+            },
+            {
+              "term": "B-LTA (+ conservazione, PREDEFINITO)",
+              "text": "Aggiunge una catena di marche temporali di conservazione, perché la prova stessa resista per decenni (la catena si rinnova ogni pochi anni). Richiede l'accesso alla rete. È l'impostazione predefinita perché offre la garanzia più forte e più duratura per gli atti ufficiali.",
+              "lines": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tiers",
+      "title": "AES O QES: QUALE FIRMA MI SERVE?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Secondo il diritto dell'UE (eIDAS) esistono tre livelli di firma elettronica:"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "term": "SES (semplice)",
+              "text": "un qualsiasi segno elettronico, anche un'immagine incollata. Facile, ma prova debole di chi ha firmato. È ciò che produce la modalità «image»: nessun valore legale.",
+              "lines": []
+            },
+            {
+              "term": "AES (avanzata)",
+              "text": "legata in modo univoco a un solo firmatario e a quel preciso documento; ogni modifica successiva è rilevabile. È la modalità «azure».",
+              "lines": []
+            },
+            {
+              "term": "QES (qualificata)",
+              "text": "una AES realizzata con un dispositivo certificato e un'identità verificata di persona. Per legge equivale a una firma autografa. È la modalità «beid» (carta eID).",
+              "lines": []
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "QES — carta eID (beid)",
+          "lines": [
+            {
+              "label": "Pro",
+              "text": "il livello più forte; giuridicamente equivalente a una firma autografa; accettata da qualsiasi terzo senza accordi preliminari.",
+              "bullet": false
+            },
+            {
+              "label": "Contro",
+              "text": "servono un lettore e la sua carta; deve digitare il PIN UNA VOLTA PER DOCUMENTO (lento per blocchi grandi); il suo numero di registro nazionale (NRN) è incorporato in ogni file.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "AES — Azure Key Vault (azure)",
+          "lines": [
+            {
+              "label": "Pro",
+              "text": "UN solo accesso per blocco, quindi rapida su molti file; nessuna carta né lettore; nessuna esposizione del NRN.",
+              "bullet": false
+            },
+            {
+              "label": "Contro",
+              "text": "non è «qualificata»; la fiducia poggia sulla CA interna della sua organizzazione, perciò soggetti esterni potrebbero non riconoscerla automaticamente.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Quale scegliere?",
+          "lines": [
+            {
+              "label": "Documenti interni o blocchi voluminosi",
+              "text": "usi azure (AES). Un solo accesso firma l'intero blocco.",
+              "bullet": true
+            },
+            {
+              "label": null,
+              "text": "Documenti che escono dall'organizzazione, o per cui è richiesta una firma equivalente a quella autografa: usi beid (QES), accettando un PIN per documento.",
+              "bullet": true
+            },
+            {
+              "label": "Nessuna carta o nessun lettore disponibile",
+              "text": "azure è la sua unica opzione crittografica.",
+              "bullet": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "title": "GLOSSARIO",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cachet firma documenti PDF in blocco. Può apporre tre tipi di segno: una firma crittografica realizzata con la sua carta eID belga (beid), una firma crittografica realizzata con il suo certificato personale custodito in Azure Key Vault (azure), oppure una semplice immagine incollata priva di valore legale (image). Per le due modalità crittografiche segue lo standard europeo PAdES e, dopo la firma, ricontrolla ogni file e le dice esattamente che cosa è stato ottenuto. I termini seguenti spiegano il significato di quei controlli e di quelle etichette."
+        },
+        {
+          "type": "definition",
+          "term": "Firma elettronica",
+          "lines": [
+            {
+              "label": null,
+              "text": "Un modo giuridicamente riconosciuto di firmare un documento per via elettronica. A differenza di una firma autografa scansionata, una firma elettronica crittografica prova anche CHI ha firmato e che il file non è cambiato da allora.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "SES / AES / QES",
+          "lines": [
+            {
+              "label": null,
+              "text": "I tre gradi eIDAS, dal più debole al più forte. La SES (semplice) è soltanto «un segno elettronico». La AES (avanzata) è legata in modo univoco al firmatario e rileva ogni modifica successiva. La QES (qualificata) è una AES realizzata con un certificato qualificato e un dispositivo sicuro, ed equivale per legge a una firma autografa. eID = QES, Azure = AES, image = nessuna.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "eIDAS",
+          "lines": [
+            {
+              "label": null,
+              "text": "Il regolamento dell'UE che definisce le firme elettroniche, i servizi fiduciari e i gradi SES/AES/QES, così che una firma apposta in un paese dell'UE sia riconosciuta negli altri.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "PAdES",
+          "lines": [
+            {
+              "label": "«PDF Advanced Electronic Signatures»",
+              "text": "lo standard ETSI (EN 319 142-1) per incorporare le firme nei file PDF. Cachet scrive firme PAdES, così qualsiasi lettore conforme (per esempio Adobe) può verificarle.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "CMS",
+          "lines": [
+            {
+              "label": null,
+              "text": "Il formato contenitore di basso livello (Cryptographic Message Syntax) che contiene materialmente i byte della firma, i certificati e le marche temporali dentro il PDF. PAdES è un profilo specifico per PDF costruito sopra CMS.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Impronta / hash",
+          "lines": [
+            {
+              "label": null,
+              "text": "Una breve impronta di lunghezza fissa calcolata a partire dal documento. Basta cambiare un byte perché l'impronta cambi del tutto. La firma è apposta su questa impronta: per questo ad Azure viene inviata solo l'impronta e mai il file intero.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Certificato",
+          "lines": [
+            {
+              "label": null,
+              "text": "Una carta d'identità elettronica per una chiave crittografica: lega una chiave pubblica a una persona o a un servizio ed è a sua volta firmata da un'autorità di certificazione. Il suo prova che la firma proviene davvero da lei.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "CA / catena di certificati",
+          "lines": [
+            {
+              "label": null,
+              "text": "Un'autorità di certificazione (CA) emette i certificati. Verificare una firma significa risalire la catena dal suo certificato attraverso una o più CA fino a una radice attendibile. Se l'intera catena regge, la firma è considerata attendibile.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "eID / certificato di non ripudio",
+          "lines": [
+            {
+              "label": null,
+              "text": "Una carta eID belga porta due certificati; Cachet usa quello di «non ripudio», riservato alle firme giuridicamente vincolanti (a differenza del certificato di «autenticazione», usato solo per accedere).",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "NRN",
+          "lines": [
+            {
+              "label": null,
+              "text": "Il numero di registro nazionale belga. È incorporato in ogni firma eID. Chiunque riceva un PDF firmato può leggerlo: condivida i file firmati con attenzione.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "PKCS#11",
+          "lines": [
+            {
+              "label": null,
+              "text": "L'interfaccia software standard con cui Cachet dialoga con la carta eID attraverso il middleware del lettore. Consente all'applicazione di usare la chiave della carta senza che la chiave lasci mai la carta.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "PIN",
+          "lines": [
+            {
+              "label": null,
+              "text": "Il codice segreto che sblocca la chiave di firma della sua carta eID. La carta non rivela mai la chiave; firma soltanto quando il PIN è corretto. In modalità beid Cachet lo chiede una volta PER DOCUMENTO.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Azure Key Vault",
+          "lines": [
+            {
+              "label": null,
+              "text": "Un servizio cloud di Microsoft che custodisce il suo certificato e la sua chiave personali in modo che la chiave non possa essere esportata. La firma avviene dentro il caveau: vi viene inviata solo l'impronta del documento e ne torna il risultato firmato.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Microsoft Entra ID",
+          "lines": [
+            {
+              "label": null,
+              "text": "Il servizio di identità e accesso di Microsoft (già Azure Active Directory). In modalità azure effettua l'accesso una volta PER BLOCCO per dimostrare di poter usare la sua chiave nel caveau.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "UPN",
+          "lines": [
+            {
+              "label": "User Principal Name",
+              "text": "la sua identità di accesso in Entra ID, di solito nella forma nome@organizzazione. È così che l'applicazione sa quale account del caveau è il suo.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Marca temporale RFC 3161 / TSA",
+          "lines": [
+            {
+              "label": null,
+              "text": "Un timbro datato e attendibile che prova l'esistenza della firma in un dato momento. Proviene via rete da un'autorità di marcatura temporale (TSA) e protegge la firma anche dopo la successiva scadenza del certificato di firma.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Marca temporale qualificata o gratuita",
+          "lines": [
+            {
+              "label": null,
+              "text": "Una marca gratuita (quella predefinita di Cachet, di DigiCert) è tecnicamente valida e ampiamente riconosciuta. Una marca qualificata proviene da una TSA qualificata ai sensi di eIDAS e ha un peso giuridico maggiore. Entrambe provano il «quando»; solo la seconda è «qualificata».",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "LTV",
+          "lines": [
+            {
+              "label": "Long-Term Validation, convalida a lungo termine",
+              "text": "nel PDF viene conservata prova sufficiente perché possa ancora essere verificato anni dopo, anche quando i certificati sono scaduti o la CA emittente non è più raggiungibile.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "DSS",
+          "lines": [
+            {
+              "label": "Il Document Security Store",
+              "text": "l'area interna al PDF in cui sono conservate le prove per la LTV (certificati e dati di revoca), così che il file sia autosufficiente.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "OCSP",
+          "lines": [
+            {
+              "label": null,
+              "text": "Una verifica in linea, in tempo reale, che chiede alla CA «questo certificato è ancora valido adesso, oppure è stato revocato?». La risposta viene salvata nel DSS per la LTV.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "CRL",
+          "lines": [
+            {
+              "label": "Certificate Revocation List, elenco dei certificati revocati",
+              "text": "un elenco pubblicato dei certificati annullati dalla CA. Un'alternativa a OCSP per dimostrare che un certificato era ancora valido al momento dell'uso; anch'esso conservato per la LTV.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Elenco di fiducia dell'UE (LOTL)",
+          "lines": [
+            {
+              "label": null,
+              "text": "L'elenco ufficiale dell'UE dei prestatori qualificati attendibili (la List of Trusted Lists). La fiducia dell'eID (QES) risale in ultima analisi fin qui. Azure (AES) NO: è resa attendibile invece dalla CA interna della sua organizzazione.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "CA interna",
+          "lines": [
+            {
+              "label": null,
+              "text": "L'autorità di certificazione della sua organizzazione. In modalità azure la fiducia e la LTV sono ancorate a questa catena di CA interna (un file PEM che fornisce lei), non all'elenco di fiducia dell'UE.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Vignetta",
+          "lines": [
+            {
+              "label": null,
+              "text": "Il piccolo timbro visibile che Cachet disegna sulla pagina nelle modalità eID e Azure: la fotografia del titolare (solo eID), «Firmato da:», il nome e la data. È il volto leggibile di una firma crittografica altrimenti invisibile. Ne sceglie la posizione facendo clic sull'anteprima della pagina; senza clic finisce in basso a destra sull'ultima pagina.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Convalida su modello",
+          "lines": [
+            {
+              "label": "Un controllo di sicurezza",
+              "text": "prima della firma ogni PDF in ingresso viene confrontato con un modello («template») e deve avere lo stesso numero di pagine e dimensioni di pagina identiche. Questo garantisce che la firma finisca nel punto giusto su ogni file del blocco. Quando alcuni file hanno un numero di pagine DIVERSO (per esempio perché sono stati aggiunti allegati digitalizzati), al passo di convalida e in cima al passo di posizionamento compare un selettore prima/ultima pagina: ciascuno di quei file viene allora firmato sulla propria prima o ultima pagina — quella pagina deve comunque avere esattamente le dimensioni della pagina del modello, così la posizione scelta ci sta con certezza.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Rinnovo B-LTA",
+          "lines": [
+            {
+              "label": null,
+              "text": "Il B-LTA (il livello predefinito) aggiunge una catena di marche temporali di conservazione, perché la prova resti dimostrabile per decenni. «Rinnovo» significa che ogni pochi anni va aggiunta una nuova marca di conservazione, prima che la protezione della precedente si indebolisca.",
+              "bullet": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glance",
+      "title": "LIVELLI PAdES IN BREVE",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            { "term": "B-B", "text": "firma di base, interamente senza connessione.", "lines": [] },
+            { "term": "B-T", "text": "aggiunge una marca temporale attendibile (serve la rete).", "lines": [] },
+            { "term": "B-LT", "text": "aggiunge i dati di revoca e i certificati della CA (LTV).", "lines": [] },
+            { "term": "B-LTA", "text": "aggiunge la catena di marche di conservazione (predefinito).", "lines": [] }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Cachet non declassa mai questi livelli in silenzio. Se la rete non è disponibile e il livello richiesto non può essere raggiunto, glielo dice invece di produrre di nascosto una firma più debole."
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "heading": "FONTI E APPROFONDIMENTI",
+    "intro": "Le norme e i servizi citati sopra. Faccia clic su un titolo per aprirlo nel browser (la maggior parte di questi documenti è in inglese).",
+    "items": [
+      {
+        "title": "eIDAS — Regolamento (UE) n. 910/2014 in materia di identificazione elettronica e servizi fiduciari (EUR-Lex)",
+        "url": "https://eur-lex.europa.eu/eli/reg/2014/910/oj"
+      },
+      {
+        "title": "ETSI EN 319 142-1 — Firme digitali PAdES: componenti di base e firme baseline (B-B, B-T, B-LT, B-LTA)",
+        "url": "https://www.etsi.org/deliver/etsi_en/319100_319199/31914201/01.01.01_60/en_31914201v010101p.pdf"
+      },
+      {
+        "title": "ETSI TS 119 612 — Elenchi di fiducia (formato degli elenchi di fiducia europei e nazionali)",
+        "url": "https://www.etsi.org/deliver/etsi_ts/119600_119699/119612/02.02.01_60/ts_119612v020201p.pdf"
+      },
+      {
+        "title": "EU Trusted List Browser — la List of Trusted Lists (LOTL) e ogni elenco nazionale",
+        "url": "https://eidas.ec.europa.eu/efda/tl-browser/"
+      },
+      {
+        "title": "RFC 3161 — Time-Stamp Protocol (TSP): come si richiedono e si emettono le marche temporali attendibili",
+        "url": "https://www.rfc-editor.org/rfc/rfc3161"
+      },
+      {
+        "title": "DigiCert — il servizio gratuito di marcatura temporale RFC 3161 che Cachet usa in modo predefinito",
+        "url": "https://knowledge.digicert.com/general-information/rfc3161-compliant-time-stamp-authority-server"
+      },
+      {
+        "title": "RFC 5652 — Cryptographic Message Syntax (CMS): il contenitore della firma dentro il PDF",
+        "url": "https://www.rfc-editor.org/rfc/rfc5652"
+      },
+      {
+        "title": "RFC 6960 — Online Certificate Status Protocol (OCSP): verifica in tempo reale della revoca dei certificati",
+        "url": "https://www.rfc-editor.org/rfc/rfc6960"
+      },
+      {
+        "title": "RFC 5280 — Certificati X.509 ed elenchi dei certificati revocati (CRL)",
+        "url": "https://www.rfc-editor.org/rfc/rfc5280"
+      },
+      {
+        "title": "eID belga — sito ufficiale: la carta, il middleware, il PIN e il lettore",
+        "url": "https://eid.belgium.be/en"
+      },
+      {
+        "title": "OASIS PKCS #11 — l'interfaccia per token crittografici usata per dialogare con la carta eID",
+        "url": "https://docs.oasis-open.org/pkcs11/pkcs11-base/v2.40/pkcs11-base-v2.40.html"
+      },
+      {
+        "title": "Azure Key Vault — informazioni sulle chiavi: come sono protette e usate per firmare nel caveau",
+        "url": "https://learn.microsoft.com/azure/key-vault/keys/about-keys"
+      },
+      {
+        "title": "Microsoft Entra ID — il servizio di identità usato per l'accesso in modalità azure",
+        "url": "https://learn.microsoft.com/entra/fundamentals/whatis"
+      },
+      {
+        "title": "pyHanko — la libreria open source di firma e convalida PDF su cui Cachet è costruito",
+        "url": "https://pyhanko.readthedocs.io/"
+      }
+    ]
+  }
+}

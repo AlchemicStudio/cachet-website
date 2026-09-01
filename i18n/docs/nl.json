@@ -1,0 +1,603 @@
+{
+  "_generated": "Ported from the Cachet app's i18n_docs.py by scripts/extract_app_docs.py — edit there, not here.",
+  "sections": [
+    {
+      "id": "modes",
+      "title": "DE DRIE MODI",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cachet ondertekent alle PDF's van een reeks op dezelfde manier. Kies de modus die past bij het juridische gewicht dat u nodig hebt."
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "term": "BEID — uw Belgische eID-kaart",
+              "text": "",
+              "lines": [
+                {
+                  "label": "Wat het inhoudt",
+                  "text": "een gekwalificeerde elektronische handtekening (QES), het hoogste juridische niveau, gelijkwaardig aan een handgeschreven handtekening.",
+                  "bullet": false
+                },
+                {
+                  "label": "Vereist",
+                  "text": "een kaartlezer, uw eID-kaart en één pincode per document. Er wordt een zichtbaar vignet (uw foto, naam en datum) toegevoegd.",
+                  "bullet": false
+                },
+                {
+                  "label": "Gebruik deze modus wanneer",
+                  "text": "een document juridisch bindend moet zijn en aantoonbaar door u persoonlijk ondertekend moet zijn.",
+                  "bullet": false
+                },
+                {
+                  "label": "Opmerking",
+                  "text": "uw rijksregisternummer (RRN) wordt in elke handtekening opgenomen; ga dus zorgvuldig om met het delen van ondertekende bestanden.",
+                  "bullet": false
+                }
+              ]
+            },
+            {
+              "term": "AZURE — uw persoonlijke certificaat in Azure Key Vault",
+              "text": "",
+              "lines": [
+                {
+                  "label": "Wat het inhoudt",
+                  "text": "een geavanceerde elektronische handtekening (AES). Sterk en verifieerbaar, maar één niveau onder QES.",
+                  "bullet": false
+                },
+                {
+                  "label": "Vereist",
+                  "text": "één Microsoft-aanmelding per reeks (niet per document). Alleen de digest van het document verlaat uw computer; de privésleutel nooit. Het vertrouwen is verankerd in de interne CA van uw organisatie.",
+                  "bullet": false
+                },
+                {
+                  "label": "Gebruik deze modus wanneer",
+                  "text": "u snel een echte cryptografische handtekening voor veel bestanden nodig hebt, zonder uw fysieke kaart.",
+                  "bullet": false
+                }
+              ]
+            },
+            {
+              "term": "IMAGE — alleen een afbeelding plakken",
+              "text": "",
+              "lines": [
+                {
+                  "label": "Wat het inhoudt",
+                  "text": "een visuele stempel, GEEN cryptografische handtekening. Zonder juridische waarde.",
+                  "bullet": false
+                },
+                {
+                  "label": "Vereist",
+                  "text": "niets; werkt volledig offline.",
+                  "bullet": false
+                },
+                {
+                  "label": "Gebruik deze modus wanneer",
+                  "text": "een document er alleen ondertekend moet uitzien, zonder juridisch effect.",
+                  "bullet": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Aanbeveling:** gebruik BEID voor juridisch bindende documenten, AZURE voor grote reeksen en IMAGE alleen als visuele stempel."
+        }
+      ]
+    },
+    {
+      "id": "levels",
+      "title": "PAdES-NIVEAUS",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "PAdES-niveaus (ETSI EN 319 142-1) beschrijven hoe duurzaam en verifieerbaar uw handtekening is. Elk niveau bouwt voort op het vorige. Cachet gebruikt standaard b-lta en zakt nooit stilzwijgend naar een lager niveau als het netwerk uitvalt."
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "term": "B-B (basis)",
+              "text": "De basishandtekening: ze bewijst wie heeft ondertekend en dat het document niet is gewijzigd. Werkt volledig offline. Kies dit niveau alleen voor snelle interne kladversies waarbij langetermijnbewijs en een betrouwbaar tijdstip niet van belang zijn.",
+              "lines": []
+            },
+            {
+              "term": "B-T (+ tijdstempel)",
+              "text": "Voegt een betrouwbare tijdstempel van een tijdstempelautoriteit (TSA) toe, die bewijst WANNEER u hebt ondertekend. Vereist netwerktoegang. Kies dit niveau wanneer de datum van ondertekening aantoonbaar moet zijn, maar langetermijnarchivering niet nodig is.",
+              "lines": []
+            },
+            {
+              "term": "B-LT (+ langetermijnvalidatie)",
+              "text": "Neemt de intrekkingsgegevens (OCSP/CRL) en de CA-certificaten op in de PDF (LTV). De handtekening blijft verifieerbaar, zelfs nadat de certificaten zijn verlopen. Vereist netwerktoegang. Kies dit niveau voor documenten die u moet bewaren en jaren later nog moet kunnen controleren.",
+              "lines": []
+            },
+            {
+              "term": "B-LTA (+ archivering, STANDAARD)",
+              "text": "Voegt een keten van archiveringstijdstempels toe, zodat het bewijs zelf tientallen jaren standhoudt (de keten wordt om de paar jaar vernieuwd). Vereist netwerktoegang. Dit is het standaardniveau omdat het de sterkste en meest duurzame garantie biedt voor officiële documenten.",
+              "lines": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tiers",
+      "title": "AES OF QES: WELKE HANDTEKENING HEB IK NODIG?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Volgens de EU-wetgeving (eIDAS) zijn er drie niveaus van elektronische handtekening:"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "term": "SES (eenvoudig)",
+              "text": "elk elektronisch merkteken, zelfs een geplakte afbeelding. Gemakkelijk, maar een zwak bewijs van wie heeft ondertekend. Dit is wat de modus 'image' oplevert — zonder juridische waarde.",
+              "lines": []
+            },
+            {
+              "term": "AES (geavanceerd)",
+              "text": "uniek gekoppeld aan één ondertekenaar en aan het exacte document; elke latere wijziging is detecteerbaar. Dit is de modus 'azure'.",
+              "lines": []
+            },
+            {
+              "term": "QES (gekwalificeerd)",
+              "text": "een AES die is aangemaakt met een gecertificeerd apparaat en een in persoon geverifieerde identiteit. Wettelijk is ze gelijkwaardig aan een handgeschreven handtekening. Dit is de modus 'beid' (eID-kaart).",
+              "lines": []
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "QES — eID-kaart (beid)",
+          "lines": [
+            {
+              "label": "Voordelen",
+              "text": "het sterkste niveau; juridisch gelijkwaardig aan een handgeschreven handtekening; aanvaard door elke derde partij zonder voorafgaande afspraak.",
+              "bullet": false
+            },
+            {
+              "label": "Nadelen",
+              "text": "vereist een kaartlezer en uw kaart; u voert uw pincode ÉÉN KEER PER DOCUMENT in (traag voor grote reeksen); uw rijksregisternummer (RRN) wordt in elk bestand opgenomen.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "AES — Azure Key Vault (azure)",
+          "lines": [
+            {
+              "label": "Voordelen",
+              "text": "ÉÉN aanmelding per reeks, dus snel voor veel bestanden; geen kaart of lezer nodig; het RRN wordt niet prijsgegeven.",
+              "bullet": false
+            },
+            {
+              "label": "Nadelen",
+              "text": "niet 'gekwalificeerd'; het vertrouwen berust op de interne CA van uw organisatie, zodat externe partijen de handtekening mogelijk niet automatisch erkennen.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Welke moet ik kiezen?",
+          "lines": [
+            {
+              "label": "Interne documenten of grote reeksen",
+              "text": "gebruik azure (AES). Met één aanmelding ondertekent u de hele reeks.",
+              "bullet": true
+            },
+            {
+              "label": null,
+              "text": "Documenten die de organisatie verlaten, of waarvoor het equivalent van een handgeschreven handtekening vereist is: gebruik beid (QES) en aanvaard dat u per document één keer uw pincode invoert.",
+              "bullet": true
+            },
+            {
+              "label": "Geen kaart of lezer beschikbaar",
+              "text": "azure is uw enige cryptografische optie.",
+              "bullet": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "title": "WOORDENLIJST",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cachet ondertekent PDF-documenten in reeksen. Het kan drie soorten merktekens aanbrengen: een cryptografische handtekening met uw Belgische eID-kaart (beid), een cryptografische handtekening met uw persoonlijke certificaat in Azure Key Vault (azure), of een eenvoudige geplakte afbeelding zonder juridische waarde (image). Voor de twee cryptografische modi volgt het de Europese PAdES-norm en controleert het na het ondertekenen elk bestand opnieuw, waarbij het precies meldt wat is bereikt. De onderstaande termen verklaren wat die controles en labels betekenen."
+        },
+        {
+          "type": "definition",
+          "term": "Elektronische handtekening",
+          "lines": [
+            {
+              "label": null,
+              "text": "Een wettelijk erkende manier om een document elektronisch te ondertekenen. In tegenstelling tot een gescande handgeschreven handtekening bewijst een cryptografische elektronische handtekening ook WIE heeft ondertekend en dat het bestand sindsdien niet is gewijzigd.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "SES / AES / QES",
+          "lines": [
+            {
+              "label": null,
+              "text": "De drie eIDAS-niveaus, van zwak naar sterk. SES (eenvoudig) is gewoon 'een elektronisch merkteken'. AES (geavanceerd) is uniek gekoppeld aan de ondertekenaar en detecteert elke latere wijziging. QES (gekwalificeerd) is een AES die is aangemaakt met een gekwalificeerd certificaat en een beveiligd apparaat, en is juridisch gelijkwaardig aan een handgeschreven handtekening. eID = QES, Azure = AES, image = geen.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "eIDAS",
+          "lines": [
+            {
+              "label": null,
+              "text": "De EU-verordening die elektronische handtekeningen, vertrouwensdiensten en de niveaus SES/AES/QES definieert, zodat een handtekening die in één EU-land is gezet, ook in de andere landen wordt erkend.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "PAdES",
+          "lines": [
+            {
+              "label": "'PDF Advanced Electronic Signatures'",
+              "text": "de ETSI-norm (EN 319 142-1) voor het inbedden van handtekeningen in PDF-bestanden. Cachet schrijft PAdES-handtekeningen, zodat elke conforme PDF-lezer (bv. Adobe) ze kan verifiëren.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "CMS",
+          "lines": [
+            {
+              "label": null,
+              "text": "Het onderliggende containerformaat (Cryptographic Message Syntax) dat de eigenlijke handtekeningbytes, certificaten en tijdstempels in de PDF bevat. PAdES is een PDF-specifiek profiel dat op CMS is gebouwd.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Digest / hash",
+          "lines": [
+            {
+              "label": null,
+              "text": "Een korte vingerafdruk met vaste lengte die uit het document wordt berekend. Wijzig één byte en de vingerafdruk verandert volledig. De handtekening wordt over deze vingerafdruk berekend; daarom wordt alleen de digest, nooit het volledige bestand, naar Azure gestuurd.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Certificaat",
+          "lines": [
+            {
+              "label": null,
+              "text": "Een elektronische identiteitskaart voor een cryptografische sleutel: ze koppelt een publieke sleutel aan een persoon of dienst en is zelf ondertekend door een certificaatautoriteit. Uw eigen certificaat bewijst dat de handtekening echt van u afkomstig is.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "CA / certificaatketen",
+          "lines": [
+            {
+              "label": null,
+              "text": "Een certificaatautoriteit (CA) geeft certificaten uit. Een handtekening verifiëren betekent de keten volgen van uw certificaat via een of meer CA's tot een vertrouwde root. Als de hele keten klopt, wordt de handtekening vertrouwd.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "eID / handtekeningcertificaat (non-repudiation)",
+          "lines": [
+            {
+              "label": null,
+              "text": "Een Belgische eID-kaart bevat twee certificaten; Cachet gebruikt het 'handtekeningcertificaat' (non-repudiation), dat is voorbehouden voor juridisch bindende handtekeningen (in tegenstelling tot het 'authenticatiecertificaat', dat alleen dient om u aan te melden).",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "RRN",
+          "lines": [
+            {
+              "label": null,
+              "text": "Het Belgische rijksregisternummer. Het wordt in elke eID-handtekening opgenomen. Iedereen die een ondertekende PDF ontvangt, kan het lezen; ga dus zorgvuldig om met het delen van ondertekende bestanden.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "PKCS#11",
+          "lines": [
+            {
+              "label": null,
+              "text": "De gestandaardiseerde software-interface waarmee Cachet via de middleware van de kaartlezer met de eID-kaart communiceert. Zo kan de toepassing de sleutel van de kaart gebruiken zonder dat die sleutel ooit de kaart verlaat.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "PIN",
+          "lines": [
+            {
+              "label": null,
+              "text": "De geheime code (pincode) die de handtekeningsleutel van uw eID-kaart ontgrendelt. De kaart geeft de sleutel nooit prijs; ze ondertekent alleen wanneer de pincode juist is. In de modus beid vraagt Cachet de pincode één keer PER DOCUMENT.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Azure Key Vault",
+          "lines": [
+            {
+              "label": null,
+              "text": "Een clouddienst van Microsoft die uw persoonlijke certificaat en sleutel bewaart, zodat de sleutel niet kan worden geëxporteerd. Het ondertekenen gebeurt in de kluis: alleen de digest van het document wordt ernaartoe gestuurd, en het ondertekende resultaat komt terug.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Microsoft Entra ID",
+          "lines": [
+            {
+              "label": null,
+              "text": "De identiteits- en aanmelddienst van Microsoft (voorheen Azure Active Directory). In de modus azure meldt u zich één keer PER REEKS aan om te bewijzen dat u uw sleutel in de kluis mag gebruiken.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "UPN",
+          "lines": [
+            {
+              "label": "User Principal Name",
+              "text": "uw aanmeldidentiteit in Entra ID, meestal in de vorm name@organisation. Zo weet de toepassing welk kluisaccount van u is.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "RFC 3161-tijdstempel / TSA",
+          "lines": [
+            {
+              "label": null,
+              "text": "Een betrouwbare, gedateerde stempel die bewijst dat de handtekening op een bepaald moment bestond. Hij wordt via het netwerk bij een tijdstempelautoriteit (TSA) opgehaald en beschermt de handtekening, ook nadat het handtekeningcertificaat later is verlopen.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Gekwalificeerde of gratis tijdstempel",
+          "lines": [
+            {
+              "label": null,
+              "text": "Een gratis tijdstempel (de standaardkeuze van Cachet, geleverd door DigiCert) is technisch geldig en wordt algemeen vertrouwd. Een gekwalificeerde tijdstempel komt van een eIDAS-gekwalificeerde TSA en heeft een sterkere juridische waarde. Beide bewijzen 'wanneer'; alleen de gekwalificeerde is 'gekwalificeerd'.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "LTV",
+          "lines": [
+            {
+              "label": null,
+              "text": "Long-Term Validation (langetermijnvalidatie): er wordt genoeg bewijs in de PDF opgeslagen om die jaren later nog te kunnen verifiëren, zelfs nadat de certificaten zijn verlopen of de uitgevende CA offline is gegaan.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "DSS",
+          "lines": [
+            {
+              "label": "De Document Security Store",
+              "text": "het gedeelte van de PDF waarin het LTV-bewijs (certificaten en intrekkingsgegevens) wordt bewaard, zodat het bestand op zichzelf staat.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "OCSP",
+          "lines": [
+            {
+              "label": null,
+              "text": "Een rechtstreekse onlinecontrole die de CA vraagt: 'Is dit certificaat op dit moment nog geldig, of is het ingetrokken?' Het antwoord wordt voor LTV in de DSS opgeslagen.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "CRL",
+          "lines": [
+            {
+              "label": null,
+              "text": "Certificate Revocation List (certificaatintrekkingslijst): een gepubliceerde lijst van certificaten die de CA heeft ingetrokken. Een alternatief voor OCSP om te bewijzen dat een certificaat nog geldig was toen het werd gebruikt; wordt ook voor LTV opgeslagen.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Vertrouwenslijst van de EU (LOTL)",
+          "lines": [
+            {
+              "label": null,
+              "text": "De officiële EU-lijst van vertrouwde gekwalificeerde dienstverleners (de List of Trusted Lists). Het vertrouwen in eID (QES) gaat uiteindelijk hierop terug. Voor Azure (AES) geldt dat NIET: daar berust het vertrouwen op de interne CA van uw organisatie.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Interne CA",
+          "lines": [
+            {
+              "label": null,
+              "text": "De eigen certificaatautoriteit van uw organisatie. In de modus azure zijn het vertrouwen en LTV verankerd in deze interne CA-keten (een PEM-bestand dat u aanlevert), niet in de vertrouwenslijst van de EU.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Vignet",
+          "lines": [
+            {
+              "label": null,
+              "text": "De kleine zichtbare stempel die Cachet in de modi eID en Azure op de pagina tekent: de foto van de kaarthouder (alleen eID), 'Signed by:', de naam en de datum. Het is de voor mensen leesbare kant van een verder onzichtbare cryptografische handtekening. U kiest de positie door op het paginavoorbeeld te klikken; zonder klik komt het rechtsonder op de laatste pagina.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Sjabloonvalidatie",
+          "lines": [
+            {
+              "label": "Een veiligheidscontrole",
+              "text": "vóór het ondertekenen wordt elke invoer-PDF vergeleken met een model ('sjabloon') en moet die hetzelfde aantal pagina's en identieke paginagrootten hebben. Dat garandeert dat de handtekening bij elk bestand van de reeks op de juiste plek terechtkomt. Wanneer sommige bestanden een ANDER aantal pagina's hebben (bv. omdat gescande bijlagen zijn toegevoegd), verschijnt een keuzelijst 'eerste/laatste pagina' in de validatiestap en bovenaan de plaatsingsstap: elk van die bestanden wordt dan op zijn eigen eerste of laatste pagina ondertekend — die pagina moet nog steeds exact de paginagrootte van het sjabloon hebben, zodat de door u gekozen positie gegarandeerd past.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "B-LTA-vernieuwing",
+          "lines": [
+            {
+              "label": null,
+              "text": "B-LTA (het standaardniveau) voegt een keten van archiveringstijdstempels toe, zodat het bewijs tientallen jaren aantoonbaar blijft. 'Vernieuwing' betekent dat om de paar jaar een nieuwe archiveringstijdstempel moet worden toegevoegd voordat de bescherming van de vorige verzwakt.",
+              "bullet": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glance",
+      "title": "PAdES-NIVEAUS IN EEN OOGOPSLAG",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "term": "B-B",
+              "text": "basishandtekening, volledig offline.",
+              "lines": []
+            },
+            {
+              "term": "B-T",
+              "text": "voegt een betrouwbare tijdstempel toe (netwerk vereist).",
+              "lines": []
+            },
+            {
+              "term": "B-LT",
+              "text": "voegt intrekkingsgegevens en CA-certificaten toe (LTV).",
+              "lines": []
+            },
+            {
+              "term": "B-LTA",
+              "text": "voegt de keten van archiveringstijdstempels toe (standaard).",
+              "lines": []
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Cachet verlaagt deze niveaus nooit stilzwijgend. Als het netwerk niet beschikbaar is en het gevraagde niveau niet kan worden bereikt, meldt het dit in plaats van stilletjes een zwakkere handtekening te produceren."
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "heading": "BRONNEN EN VERDER LEZEN",
+    "intro": "De hierboven vermelde normen en diensten. Klik op een titel om die in uw browser te openen (de meeste van deze documenten zijn in het Engels).",
+    "items": [
+      {
+        "title": "eIDAS — Verordening (EU) nr. 910/2014 betreffende elektronische identificatie en vertrouwensdiensten (EUR-Lex)",
+        "url": "https://eur-lex.europa.eu/eli/reg/2014/910/oj"
+      },
+      {
+        "title": "ETSI EN 319 142-1 — digitale PAdES-handtekeningen: bouwstenen en baseline-handtekeningen (B-B, B-T, B-LT, B-LTA)",
+        "url": "https://www.etsi.org/deliver/etsi_en/319100_319199/31914201/01.01.01_60/en_31914201v010101p.pdf"
+      },
+      {
+        "title": "ETSI TS 119 612 — Trusted Lists (formaat van de vertrouwenslijst van de EU en van de nationale vertrouwenslijsten)",
+        "url": "https://www.etsi.org/deliver/etsi_ts/119600_119699/119612/02.02.01_60/ts_119612v020201p.pdf"
+      },
+      {
+        "title": "EU Trusted List Browser — de List of Trusted Lists (LOTL) en alle nationale lijsten",
+        "url": "https://eidas.ec.europa.eu/efda/tl-browser/"
+      },
+      {
+        "title": "RFC 3161 — Time-Stamp Protocol (TSP): hoe betrouwbare tijdstempels worden aangevraagd en uitgegeven",
+        "url": "https://www.rfc-editor.org/rfc/rfc3161"
+      },
+      {
+        "title": "DigiCert — de gratis RFC 3161-tijdstempeldienst die Cachet standaard gebruikt",
+        "url": "https://knowledge.digicert.com/general-information/rfc3161-compliant-time-stamp-authority-server"
+      },
+      {
+        "title": "RFC 5652 — Cryptographic Message Syntax (CMS): de handtekeningcontainer in de PDF",
+        "url": "https://www.rfc-editor.org/rfc/rfc5652"
+      },
+      {
+        "title": "RFC 6960 — Online Certificate Status Protocol (OCSP): rechtstreekse onlinecontrole op ingetrokken certificaten",
+        "url": "https://www.rfc-editor.org/rfc/rfc6960"
+      },
+      {
+        "title": "RFC 5280 — X.509-certificaten en certificaatintrekkingslijsten (CRL)",
+        "url": "https://www.rfc-editor.org/rfc/rfc5280"
+      },
+      {
+        "title": "Belgische eID — officiële website: de kaart, de middleware, de pincode en de kaartlezer",
+        "url": "https://eid.belgium.be/en"
+      },
+      {
+        "title": "OASIS PKCS #11 — de interface voor cryptografische tokens waarmee met de eID-kaart wordt gecommuniceerd",
+        "url": "https://docs.oasis-open.org/pkcs11/pkcs11-base/v2.40/pkcs11-base-v2.40.html"
+      },
+      {
+        "title": "Azure Key Vault — over sleutels: hoe sleutels in de kluis worden beschermd en voor ondertekening gebruikt",
+        "url": "https://learn.microsoft.com/azure/key-vault/keys/about-keys"
+      },
+      {
+        "title": "Microsoft Entra ID — de identiteitsdienst die voor de aanmelding in de modus azure wordt gebruikt",
+        "url": "https://learn.microsoft.com/entra/fundamentals/whatis"
+      },
+      {
+        "title": "pyHanko — de opensourcebibliotheek voor het ondertekenen en valideren van PDF's waarop Cachet is gebouwd",
+        "url": "https://pyhanko.readthedocs.io/"
+      }
+    ]
+  }
+}

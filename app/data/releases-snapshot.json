@@ -1,0 +1,60 @@
+{
+  "releases": [
+    {
+      "tag": "v1.2.0",
+      "name": "Cachet v1.2.0",
+      "body": "Standalone binaries (no Python required):\n- `cachet-…-linux-x86_64.tar.gz` — `cachet` (GUI) + `cachet-cli` (console)\n- `cachet-…-windows-x86_64.zip` — `cachet.exe` (GUI) + `cachet-cli.exe` (console)\n\nRuntime requirements (beid mode): Belgian eID middleware + reader.\nLevels ≥ b-t need network (TSA / trust lists / OCSP-CRL) — see BUILD.md.\n\n\n## What's Changed\n* Feat/gui wizard i18n by @SebastienDenooz in https://github.com/AlchemicStudio/Cachet/pull/2\n\n\n**Full Changelog**: https://github.com/AlchemicStudio/Cachet/compare/v1.0.0...v1.2.0",
+      "publishedAt": "2026-09-01T11:47:20Z",
+      "prerelease": false,
+      "draft": false,
+      "htmlUrl": "https://github.com/AlchemicStudio/Cachet/releases/tag/v1.2.0",
+      "assets": [
+        {
+          "name": "cachet-1.2.0-linux-x86_64.tar.gz",
+          "size": 115246124,
+          "downloadCount": 0,
+          "url": "https://github.com/AlchemicStudio/Cachet/releases/download/v1.2.0/cachet-1.2.0-linux-x86_64.tar.gz",
+          "digest": "sha256:2efcc7774be825da23f439ba6ad7161e7cd4c34e982fcf9003b9aec8cfb03dc4",
+          "platform": "linux"
+        },
+        {
+          "name": "cachet-1.2.0-windows-x86_64.zip",
+          "size": 73765801,
+          "downloadCount": 3,
+          "url": "https://github.com/AlchemicStudio/Cachet/releases/download/v1.2.0/cachet-1.2.0-windows-x86_64.zip",
+          "digest": "sha256:c79f855f71b43185a1a643f93fe602bb0ed9779f4266d504f95a9296d29001c6",
+          "platform": "windows"
+        }
+      ]
+    },
+    {
+      "tag": "v1.0.0",
+      "name": "Cachet v1.0.0",
+      "body": "Standalone binaries (no Python required):\n- `cachet-…-linux-x86_64.tar.gz` — `cachet` (GUI) + `cachet-cli` (console)\n- `cachet-…-windows-x86_64.zip` — `cachet.exe` (GUI) + `cachet-cli.exe` (console)\n\nRuntime requirements (beid mode): Belgian eID middleware + reader.\nLevels ≥ b-t need network (TSA / trust lists / OCSP-CRL) — see BUILD.md.\n\n\n## What's Changed\n* V0.9RC1 by @SebastienDenooz in https://github.com/AlchemicStudio/Cachet/pull/1\n\n## New Contributors\n* @SebastienDenooz made their first contribution in https://github.com/AlchemicStudio/Cachet/pull/1\n\n**Full Changelog**: https://github.com/AlchemicStudio/Cachet/commits/v1.0.0",
+      "publishedAt": "2026-06-04T23:29:36Z",
+      "prerelease": false,
+      "draft": false,
+      "htmlUrl": "https://github.com/AlchemicStudio/Cachet/releases/tag/v1.0.0",
+      "assets": [
+        {
+          "name": "cachet-1.0.0-linux-x86_64.tar.gz",
+          "size": 115132670,
+          "downloadCount": 2,
+          "url": "https://github.com/AlchemicStudio/Cachet/releases/download/v1.0.0/cachet-1.0.0-linux-x86_64.tar.gz",
+          "digest": "sha256:7680996ec90f3854f1738643cf7850b54208eecb9fd41f1da07a2ffa2e0447ed",
+          "platform": "linux"
+        },
+        {
+          "name": "cachet-1.0.0-windows-x86_64.zip",
+          "size": 73729919,
+          "downloadCount": 1,
+          "url": "https://github.com/AlchemicStudio/Cachet/releases/download/v1.0.0/cachet-1.0.0-windows-x86_64.zip",
+          "digest": "sha256:6de537a8b1537a334ab13bd27271cc6465f2e38388b22727134977a8bdca7694",
+          "platform": "windows"
+        }
+      ]
+    }
+  ],
+  "fetchedAt": "2026-09-01T19:25:42.089Z",
+  "source": "snapshot"
+}

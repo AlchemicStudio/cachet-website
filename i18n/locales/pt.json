@@ -1,0 +1,368 @@
+{
+  "site": {
+    "name": "Cachet",
+    "tagline": "Assinatura de PDF em lote com o cartão eID belga",
+    "description": "Assine uma pasta inteira de PDF com o seu cartão eID belga ou com um certificado do Azure Key Vault. PAdES B-LTA por predefinição: selos temporais de confiança, dados de revogação incorporados e uma cadeia de arquivo — verificados de imediato e nunca reduzidos em silêncio."
+  },
+  "nav": {
+    "docs": "Documentação",
+    "news": "Novidades",
+    "github": "GitHub",
+    "repository": "Código-fonte no GitHub",
+    "download": "Transferir",
+    "downloadVersion": "Transferir {version}",
+    "home": "Voltar à página inicial",
+    "menu": "Abrir o menu",
+    "close": "Fechar o menu",
+    "language": "Idioma",
+    "changeLanguage": "Mudar de idioma",
+    "theme": "Tema",
+    "themeLight": "Claro",
+    "themeDark": "Escuro",
+    "themeSystem": "Sistema",
+    "toggleTheme": "Mudar de tema",
+    "skip": "Ir para o conteúdo"
+  },
+  "home": {
+    "eyebrow": "Código aberto · GPL-3.0",
+    "lead": "O Cachet assina um lote inteiro de PDF numa só passagem — com o seu cartão eID belga, com o seu certificado pessoal no Azure Key Vault, ou com um simples carimbo de imagem. Cada assinatura criptográfica é PAdES, tem selo temporal, é verificável a longo prazo e é reverificada assim que é escrita.",
+    "readMore": "Ler a apresentação completa",
+    "viewSource": "Ver o código-fonte",
+    "badges": {
+      "qes": "Assinaturas eID qualificadas",
+      "pades": "PAdES B-LTA por predefinição",
+      "batch": "Pastas inteiras de uma vez",
+      "standalone": "Sem necessidade de Python"
+    },
+    "featuresTitle": "O que faz",
+    "featuresLead": "A versão breve. A documentação desenvolve cada ponto em detalhe.",
+    "modesTitle": "Três formas de assinar",
+    "modesLead": "Escolha o modo que corresponde ao peso jurídico de que o documento precisa.",
+    "modesMore": "Comparar os modos em detalhe",
+    "newsTitle": "Versão mais recente",
+    "newsMore": "Todas as versões"
+  },
+  "download": {
+    "title": "Transferência",
+    "lead": "Executáveis autónomos — uma aplicação com janela e um programa de consola no mesmo arquivo. Não é preciso instalar Python na máquina de destino.",
+    "version": "Versão {version}",
+    "released": "Publicada a {date}",
+    "latest": "Versão mais recente",
+    "prerelease": "Pré-lançamento",
+    "recommended": "Recomendado para o seu sistema",
+    "otherPlatforms": "Outras plataformas",
+    "allFiles": "Todos os ficheiros desta versão",
+    "size": "Tamanho",
+    "downloads": "{count} transferências",
+    "checksum": "Soma de verificação {algo}",
+    "copyChecksum": "Copiar a soma de verificação {algo}",
+    "copied": "Copiado",
+    "verifyHint": "Verifique o arquivo antes de o executar:",
+    "viewOnGitHub": "Ver esta versão no GitHub",
+    "allReleases": "Todas as versões",
+    "empty": "Ainda não há nenhuma versão publicada.",
+    "emptyHint": "Os executáveis aparecem aqui assim que uma versão for etiquetada no GitHub.",
+    "loading": "A carregar as versões a partir do GitHub…",
+    "live": "Em direto do GitHub",
+    "snapshot": "Cópia em cache",
+    "asOf": "à data de {date}",
+    "staleTitle": "A mostrar uma cópia em cache",
+    "staleBody": "Não foi possível contactar o GitHub — a sua API permite 60 pedidos por hora a partir do mesmo endereço. Os ficheiros abaixo vêm da última verificação bem-sucedida e as ligações continuam a funcionar.",
+    "platform": {
+      "linux": "Linux",
+      "windows": "Windows",
+      "macos": "macOS",
+      "source": "Código-fonte",
+      "other": "Outros"
+    },
+    "platformDetail": {
+      "linux": "x86-64 · tar.gz",
+      "windows": "x86-64 · zip",
+      "macos": "x86-64",
+      "source": "Arquivo",
+      "other": ""
+    },
+    "contents": {
+      "title": "O que contém o arquivo",
+      "gui": "`cachet` — o assistente gráfico",
+      "cli": "`cachet-cli` — a ferramenta de consola"
+    },
+    "afterTitle": "Antes de assinar",
+    "after": {
+      "beid": "Para assinar com o eID, instale o middleware eID belga e ligue um leitor de cartões.",
+      "network": "Os níveis b-t e superiores precisam de acesso à rede para a autoridade de selagem temporal, a lista de confiança da UE e as verificações de revogação.",
+      "offline": "O nível b-b e o modo imagem funcionam totalmente sem ligação."
+    }
+  },
+  "docs": {
+    "title": "Documentação",
+    "lead": "O que o Cachet faz, o que cada nível de assinatura realmente garante, e como assinar um lote de documentos do início ao fim.",
+    "toc": "Nesta página",
+    "onGitHub": "Documentação no GitHub",
+    "onGitHubLead": "O repositório contém a documentação técnica de referência, mantida a par do código.",
+    "links": {
+      "readme": { "title": "README", "text": "Referência completa das opções e dos modos" },
+      "build": { "title": "BUILD.md", "text": "Empacotamento: compilação nativa, Wine e CI" },
+      "spec": { "title": "specifications.md", "text": "A especificação da passagem a PAdES B-LTA" },
+      "issues": { "title": "Issues", "text": "Comunicar um erro ou colocar uma questão" }
+    },
+    "sections": {
+      "overview": "Visão geral",
+      "features": "Funcionalidades",
+      "modes": "Os três modos",
+      "walkthrough": "Assinar um lote, passo a passo",
+      "cli": "Linha de comandos",
+      "levels": "Níveis de assinatura",
+      "tiers": "AES ou QES?",
+      "requirements": "Requisitos",
+      "install": "Instalação",
+      "glossary": "Glossário",
+      "sources": "Fontes",
+      "legal": "A ter em conta"
+    },
+    "overview": {
+      "p1": "O Cachet é um assinador de PDF em lote pensado para os fluxos administrativos belgas. Indica-lhe uma pasta, escolhe como os documentos devem ser assinados, coloca a marca visível uma única vez, e ele aplica a mesma assinatura a cada ficheiro do lote.",
+      "p2": "Funciona como assistente gráfico passo a passo ou como ferramenta de consola, a partir do mesmo núcleo. As assinaturas criptográficas seguem a norma PAdES (ETSI EN 319 142-1) até ao nível B-LTA: um selo temporal RFC 3161 de confiança, dados de revogação incorporados no documento e uma cadeia de selos de arquivo — com âncoras de confiança retiradas da lista de confiança da UE nas assinaturas eID, ou da autoridade de certificação interna da sua organização nas assinaturas Azure.",
+      "p3": "Cada ficheiro assinado é reaberto e validado imediatamente depois de escrito, e é comunicado o nível realmente atingido. Se o nível pedido não puder ser atingido, o documento é marcado como falhado. O Cachet nunca produz em silêncio uma assinatura mais fraca do que aquela que pediu.",
+      "quote": "O modo eID utiliza o certificado de não repúdio do cartão, juridicamente equivalente a uma assinatura manuscrita."
+    },
+    "features": {
+      "batch": { "title": "Lotes inteiros de uma vez", "text": "Indique ao Cachet ficheiros ou pastas. A mesma marca, a mesma página e a mesma posição são aplicadas a todos os documentos do lote." },
+      "modes": { "title": "Três modos de assinatura", "text": "Uma assinatura eID qualificada, uma assinatura avançada a partir do Azure Key Vault, ou um simples carimbo de imagem sem valor jurídico." },
+      "pades": { "title": "PAdES até B-LTA", "text": "Níveis b-b, b-t, b-lt e b-lta, selecionáveis em cada execução. b-lta é a predefinição — o mais forte e o mais duradouro." },
+      "timestamp": { "title": "Selagem temporal de confiança", "text": "Uma autoridade de selagem temporal RFC 3161 prova quando assinou. Aponte-a para uma TSA qualificada quando for exigida uma conservação qualificada segundo o eIDAS." },
+      "ltv": { "title": "Validação a longo prazo", "text": "Os certificados da AC e as respostas OCSP/CRL são incorporados no momento da assinatura, pelo que o PDF continua verificável depois de os certificados expirarem." },
+      "verify": { "title": "Verificado no momento", "text": "Cada ficheiro assinado é reaberto e validado, e o nível atingido é comunicado. Os níveis nunca são reduzidos em silêncio." },
+      "template": { "title": "Validação por modelo", "text": "Um documento só é aceite se o seu número de páginas e as dimensões de cada uma corresponderem exatamente a um PDF-modelo. Os ficheiros rejeitados nunca são assinados." },
+      "placement": { "title": "Colocar com um clique", "text": "Uma pré-visualização real da página de destino, desenhada pelo motor PDFium incorporado. Clique onde a marca deve ficar — é aí que fica assinada." },
+      "vignette": { "title": "Marca de assinatura visível", "text": "As assinaturas eID carimbam a fotografia do titular, o nome e a data; as assinaturas Azure carimbam o nome e a data." },
+      "safety": { "title": "Nada é substituído", "text": "O resultado é escrito como `{pattern}` numa pasta à sua escolha, e os ficheiros existentes nunca são substituídos." },
+      "i18n": { "title": "Seis idiomas na aplicação", "text": "O assistente fala inglês, francês, neerlandês, alemão, espanhol e português, e segue por predefinição o idioma do sistema." },
+      "standalone": { "title": "Executáveis autónomos", "text": "Uma aplicação com janela e uma ferramenta de consola por plataforma, para Linux e Windows. Não há nada a instalar além do middleware eID." }
+    },
+    "modes": {
+      "lead": "Os três modos aplicam uma marca visível e processam o lote de forma idêntica. O que difere é o peso jurídico daquilo que produzem.",
+      "table": {
+        "mode": "Modo",
+        "requires": "Requer",
+        "nature": "Natureza",
+        "output": "Marca visível"
+      },
+      "beid": {
+        "name": "Cartão eID",
+        "flag": "--mode beid",
+        "requires": "Leitor de cartões, cartão eID, um PIN por documento",
+        "nature": "Assinatura criptográfica de grau qualificado (QES)",
+        "output": "Fotografia do titular, nome e data",
+        "note": "O maior peso jurídico e o método mais lento para lotes grandes — o PIN é pedido para cada documento."
+      },
+      "azure": {
+        "name": "Azure Key Vault",
+        "flag": "--mode azure",
+        "requires": "Uma autenticação Microsoft por lote, uma chave e um certificado pessoais no Key Vault",
+        "nature": "Assinatura eletrónica avançada (AES)",
+        "output": "Nome e data",
+        "note": "Só o resumo do documento é enviado para o Azure; o ficheiro em si nunca sai da sua máquina, e a chave privada nunca sai do cofre."
+      },
+      "image": {
+        "name": "Carimbo de imagem",
+        "flag": "--mode image",
+        "requires": "Nada — funciona sem ligação",
+        "nature": "Não é uma assinatura criptográfica",
+        "output": "A imagem que fornecer",
+        "note": "Apenas uma marca visual. Não tem valor jurídico nem prova quem a aplicou."
+      }
+    },
+    "walkthrough": {
+      "lead": "O assistente gráfico percorre-se em oito passos. Uma barra de passos assinala a verde os concluídos e a vermelho os problemáticos, cada formulário é acompanhado de ajuda contextual, e mudar de idioma volta a desenhar o passo atual sem perder nada do que foi introduzido.",
+      "stepLabel": "Passo {n}",
+      "cliNote": "Prefere a consola? O mesmo lote é tratado com um único comando — veja a secção da linha de comandos mais abaixo.",
+      "welcomeAlt": "O ecrã de boas-vindas do Cachet, com o seletor de idioma e o botão Começar",
+      "shotNote": "As capturas mostram a interface em inglês; o assistente também fala português, francês, neerlandês, alemão e espanhol.",
+      "steps": {
+        "template": { "title": "Escolher um modelo", "text": "Selecione um PDF-modelo com o qual cada documento do lote deve corresponder. Está a assinar apenas um documento? Escolha esse mesmo documento como modelo." },
+        "documents": { "title": "Acrescentar os documentos", "text": "Selecione ficheiros individuais ou pastas inteiras. Nas pastas procuram-se automaticamente os PDF." },
+        "validation": { "title": "Validar face ao modelo", "text": "Cada ficheiro é verificado: o mesmo número de páginas e dimensões de página exatamente iguais. Uma tabela mostra o resultado, e os ficheiros rejeitados nunca são assinados. Se alguns ficheiros tiverem um número de páginas diferente — anexos digitalizados acrescentados, por exemplo — aparece um seletor para assinar cada ficheiro na sua própria primeira ou última página." },
+        "output": { "title": "Escolher uma pasta de destino", "text": "Os ficheiros assinados são escritos como `{pattern}`. Os ficheiros existentes nunca são substituídos: se o nome coincidir, acrescenta-se ` - 1`, ` - 2`, e assim por diante." },
+        "type": { "title": "Escolher o tipo de assinatura", "text": "eID, Azure ou imagem, mais o nível PAdES (b-lta por predefinição). No modo Azure, um painel recolhe as definições do cofre e oferece a ação «Iniciar sessão com a Microsoft». Um botão «Documentação completa» abre esta mesma referência dentro da aplicação." },
+        "placement": { "title": "Colocar a marca", "text": "A página de destino é realmente apresentada. Clique onde a marca deve ficar — nos modos eID e Azure, a vinheta visível é assinada exatamente aí. Há um campo manual de página, e quando o número de páginas difere, o seletor de primeira/última também aparece aqui." },
+        "signing": { "title": "Assinar", "text": "Um resumo de tudo o que foi escolhido, um lembrete para inserir o cartão eID no modo eID, e depois o progresso à medida que cada documento é assinado. No modo eID, o PIN é pedido uma vez por documento; no modo Azure, iniciou sessão uma só vez para todo o lote." },
+        "report": { "title": "Ler o relatório", "text": "Uma tabela de resultados documento a documento, com o nível realmente atingido por cada ficheiro — por exemplo «PAdES-B-LTA, LTV ok» — e um botão que abre a pasta de destino." }
+      }
+    },
+    "cli": {
+      "lead": "A ferramenta de consola partilha todo o seu núcleo com o assistente, pelo que tudo o que a interface faz está a um comando de distância. Estes exemplos pressupõem uma instalação a partir do código-fonte; com um executável transferido, substitua a chamada ao interpretador por `cachet-cli`.",
+      "examplesTitle": "Comandos comuns",
+      "flagsTitle": "Opções",
+      "flagsLead": "As opções de que a maioria das execuções precisa. O README documenta o conjunto completo, incluindo todas as opções do Azure.",
+      "flagColumn": "Opção",
+      "meaningColumn": "Significado",
+      "examples": {
+        "beid": "Assinar uma pasta com o cartão eID, no nível b-lta predefinido",
+        "offline": "Assinar sem ligação no nível básico, sem qualquer acesso à rede",
+        "image": "Aplicar um carimbo de imagem, validando face a um modelo",
+        "azure": "Assinar com um certificado pessoal do Azure Key Vault",
+        "gui": "Abrir o assistente gráfico"
+      },
+      "flags": {
+        "--gui": "Lança a interface gráfica; caso contrário, a ferramenta corre em modo de consola.",
+        "--input": "Ficheiros e pastas a processar. Nas pastas procuram-se os PDF.",
+        "--output": "Pasta de destino. Os ficheiros são escritos como `{pattern}` e nunca são substituídos.",
+        "--template": "PDF-modelo. Se for indicado, cada ficheiro de entrada é validado face a ele.",
+        "--mode": "`beid`, `azure` ou `image`. Por predefinição, `beid`.",
+        "--pades-level": "`b-b`, `b-t`, `b-lt` ou `b-lta`. Por predefinição, `b-lta`.",
+        "--page": "Página de destino: um número a partir de 1, ou `first` / `last`, resolvido documento a documento.",
+        "--x-y": "Canto inferior esquerdo da marca, em pontos a contar do canto inferior esquerdo da página. Omita ambos no modo eID para obter o canto inferior direito da última página.",
+        "--image-path": "A imagem a aplicar. Obrigatória no modo imagem.",
+        "--timestamp-url": "Autoridade de selagem temporal RFC 3161 para os níveis b-t e superiores.",
+        "--digest": "Resumo da assinatura: `sha256` (predefinição), `sha384` ou `sha512`.",
+        "--azure-vault-url": "URL do Key Vault. Obrigatória no modo Azure.",
+        "--azure-trust-anchors": "Ficheiro PEM ou DER, ou um diretório, com a cadeia da AC interna usada como âncoras de confiança LTV no modo Azure.",
+        "--refresh-trust-list": "Força uma nova transferência da lista de confiança da UE, ignorando a cache de 24 horas."
+      }
+    },
+    "levels": {
+      "lead": "Os níveis PAdES tal como definidos pela norma ETSI EN 319 142-1. Cada um assenta no anterior, e o Cachet usa o mais forte por predefinição.",
+      "table": {
+        "level": "Nível",
+        "adds": "Acrescenta",
+        "network": "Rede"
+      },
+      "networkNone": "Nenhuma — totalmente sem ligação",
+      "networkTsa": "Autoridade de selagem temporal",
+      "networkFull": "Autoridade de selagem, lista de confiança, OCSP/CRL",
+      "default": "Predefinição",
+      "adds": {
+        "b-b": "A assinatura básica: quem assinou e que nada mudou desde então",
+        "b-t": "Um selo temporal RFC 3161 de confiança, que prova quando",
+        "b-lt": "Dados de revogação e certificados da AC incorporados no documento (LTV)",
+        "b-lta": "Uma cadeia de selos de arquivo, para que a própria prova continue a sustentar-se"
+      }
+    },
+    "requirements": {
+      "lead": "O que cada modo precisa em tempo de execução.",
+      "beid": {
+        "title": "Modo eID",
+        "items": [
+          "O middleware eID belga, que fornece a biblioteca PKCS#11",
+          "Um leitor de cartões com um cartão eID inserido",
+          "O serviço PC/SC em execução",
+          "Acesso à rede para os níveis b-t e superiores; b-b funciona totalmente sem ligação"
+        ]
+      },
+      "azure": {
+        "title": "Modo Azure",
+        "items": [
+          "Nenhum equipamento adicional",
+          "Acesso de saída a login.microsoftonline.com e ao URL do seu Key Vault",
+          "Uma chave e um certificado pessoais aprovisionados no Key Vault por uma administração",
+          "Pontos CRL ou OCSP acessíveis na AC interna para os níveis b-lt e superiores"
+        ]
+      },
+      "image": {
+        "title": "Modo imagem",
+        "items": [
+          "Nada — puro carimbo de PDF, totalmente sem ligação"
+        ]
+      },
+      "preview": "A pré-visualização do passo de colocação não precisa de mais nada: o motor de desenho PDFium está incorporado na aplicação."
+    },
+    "install": {
+      "lead": "Dois caminhos: transferir um executável autónomo, ou executá-lo a partir do código-fonte.",
+      "binaryTitle": "Executável autónomo",
+      "binaryText": "Transfira o arquivo correspondente à sua plataforma e extraia-o. Contém uma aplicação com janela e uma ferramenta de consola, ambas autossuficientes — não é preciso instalar Python. O middleware eID continua a ser um requisito à parte para a assinatura eID e nunca é incluído.",
+      "sourceTitle": "A partir do código-fonte",
+      "sourceText": "Clone o repositório, crie um ambiente virtual e instale as dependências. No Debian e no Ubuntu, a interface gráfica precisa ainda do pacote Tk do sistema.",
+      "buildTitle": "Compilar por si próprio",
+      "buildText": "A compilação nativa em Linux, a compilação nativa em Windows, a compilação cruzada através do Wine e o pipeline do GitHub Actions estão todos documentados no BUILD.md.",
+      "downloadCta": "Ir para as transferências"
+    },
+    "reference": {
+      "title": "Referência",
+      "lead": "As secções seguintes constituem a documentação de referência da própria aplicação, reproduzida palavra por palavra para que o site e a aplicação nunca digam coisas diferentes.",
+      "fromApp": "Da documentação integrada na aplicação",
+      "notTranslated": "Esta referência ainda não está disponível no seu idioma; é apresentada em inglês."
+    },
+    "legal": {
+      "rrn": {
+        "title": "O seu número de registo nacional consta de cada assinatura eID",
+        "text": "O certificado de não repúdio do cartão eID belga contém o seu número de registo nacional (NRN), e esse certificado é incorporado em cada assinatura que produz. Quem receber um PDF assinado pode lê-lo. O Cachet avisa disso no arranque e no seu resumo — pense em como os documentos assinados serão distribuídos."
+      },
+      "tsa": {
+        "title": "Um selo temporal gratuito não é um selo qualificado",
+        "text": "A autoridade de selagem temporal predefinida é gratuita e produz assinaturas B-T e B-LTA tecnicamente válidas, mas não selos qualificados no sentido do eIDAS. Para uma verdadeira conservação qualificada a longo prazo, aponte o URL de selagem para uma autoridade qualificada — a lista de confiança da UE identifica os prestadores que oferecem serviços de selagem temporal qualificada."
+      },
+      "aes": {
+        "title": "As assinaturas Azure são avançadas, não qualificadas",
+        "text": "O modo Azure produz uma assinatura eletrónica avançada (AES). É adequada para documentos internos, mas fica um patamar abaixo da assinatura qualificada (QES) produzida pelo cartão eID. Para documentos em que terceiros externos se apoiem, seria necessário um emissor qualificado reconhecido publicamente."
+      },
+      "archival": {
+        "title": "As cadeias B-LTA precisam de renovação",
+        "text": "A cadeia de selos de arquivo mantém a prova demonstrável ao longo do tempo, mas um arquivo verdadeiramente duradouro exige renovar essa cadeia periodicamente. O BUILD.md explica o que isso implica."
+      }
+    }
+  },
+  "news": {
+    "title": "Novidades",
+    "lead": "Todas as versões publicadas, diretamente do GitHub, com as suas notas e as suas transferências.",
+    "latest": "Mais recente",
+    "prerelease": "Pré-lançamento",
+    "released": "Publicada a {date}",
+    "downloadsTitle": "Transferências",
+    "notesTitle": "Notas da versão",
+    "notesLanguage": "As notas de versão são publicadas em inglês.",
+    "viewOnGitHub": "Ver no GitHub",
+    "empty": "Ainda não foi publicada nenhuma versão.",
+    "emptyHint": "Esta página preenche-se com as versões do repositório assim que a primeira for etiquetada.",
+    "feed": "Subscrever o fluxo",
+    "count": "{count} versão | {count} versões"
+  },
+  "footer": {
+    "tagline": "Assinatura de PDF em lote para os fluxos administrativos belgas.",
+    "project": "Projeto",
+    "resources": "Recursos",
+    "legal": "Aviso legal",
+    "license": "Publicado sob a licença GPL-3.0",
+    "sourceCode": "Código-fonte",
+    "issues": "Issues",
+    "releases": "Versões",
+    "builtBy": "Criado por {org}",
+    "notAffiliated": "O Cachet é um projeto de código aberto independente. Não está associado nem é apoiado pelo Estado belga ou pela Microsoft.",
+    "eidLink": "Middleware eID belga",
+    "eidasLink": "Regulamento eIDAS",
+    "tlBrowserLink": "Navegador das listas de confiança da UE"
+  },
+  "error": {
+    "404": {
+      "title": "Página não encontrada",
+      "text": "Essa página não existe, ou foi movida.",
+      "cta": "Voltar à página inicial"
+    },
+    "500": {
+      "title": "Algo correu mal",
+      "text": "Ocorreu um erro inesperado.",
+      "cta": "Voltar à página inicial"
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "Cachet — assinatura de PDF em lote com o cartão eID belga",
+      "description": "Assine pastas inteiras de PDF com o seu cartão eID belga (QES) ou um certificado do Azure Key Vault (AES). PAdES B-LTA, selagem temporal de confiança, validação a longo prazo. Livre e de código aberto, para Linux e Windows."
+    },
+    "docs": {
+      "title": "Documentação",
+      "description": "Como o Cachet assina os PDF: os três modos, os níveis PAdES de b-b a b-lta, o assistente de oito passos, a referência da linha de comandos e um glossário das normas envolvidas."
+    },
+    "news": {
+      "title": "Novidades",
+      "description": "Todas as versões do Cachet com as suas notas e as suas transferências para Linux e Windows, em direto do GitHub."
+    },
+    "ogTagline": "Assinatura de PDF em lote com o cartão eID belga"
+  },
+  "a11y": {
+    "externalLink": "abre num separador novo",
+    "currentPage": "Página atual",
+    "loading": "A carregar",
+    "copy": "Copiar"
+  }
+}

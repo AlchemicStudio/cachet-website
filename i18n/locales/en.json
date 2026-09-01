@@ -1,0 +1,440 @@
+{
+  "site": {
+    "name": "Cachet",
+    "tagline": "Batch PDF signing with the Belgian eID card",
+    "description": "Sign a whole folder of PDFs with your Belgian eID card or an Azure Key Vault certificate. PAdES B-LTA by default: trusted timestamps, embedded revocation data and an archival chain — verified on the spot, never silently downgraded."
+  },
+  "nav": {
+    "docs": "Documentation",
+    "news": "News",
+    "github": "GitHub",
+    "repository": "Source code on GitHub",
+    "download": "Download",
+    "downloadVersion": "Download {version}",
+    "home": "Back to the home page",
+    "menu": "Open the menu",
+    "close": "Close the menu",
+    "language": "Language",
+    "changeLanguage": "Change language",
+    "theme": "Theme",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "themeSystem": "System",
+    "toggleTheme": "Switch theme",
+    "skip": "Skip to content"
+  },
+  "home": {
+    "eyebrow": "Open source · GPL-3.0",
+    "lead": "Cachet signs a whole batch of PDFs in one pass — with your Belgian eID card, with your personal certificate in Azure Key Vault, or with a plain image stamp. Every cryptographic signature is PAdES, timestamped, long-term verifiable, and re-checked the moment it is written.",
+    "readMore": "Read the full presentation",
+    "viewSource": "View the source",
+    "badges": {
+      "qes": "Qualified eID signatures",
+      "pades": "PAdES B-LTA by default",
+      "batch": "Whole folders at once",
+      "standalone": "No Python required"
+    },
+    "featuresTitle": "What it does",
+    "featuresLead": "The short version. The documentation covers each point in depth.",
+    "modesTitle": "Three ways to sign",
+    "modesLead": "Pick the mode that matches the legal weight the document needs.",
+    "modesMore": "Compare the modes in detail",
+    "newsTitle": "Latest release",
+    "newsMore": "All releases"
+  },
+  "download": {
+    "title": "Download",
+    "lead": "Standalone builds — a windowed app and a console binary in one archive. No Python installation needed on the target machine.",
+    "version": "Version {version}",
+    "released": "Released {date}",
+    "latest": "Latest version",
+    "prerelease": "Pre-release",
+    "recommended": "Recommended for your system",
+    "otherPlatforms": "Other platforms",
+    "allFiles": "All files in this release",
+    "size": "Size",
+    "downloads": "{count} downloads",
+    "checksum": "{algo} checksum",
+    "copyChecksum": "Copy the {algo} checksum",
+    "copied": "Copied",
+    "verifyHint": "Check the archive before running it:",
+    "viewOnGitHub": "View this release on GitHub",
+    "allReleases": "All releases",
+    "empty": "No published release yet.",
+    "emptyHint": "Builds appear here as soon as a version is tagged on GitHub.",
+    "loading": "Loading releases from GitHub…",
+    "live": "Live from GitHub",
+    "snapshot": "Cached copy",
+    "asOf": "as of {date}",
+    "staleTitle": "Showing a cached copy",
+    "staleBody": "GitHub could not be reached — its API allows 60 requests an hour from a shared address. The files below are from the last successful check and the links still work.",
+    "platform": {
+      "linux": "Linux",
+      "windows": "Windows",
+      "macos": "macOS",
+      "source": "Source code",
+      "other": "Other"
+    },
+    "platformDetail": {
+      "linux": "x86-64 · tar.gz",
+      "windows": "x86-64 · zip",
+      "macos": "x86-64",
+      "source": "Archive",
+      "other": ""
+    },
+    "contents": {
+      "title": "What is in the archive",
+      "gui": "`cachet` — the graphical wizard",
+      "cli": "`cachet-cli` — the console tool"
+    },
+    "afterTitle": "Before you sign",
+    "after": {
+      "beid": "For eID signing, install the Belgian eID middleware and connect a card reader.",
+      "network": "Levels b-t and above need network access for the timestamp authority, the EU trusted list and revocation checks.",
+      "offline": "Level b-b and image mode work fully offline."
+    }
+  },
+  "docs": {
+    "title": "Documentation",
+    "lead": "What Cachet does, what each signature level actually guarantees, and how to sign a batch of documents from start to finish.",
+    "toc": "On this page",
+    "onGitHub": "Documentation on GitHub",
+    "onGitHubLead": "The repository carries the canonical technical documentation, kept in step with the code.",
+    "links": {
+      "readme": {
+        "title": "README",
+        "text": "Full CLI reference, options and modes"
+      },
+      "build": {
+        "title": "BUILD.md",
+        "text": "Packaging: native, Wine and CI builds"
+      },
+      "spec": {
+        "title": "specifications.md",
+        "text": "The PAdES B-LTA upgrade specification"
+      },
+      "issues": {
+        "title": "Issues",
+        "text": "Report a bug or ask a question"
+      }
+    },
+    "sections": {
+      "overview": "Overview",
+      "features": "Features",
+      "modes": "The three modes",
+      "walkthrough": "Signing a batch, step by step",
+      "cli": "Command line",
+      "levels": "Signature levels",
+      "tiers": "AES or QES?",
+      "requirements": "Requirements",
+      "install": "Installation",
+      "glossary": "Glossary",
+      "sources": "Sources",
+      "legal": "Things to know"
+    },
+    "overview": {
+      "p1": "Cachet is a batch PDF signer built for Belgian administrative workflows. You point it at a folder, choose how the documents should be signed, place the visible mark once, and it applies the same signature to every file in the batch.",
+      "p2": "It runs either as a step-by-step graphical wizard or as a console tool, from the same core. Cryptographic signatures follow the PAdES baseline standard (ETSI EN 319 142-1) up to level B-LTA: a trusted RFC 3161 timestamp, revocation data embedded in the document, and an archival timestamp chain — with trust anchors taken from the EU Trusted List for eID signatures, or from your organisation's internal CA for Azure signatures.",
+      "p3": "Every signed file is re-opened and validated immediately after writing, and the level actually achieved is reported. If the requested level cannot be reached, the document is marked failed. Cachet never silently produces a weaker signature than the one you asked for.",
+      "quote": "The eID mode uses the card's non-repudiation certificate, which is legally equivalent to a handwritten signature."
+    },
+    "features": {
+      "batch": {
+        "title": "Whole batches at once",
+        "text": "Point Cachet at files or folders. The same mark, page and position are applied to every document in the batch."
+      },
+      "modes": {
+        "title": "Three signing modes",
+        "text": "A qualified eID signature, an advanced signature from Azure Key Vault, or a plain image stamp with no legal value."
+      },
+      "pades": {
+        "title": "PAdES up to B-LTA",
+        "text": "Levels b-b, b-t, b-lt and b-lta, selectable per run. b-lta is the default — the strongest and longest-lasting."
+      },
+      "timestamp": {
+        "title": "Trusted timestamping",
+        "text": "An RFC 3161 timestamp authority proves when you signed. Point it at a qualified TSA when eIDAS-qualified preservation matters."
+      },
+      "ltv": {
+        "title": "Long-term validation",
+        "text": "CA certificates and OCSP/CRL responses are embedded at signing time, so the PDF stays verifiable after the certificates expire."
+      },
+      "verify": {
+        "title": "Verified on the spot",
+        "text": "Each signed file is re-opened and validated, and the achieved level is reported. Levels are never silently downgraded."
+      },
+      "template": {
+        "title": "Template validation",
+        "text": "Inputs are accepted only if their page count and per-page dimensions match a model PDF exactly. Rejected files are never signed."
+      },
+      "placement": {
+        "title": "Click to place",
+        "text": "A real preview of the target page, rendered by the bundled PDFium engine. Click where the mark belongs — that is where it is signed."
+      },
+      "vignette": {
+        "title": "Visible signature mark",
+        "text": "eID signatures stamp the cardholder photo, name and date; Azure signatures stamp the name and date."
+      },
+      "safety": {
+        "title": "Nothing overwritten",
+        "text": "Output is written as `{pattern}` in a folder you choose, and existing files are never replaced."
+      },
+      "i18n": {
+        "title": "Six languages in the app",
+        "text": "The wizard speaks English, French, Dutch, German, Spanish and Portuguese, and follows your system language by default."
+      },
+      "standalone": {
+        "title": "Standalone binaries",
+        "text": "One windowed app and one console tool per platform, for Linux and Windows. Nothing to install beyond the eID middleware."
+      }
+    },
+    "modes": {
+      "lead": "All three modes stamp a visible mark and process the whole batch identically. What differs is the legal weight of what they produce.",
+      "table": {
+        "mode": "Mode",
+        "requires": "Requires",
+        "nature": "Nature",
+        "output": "Visible output"
+      },
+      "beid": {
+        "name": "eID card",
+        "flag": "--mode beid",
+        "requires": "Card reader, eID card, one PIN per document",
+        "nature": "Qualified-grade cryptographic signature (QES)",
+        "output": "Cardholder photo, name and date",
+        "note": "The strongest legal weight, and the slowest for large batches — the PIN is requested for every document."
+      },
+      "azure": {
+        "name": "Azure Key Vault",
+        "flag": "--mode azure",
+        "requires": "One Microsoft login per batch, a personal key and certificate in Key Vault",
+        "nature": "Advanced electronic signature (AES)",
+        "output": "Name and date",
+        "note": "Only the document digest is sent to Azure; the file itself never leaves your machine, and the private key never leaves the vault."
+      },
+      "image": {
+        "name": "Image stamp",
+        "flag": "--mode image",
+        "requires": "Nothing — works offline",
+        "nature": "Not a cryptographic signature",
+        "output": "The image you supply",
+        "note": "A visual mark only. It carries no legal value and proves nothing about who applied it."
+      }
+    },
+    "walkthrough": {
+      "lead": "The graphical wizard walks through eight steps. A stepper marks completed steps green and problems red, contextual help sits beside every form, and switching language re-renders the current step without losing anything you entered.",
+      "stepLabel": "Step {n}",
+      "cliNote": "Prefer the console? The same batch runs as a single command — see the command line section below.",
+      "steps": {
+        "template": {
+          "title": "Choose a template",
+          "text": "Pick a model PDF that every document in the batch should match. Signing a single document? Choose that document itself as the template."
+        },
+        "documents": {
+          "title": "Add the documents",
+          "text": "Select individual files or whole folders. Folders are searched for PDFs automatically."
+        },
+        "validation": {
+          "title": "Validate against the template",
+          "text": "Each file is checked for the same page count and exactly identical page dimensions. A pass/fail table shows the result, and rejected files are never signed. If some files have a different page count — scanned annexes appended, for instance — a selector appears so every file is signed on its own first or last page instead."
+        },
+        "output": {
+          "title": "Choose an output folder",
+          "text": "Signed files are written as `{pattern}`. Existing files are never overwritten; on a name collision, ` - 1`, ` - 2` and so on are appended."
+        },
+        "type": {
+          "title": "Choose the signature type",
+          "text": "eID, Azure or image, plus the PAdES level (b-lta by default). In Azure mode a panel collects the vault settings and offers a “Sign in with Microsoft” action. A “Full documentation” button opens this same reference inside the app."
+        },
+        "placement": {
+          "title": "Place the mark",
+          "text": "The target page is rendered for real. Click where the mark should sit — in eID and Azure modes the visible vignette is signed exactly there. A manual page field is available, and when page counts differ the first/last selector appears here too."
+        },
+        "signing": {
+          "title": "Sign",
+          "text": "A summary of everything chosen, a reminder to insert the eID card in eID mode, then progress as each document is signed. In eID mode the PIN is requested once per document; in Azure mode you signed in once for the whole batch."
+        },
+        "report": {
+          "title": "Read the report",
+          "text": "A per-document result table with the level actually achieved for each file — for example “PAdES-B-LTA, LTV ok” — and a button that opens the output folder."
+        }
+      },
+      "welcomeAlt": "The Cachet welcome screen, with the language selector and the Start button",
+      "shotNote": "Screenshots are of the English interface; the wizard also speaks French, Dutch, German, Spanish and Portuguese."
+    },
+    "cli": {
+      "lead": "The console tool shares its entire core with the wizard, so anything the interface can do is one command away. These examples assume a source checkout; with a downloaded build, replace the interpreter call with `cachet-cli`.",
+      "examplesTitle": "Common commands",
+      "flagsTitle": "Options",
+      "flagsLead": "The flags most runs need. The README documents the complete surface, including every Azure option.",
+      "flagColumn": "Flag",
+      "meaningColumn": "Meaning",
+      "examples": {
+        "beid": "Sign a folder with the eID card, at the default b-lta level",
+        "offline": "Sign offline at the basic level, with no network access",
+        "image": "Stamp an image, validated against a template",
+        "azure": "Sign with a personal Azure Key Vault certificate",
+        "gui": "Open the graphical wizard"
+      },
+      "flags": {
+        "--gui": "Launch the graphical interface; otherwise the tool runs in console mode.",
+        "--input": "Files and folders to process. Folders are searched for PDFs.",
+        "--output": "Output folder. Files are written as `{pattern}` and never overwritten.",
+        "--template": "Template PDF. When supplied, every input is validated against it.",
+        "--mode": "`beid`, `azure` or `image`. Defaults to `beid`.",
+        "--pades-level": "`b-b`, `b-t`, `b-lt` or `b-lta`. Defaults to `b-lta`.",
+        "--page": "Target page: a 1-based number, or `first` / `last` resolved per document.",
+        "--x-y": "Lower-left corner of the mark, in points from the bottom-left of the page. Omit both in eID mode for the bottom-right of the last page.",
+        "--image-path": "The image to stamp. Required in image mode.",
+        "--timestamp-url": "RFC 3161 timestamp authority for levels b-t and above.",
+        "--digest": "Signature digest: `sha256` (default), `sha384` or `sha512`.",
+        "--azure-vault-url": "Key Vault URL. Required in Azure mode.",
+        "--azure-trust-anchors": "PEM or DER file, or a directory, holding the internal CA chain used as LTV trust anchors in Azure mode.",
+        "--refresh-trust-list": "Force a re-download of the EU trusted list, bypassing the 24-hour cache."
+      }
+    },
+    "levels": {
+      "lead": "PAdES baseline levels, as defined by ETSI EN 319 142-1. Each builds on the one before it, and Cachet defaults to the strongest.",
+      "table": {
+        "level": "Level",
+        "adds": "Adds",
+        "network": "Network"
+      },
+      "networkNone": "None — fully offline",
+      "networkTsa": "Timestamp authority",
+      "networkFull": "Timestamp authority, trusted list, OCSP/CRL",
+      "default": "Default",
+      "adds": {
+        "b-b": "The basic signature: who signed, and that nothing changed since",
+        "b-t": "A trusted RFC 3161 timestamp, proving when",
+        "b-lt": "Revocation data and CA certificates embedded in the document (LTV)",
+        "b-lta": "An archival timestamp chain, so the evidence itself keeps proving out"
+      }
+    },
+    "requirements": {
+      "lead": "What each mode needs at runtime.",
+      "beid": {
+        "title": "eID mode",
+        "items": [
+          "The Belgian eID middleware, which provides the PKCS#11 library",
+          "A card reader with an eID card inserted",
+          "The PC/SC service running",
+          "Network access for levels b-t and above; b-b is fully offline"
+        ]
+      },
+      "azure": {
+        "title": "Azure mode",
+        "items": [
+          "No hardware at all",
+          "Outbound access to login.microsoftonline.com and your Key Vault URL",
+          "A personal key and certificate provisioned in Key Vault by an administrator",
+          "Reachable CRL or OCSP endpoints on the internal CA for levels b-lt and above"
+        ]
+      },
+      "image": {
+        "title": "Image mode",
+        "items": [
+          "Nothing — pure PDF stamping, fully offline"
+        ]
+      },
+      "preview": "The page preview in the placement step needs nothing extra: the PDFium rendering engine is bundled with the application."
+    },
+    "install": {
+      "lead": "Two ways in: download a standalone build, or run it from source.",
+      "binaryTitle": "Standalone build",
+      "binaryText": "Download the archive for your platform and extract it. It contains a windowed application and a console tool, both self-contained — no Python installation required. The eID middleware remains a separate runtime requirement for eID signing, and is never bundled.",
+      "sourceTitle": "From source",
+      "sourceText": "Clone the repository, create a virtual environment and install the dependencies. On Debian and Ubuntu the graphical interface also needs the system Tk package.",
+      "buildTitle": "Building it yourself",
+      "buildText": "Native Linux, native Windows, cross-building through Wine and the GitHub Actions pipeline are all documented in BUILD.md.",
+      "downloadCta": "Go to the downloads"
+    },
+    "reference": {
+      "title": "Reference",
+      "lead": "The sections below are the application's own reference documentation, reproduced word for word so the site and the app never say different things.",
+      "fromApp": "From the application's built-in documentation",
+      "notTranslated": "This reference is not yet available in your language; it is shown in English."
+    },
+    "legal": {
+      "rrn": {
+        "title": "Your national register number is in every eID signature",
+        "text": "The Belgian eID non-repudiation certificate contains your national register number (RRN), and that certificate is embedded in every signature it produces. Anyone who receives a signed PDF can read it. Cachet warns about this at startup and in its summary — think about how the signed documents will be distributed."
+      },
+      "tsa": {
+        "title": "Free timestamps are not qualified timestamps",
+        "text": "The default timestamp authority is free and produces technically valid B-T and B-LTA signatures, but not qualified timestamps in the eIDAS sense. For genuine qualified long-term preservation, point the timestamp URL at a qualified authority — the EU trusted list identifies providers offering qualified timestamping services."
+      },
+      "aes": {
+        "title": "Azure signatures are advanced, not qualified",
+        "text": "Azure mode produces an advanced electronic signature (AES). That is appropriate for internal documents, but it is one tier below the qualified signature (QES) the eID card produces. For documents relied on by external third parties, a publicly recognised qualified issuer would be needed."
+      },
+      "archival": {
+        "title": "B-LTA chains need renewing",
+        "text": "The archival timestamp chain keeps the evidence provable over time, but for genuine long-term archival that chain has to be renewed periodically. BUILD.md explains what that involves."
+      }
+    }
+  },
+  "news": {
+    "title": "News",
+    "lead": "Every published release, straight from GitHub, with its notes and its downloads.",
+    "latest": "Latest",
+    "prerelease": "Pre-release",
+    "released": "Released {date}",
+    "downloadsTitle": "Downloads",
+    "notesTitle": "Release notes",
+    "notesLanguage": "Release notes are published in English.",
+    "viewOnGitHub": "View on GitHub",
+    "empty": "No release has been published yet.",
+    "emptyHint": "This page fills itself from the repository's releases as soon as the first version is tagged.",
+    "feed": "Subscribe to the feed",
+    "count": "{count} release | {count} releases"
+  },
+  "footer": {
+    "tagline": "Batch PDF signing for Belgian administrative workflows.",
+    "project": "Project",
+    "resources": "Resources",
+    "legal": "Legal",
+    "license": "Released under the GPL-3.0 licence",
+    "sourceCode": "Source code",
+    "issues": "Issues",
+    "releases": "Releases",
+    "builtBy": "Built by {org}",
+    "notAffiliated": "Cachet is an independent open-source project. It is not affiliated with, nor endorsed by, the Belgian government or Microsoft.",
+    "eidLink": "Belgian eID middleware",
+    "eidasLink": "eIDAS regulation",
+    "tlBrowserLink": "EU Trusted List browser"
+  },
+  "error": {
+    "404": {
+      "title": "Page not found",
+      "text": "That page does not exist, or it moved.",
+      "cta": "Back to the home page"
+    },
+    "500": {
+      "title": "Something went wrong",
+      "text": "An unexpected error occurred.",
+      "cta": "Back to the home page"
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "Cachet — batch PDF signing with the Belgian eID card",
+      "description": "Sign whole folders of PDFs with your Belgian eID card (QES) or an Azure Key Vault certificate (AES). PAdES B-LTA, trusted timestamps, long-term validation. Free and open source for Linux and Windows."
+    },
+    "docs": {
+      "title": "Documentation",
+      "description": "How Cachet signs PDFs: the three modes, the PAdES levels from b-b to b-lta, the eight-step wizard, the command line reference and a glossary of the standards involved."
+    },
+    "news": {
+      "title": "News",
+      "description": "Every Cachet release with its notes and its downloads for Linux and Windows, live from GitHub."
+    },
+    "ogTagline": "Batch PDF signing with the Belgian eID card"
+  },
+  "a11y": {
+    "externalLink": "opens in a new tab",
+    "currentPage": "Current page",
+    "loading": "Loading",
+    "copy": "Copy"
+  }
+}

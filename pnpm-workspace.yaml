@@ -1,0 +1,5 @@
+# esbuild fetches its platform binary in a postinstall step, and vue-demi
+# picks the Vue 2/3 shim; both are required for the build to run at all.
+allowBuilds:
+  esbuild: true
+  vue-demi: true

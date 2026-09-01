@@ -1,0 +1,75 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  # Lets a release in AlchemicStudio/Cachet rebuild the site so the prerendered
+  # snapshot is current. From the app's release workflow:
+  #   gh api repos/AlchemicStudio/cachet-website/dispatches \
+  #     -f event_type=cachet-release
+  repository_dispatch:
+    types: [cachet-release]
+  workflow_dispatch:
+
+# One deployment at a time; a queued run supersedes the one waiting, but never
+# cancels a deploy that is already publishing.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Generate the static site
+        run: pnpm generate
+        env:
+          # Lifts the 60 requests/hour anonymous limit so the build-time release
+          # fetch succeeds; a failed fetch falls back to the committed snapshot
+          # rather than failing the build.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check that the build produced every locale
+        run: |
+          set -euo pipefail
+          for locale in "" fr nl de es pt it; do
+            path=".output/public${locale:+/$locale}/index.html"
+            test -f "$path" || { echo "missing $path"; exit 1; }
+            test -f ".output/public${locale:+/$locale}/docs/index.html"
+            test -f ".output/public${locale:+/$locale}/news/index.html"
+            test -f ".output/public${locale:+/$locale}/feed.xml"
+          done
+          test -f .output/public/sitemap_index.xml
+          test -f .output/public/__sitemap__/it.xml
+          test -f .output/public/CNAME
+          echo "All 7 locales generated."
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .output/public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

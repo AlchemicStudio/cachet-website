@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Charte graphique — tokens du logo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --abyss:#011689; --indigo:#433EA1; --violet:#7D44A3;
+  --magenta:#C016A2; --aqua:#11CFC9; --periwinkle:#8C81C5;
+  --surface:#F9F9F9; --ink:#424350; --muted:#626475;
+  --border:#D3D4D7; --radius:0.875rem;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--surface);color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;letter-spacing:-0.02em;margin:0}
+code{font-family:'JetBrains Mono',monospace;font-size:0.78rem}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+header{
+  background:
+    linear-gradient(30deg,rgba(140,129,197,.18) 1px,transparent 1px),
+    linear-gradient(150deg,rgba(140,129,197,.18) 1px,transparent 1px),
+    linear-gradient(160deg,#011689,#5B108B);
+  background-size:48px 28px,48px 28px,auto;color:#fff;padding:5rem 0 4rem}
+header .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:#AEE5E2}
+header h1{font-size:clamp(2.5rem,6vw,4rem);margin:.6rem 0 .8rem;max-width:18ch}
+header p{max-width:56ch;color:#D6D6E4;line-height:1.6;margin:0}
+header img{width:150px;margin-bottom:1.5rem}
+section{padding:3.5rem 0;border-bottom:1px solid var(--border)}
+section>.wrap>h2{font-size:1.75rem;margin-bottom:.4rem}
+.lead{color:var(--muted);max-width:62ch;line-height:1.6;margin:0 0 2rem}
+.chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.9rem}
+.chip{margin:0;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:#fff}
+.chip__swatch{background:var(--c);color:var(--on);height:88px;display:flex;align-items:flex-end;padding:.7rem .8rem;font-weight:600;font-size:.9rem}
+.chip figcaption{padding:.7rem .8rem;display:flex;flex-direction:column;gap:.3rem}
+.chip span{font-size:.75rem;color:var(--muted);line-height:1.35}
+.ramp{margin-bottom:1.6rem}
+.ramp h3{font-size:.85rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:.5rem}
+.ramp__row{display:grid;grid-template-columns:repeat(11,1fr);border-radius:var(--radius);overflow:hidden}
+.step{background:var(--c);color:var(--on);padding:1.1rem .35rem;display:flex;flex-direction:column;gap:.2rem;font-size:.65rem}
+.step b{font-size:.72rem} .step code{font-size:.6rem;opacity:.85}
+.grads{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem}
+.grad{border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);background:#fff}
+.grad span{display:block;background:var(--g);height:100px;color:#fff;font-weight:600;padding:.7rem .9rem;font-family:'Space Grotesk',sans-serif}
+.grad p{margin:0;padding:.75rem .9rem;font-size:.8rem;color:var(--muted);line-height:1.45}
+table{width:100%;border-collapse:collapse;font-size:.85rem;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+th,td{text-align:left;padding:.6rem .8rem;border-bottom:1px solid var(--border)}
+th{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+tr:last-child td{border-bottom:none}
+.dot{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:.4rem;vertical-align:-1px;border:1px solid rgba(0,0,0,.12)}
+.tag{font-size:.7rem;padding:.15rem .5rem;border-radius:999px;font-weight:600}
+.tag--ok{background:#E3F5F4;color:#0C6462}
+.tag--warn{background:#FEF3C7;color:#92400E}
+.tag--bad{background:#FEE2E2;color:#991B1B}
+.type-row{display:flex;gap:1.2rem;align-items:baseline;padding:.5rem 0;border-bottom:1px dashed var(--border)}
+.type-label{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--muted);min-width:110px}
+.type-sample{font-family:'Space Grotesk',sans-serif;font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem 1.2rem}
+.card h3{font-size:1rem;margin-bottom:.4rem} .card p{margin:0;font-size:.85rem;color:var(--muted);line-height:1.55}
+.do{border-left:3px solid #11CFC9} .dont{border-left:3px solid #C016A2}
+footer{padding:2.5rem 0;color:var(--muted);font-size:.8rem}
+@media(max-width:720px){.ramp__row{grid-template-columns:repeat(4,1fr)}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <img src="assets/web/logo-mark-white.png" alt="Logo">
+  <div class="eyebrow">Charte graphique · v1.0.0</div>
+  <h1>Un réseau de cubes, neuf couleurs, une seule source de vérité</h1>
+  <p>Toutes les valeurs ci-dessous sont extraites pixel par pixel du logo, puis dérivées en échelles tonales complètes. Le même fichier <code>design-tokens.json</code> alimente le CSS Nuxt et le thème Flutter.</p>
+</div></header>
+
+<section><div class="wrap">
+  <h2>Couleurs du logo</h2>
+  <p class="lead">Valeurs exactes, à utiliser telles quelles pour le logo, les illustrations isométriques et les dégradés. Pour l'interface, préférer les échelles tonales de la section suivante.</p>
+  <div class="chips"><figure class="chip" style="--c:#011689;--on:#FFFFFF"><div class="chip__swatch">abyss</div><figcaption><code>#011689</code><span>Face gauche du cube racine — couleur la plus profonde</span></figcaption></figure><figure class="chip" style="--c:#433EA1;--on:#FFFFFF"><div class="chip__swatch">indigo</div><figcaption><code>#433EA1</code><span>Face droite du cube racine</span></figcaption></figure><figure class="chip" style="--c:#8C81C5;--on:#FFFFFF"><div class="chip__swatch">periwinkle</div><figcaption><code>#8C81C5</code><span>Face supérieure du cube racine</span></figcaption></figure><figure class="chip" style="--c:#5B108B;--on:#FFFFFF"><div class="chip__swatch">plum</div><figcaption><code>#5B108B</code><span>Face gauche des cubes intermédiaires</span></figcaption></figure><figure class="chip" style="--c:#7D44A3;--on:#FFFFFF"><div class="chip__swatch">violet</div><figcaption><code>#7D44A3</code><span>Face droite des cubes intermédiaires</span></figcaption></figure><figure class="chip" style="--c:#AF87C4;--on:#42444E"><div class="chip__swatch">lilac</div><figcaption><code>#AF87C4</code><span>Face supérieure des cubes intermédiaires</span></figcaption></figure><figure class="chip" style="--c:#C016A2;--on:#FFFFFF"><div class="chip__swatch">magenta</div><figcaption><code>#C016A2</code><span>Face gauche des cubes feuilles</span></figcaption></figure><figure class="chip" style="--c:#CF58B4;--on:#FFFFFF"><div class="chip__swatch">pink</div><figcaption><code>#CF58B4</code><span>Face droite des cubes feuilles</span></figcaption></figure><figure class="chip" style="--c:#E499CF;--on:#42444E"><div class="chip__swatch">blush</div><figcaption><code>#E499CF</code><span>Face supérieure des cubes feuilles</span></figcaption></figure><figure class="chip" style="--c:#11CFC9;--on:#42444E"><div class="chip__swatch">aqua</div><figcaption><code>#11CFC9</code><span>Extrémité cyan du dégradé des cubes filaires</span></figcaption></figure><figure class="chip" style="--c:#788FBE;--on:#FFFFFF"><div class="chip__swatch">steel</div><figcaption><code>#788FBE</code><span>Point de bascule bleu du dégradé filaire</span></figcaption></figure><figure class="chip" style="--c:#CFD2D3;--on:#42444E"><div class="chip__swatch">mist</div><figcaption><code>#CFD2D3</code><span>Connecteurs neutres entre les cubes</span></figcaption></figure></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Échelles tonales</h2>
+  <p class="lead">Cinq familles dérivées des faces du logo, de 50 à 950, mixées en espace linéaire pour garder la teinte sur les valeurs claires. Le pas 600 correspond à la couleur d'origine (500 pour l'aqua).</p>
+  <div class="ramp"><h3>indigo</h3><div class="ramp__row"><div class="step" style="--c:#F8F8FA;--on:#42444E"><b>50</b><code>#F8F8FA</code></div><div class="step" style="--c:#E8E8F0;--on:#42444E"><b>100</b><code>#E8E8F0</code></div><div class="step" style="--c:#D6D6E4;--on:#42444E"><b>200</b><code>#D6D6E4</code></div><div class="step" style="--c:#C1C1D8;--on:#42444E"><b>300</b><code>#C1C1D8</code></div><div class="step" style="--c:#A8A7C9;--on:#42444E"><b>400</b><code>#A8A7C9</code></div><div class="step" style="--c:#8684B8;--on:#FFFFFF"><b>500</b><code>#8684B8</code></div><div class="step" style="--c:#433EA1;--on:#FFFFFF"><b>600</b><code>#433EA1</code></div><div class="step" style="--c:#3C3892;--on:#FFFFFF"><b>700</b><code>#3C3892</code></div><div class="step" style="--c:#343080;--on:#FFFFFF"><b>800</b><code>#343080</code></div><div class="step" style="--c:#2B276B;--on:#FFFFFF"><b>900</b><code>#2B276B</code></div><div class="step" style="--c:#1F1C4E;--on:#FFFFFF"><b>950</b><code>#1F1C4E</code></div></div></div><div class="ramp"><h3>violet</h3><div class="ramp__row"><div class="step" style="--c:#F9F8FA;--on:#42444E"><b>50</b><code>#F9F8FA</code></div><div class="step" style="--c:#ECE8F0;--on:#42444E"><b>100</b><code>#ECE8F0</code></div><div class="step" style="--c:#DDD6E5;--on:#42444E"><b>200</b><code>#DDD6E5</code></div><div class="step" style="--c:#CDC2D8;--on:#42444E"><b>300</b><code>#CDC2D8</code></div><div class="step" style="--c:#B9A8CA;--on:#42444E"><b>400</b><code>#B9A8CA</code></div><div class="step" style="--c:#A186BA;--on:#FFFFFF"><b>500</b><code>#A186BA</code></div><div class="step" style="--c:#7D44A3;--on:#FFFFFF"><b>600</b><code>#7D44A3</code></div><div class="step" style="--c:#713D94;--on:#FFFFFF"><b>700</b><code>#713D94</code></div><div class="step" style="--c:#633582;--on:#FFFFFF"><b>800</b><code>#633582</code></div><div class="step" style="--c:#522B6C;--on:#FFFFFF"><b>900</b><code>#522B6C</code></div><div class="step" style="--c:#3B1E4F;--on:#FFFFFF"><b>950</b><code>#3B1E4F</code></div></div></div><div class="ramp"><h3>magenta</h3><div class="ramp__row"><div class="step" style="--c:#FCF8FA;--on:#42444E"><b>50</b><code>#FCF8FA</code></div><div class="step" style="--c:#F4E7F0;--on:#42444E"><b>100</b><code>#F4E7F0</code></div><div class="step" style="--c:#ECD4E4;--on:#42444E"><b>200</b><code>#ECD4E4</code></div><div class="step" style="--c:#E3BED8;--on:#42444E"><b>300</b><code>#E3BED8</code></div><div class="step" style="--c:#D9A2CA;--on:#42444E"><b>400</b><code>#D9A2CA</code></div><div class="step" style="--c:#CE7BB9;--on:#42444E"><b>500</b><code>#CE7BB9</code></div><div class="step" style="--c:#C016A2;--on:#FFFFFF"><b>600</b><code>#C016A2</code></div><div class="step" style="--c:#AE1493;--on:#FFFFFF"><b>700</b><code>#AE1493</code></div><div class="step" style="--c:#991181;--on:#FFFFFF"><b>800</b><code>#991181</code></div><div class="step" style="--c:#7F0E6B;--on:#FFFFFF"><b>900</b><code>#7F0E6B</code></div><div class="step" style="--c:#5C0B4F;--on:#FFFFFF"><b>950</b><code>#5C0B4F</code></div></div></div><div class="ramp"><h3>aqua</h3><div class="ramp__row"><div class="step" style="--c:#F8FCFC;--on:#42444E"><b>50</b><code>#F8FCFC</code></div><div class="step" style="--c:#E3F5F4;--on:#42444E"><b>100</b><code>#E3F5F4</code></div><div class="step" style="--c:#CBEDEB;--on:#42444E"><b>200</b><code>#CBEDEB</code></div><div class="step" style="--c:#AEE5E2;--on:#42444E"><b>300</b><code>#AEE5E2</code></div><div class="step" style="--c:#84DBD7;--on:#42444E"><b>400</b><code>#84DBD7</code></div><div class="step" style="--c:#11CFC9;--on:#42444E"><b>500</b><code>#11CFC9</code></div><div class="step" style="--c:#10C0BA;--on:#42444E"><b>600</b><code>#10C0BA</code></div><div class="step" style="--c:#0FAEA9;--on:#42444E"><b>700</b><code>#0FAEA9</code></div><div class="step" style="--c:#0E9B96;--on:#FFFFFF"><b>800</b><code>#0E9B96</code></div><div class="step" style="--c:#0D8380;--on:#FFFFFF"><b>900</b><code>#0D8380</code></div><div class="step" style="--c:#0C6462;--on:#FFFFFF"><b>950</b><code>#0C6462</code></div></div></div><div class="ramp"><h3>neutral</h3><div class="ramp__row"><div class="step" style="--c:#F9F9F9;--on:#42444E"><b>50</b><code>#F9F9F9</code></div><div class="step" style="--c:#E7E8E9;--on:#42444E"><b>100</b><code>#E7E8E9</code></div><div class="step" style="--c:#D3D4D7;--on:#42444E"><b>200</b><code>#D3D4D7</code></div><div class="step" style="--c:#BCBCC2;--on:#42444E"><b>300</b><code>#BCBCC2</code></div><div class="step" style="--c:#9D9EA7;--on:#42444E"><b>400</b><code>#9D9EA7</code></div><div class="step" style="--c:#6A6C7E;--on:#FFFFFF"><b>500</b><code>#6A6C7E</code></div><div class="step" style="--c:#626475;--on:#FFFFFF"><b>600</b><code>#626475</code></div><div class="step" style="--c:#595A6A;--on:#FFFFFF"><b>700</b><code>#595A6A</code></div><div class="step" style="--c:#4E4F5E;--on:#FFFFFF"><b>800</b><code>#4E4F5E</code></div><div class="step" style="--c:#424350;--on:#FFFFFF"><b>900</b><code>#424350</code></div><div class="step" style="--c:#31323D;--on:#FFFFFF"><b>950</b><code>#31323D</code></div></div></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Dégradés</h2>
+  <p class="lead">Le dégradé <em>spectrum</em> rejoue la traversée cyan → bleu → violet → magenta des cubes filaires. Un seul dégradé par écran : c'est l'élément signature, il perd sa force s'il est répété.</p>
+  <div class="grads"><div class="grad" style="--g:linear-gradient(135deg,#11CFC9,#788FBE,#433EA1,#7D44A3,#C016A2)"><span>spectrum</span><p>Dégradé signature — reprend la traversée cyan → bleu → violet → magenta du logo</p></div><div class="grad" style="--g:linear-gradient(160deg,#011689,#5B108B)"><span>core</span><p>Fonds sombres, hero, cartes de tête</p></div><div class="grad" style="--g:linear-gradient(135deg,#C016A2,#E499CF)"><span>accent</span><p>CTA, badges, états actifs</p></div><div class="grad" style="--g:linear-gradient(180deg,#11CFC9,#788FBE)"><span>wireframe</span><p>Traits, bordures, illustrations filaires</p></div></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Contrastes</h2>
+  <p class="lead">Ratios WCAG 2.1 calculés sur les paires réellement utilisées par les composants. Les paires « AA large » sont réservées aux textes de 24 px ou 19 px gras, jamais au corps de texte.</p>
+  <table><thead><tr><th>Paire</th><th>Premier plan</th><th>Fond</th><th>Ratio</th><th>Niveau</th></tr></thead><tbody><tr><td>indigo 600 / blanc</td><td><span class="dot" style="background:#433EA1"></span><code>#433EA1</code></td><td><span class="dot" style="background:#FFFFFF"></span><code>#FFFFFF</code></td><td>8.60:1</td><td><span class="tag tag--ok">AAA</span></td></tr><tr><td>magenta 600 / blanc</td><td><span class="dot" style="background:#C016A2"></span><code>#C016A2</code></td><td><span class="dot" style="background:#FFFFFF"></span><code>#FFFFFF</code></td><td>5.42:1</td><td><span class="tag tag--ok">AA</span></td></tr><tr><td>violet 600 / blanc</td><td><span class="dot" style="background:#7D44A3"></span><code>#7D44A3</code></td><td><span class="dot" style="background:#FFFFFF"></span><code>#FFFFFF</code></td><td>6.51:1</td><td><span class="tag tag--ok">AA</span></td></tr><tr><td>abyss / blanc</td><td><span class="dot" style="background:#011689"></span><code>#011689</code></td><td><span class="dot" style="background:#FFFFFF"></span><code>#FFFFFF</code></td><td>14.22:1</td><td><span class="tag tag--ok">AAA</span></td></tr><tr><td>aqua 500 / encre</td><td><span class="dot" style="background:#11CFC9"></span><code>#11CFC9</code></td><td><span class="dot" style="background:#42444E"></span><code>#42444E</code></td><td>4.98:1</td><td><span class="tag tag--ok">AA</span></td></tr><tr><td>aqua 700 / blanc</td><td><span class="dot" style="background:#0FAEA9"></span><code>#0FAEA9</code></td><td><span class="dot" style="background:#FFFFFF"></span><code>#FFFFFF</code></td><td>2.75:1</td><td><span class="tag tag--bad">insuffisant</span></td></tr><tr><td>encre / surface</td><td><span class="dot" style="background:#424350"></span><code>#424350</code></td><td><span class="dot" style="background:#F9F9F9"></span><code>#F9F9F9</code></td><td>9.28:1</td><td><span class="tag tag--ok">AAA</span></td></tr><tr><td>texte discret / surface</td><td><span class="dot" style="background:#626475"></span><code>#626475</code></td><td><span class="dot" style="background:#F9F9F9"></span><code>#F9F9F9</code></td><td>5.54:1</td><td><span class="tag tag--ok">AA</span></td></tr><tr><td>indigo 300 / fond sombre</td><td><span class="dot" style="background:#C1C1D8"></span><code>#C1C1D8</code></td><td><span class="dot" style="background:#0A0713"></span><code>#0A0713</code></td><td>11.29:1</td><td><span class="tag tag--ok">AAA</span></td></tr><tr><td>aqua 400 / fond sombre</td><td><span class="dot" style="background:#84DBD7"></span><code>#84DBD7</code></td><td><span class="dot" style="background:#0A0713"></span><code>#0A0713</code></td><td>12.44:1</td><td><span class="tag tag--ok">AAA</span></td></tr></tbody></table>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Typographie</h2>
+  <p class="lead">Space Grotesk en titrage — ses terminaisons coupées à angle droit répondent aux arêtes isométriques du logo. Inter pour le corps de texte, JetBrains Mono pour les données, identifiants et extraits de code.</p>
+  <div class="type-row"><span class="type-label">xs · 0.75rem</span><span class="type-sample" style="font-size:0.75rem;line-height:1rem;letter-spacing:0.02em">Cubes, arêtes et connexions</span></div><div class="type-row"><span class="type-label">sm · 0.875rem</span><span class="type-sample" style="font-size:0.875rem;line-height:1.25rem;letter-spacing:0.01em">Cubes, arêtes et connexions</span></div><div class="type-row"><span class="type-label">base · 1rem</span><span class="type-sample" style="font-size:1rem;line-height:1.5rem;letter-spacing:0">Cubes, arêtes et connexions</span></div><div class="type-row"><span class="type-label">lg · 1.125rem</span><span class="type-sample" style="font-size:1.125rem;line-height:1.75rem;letter-spacing:-0.005em">Cubes, arêtes et connexions</span></div><div class="type-row"><span class="type-label">xl · 1.375rem</span><span class="type-sample" style="font-size:1.375rem;line-height:1.9rem;letter-spacing:-0.01em">Cubes, arêtes et connexions</span></div><div class="type-row"><span class="type-label">2xl · 1.75rem</span><span class="type-sample" style="font-size:1.75rem;line-height:2.15rem;letter-spacing:-0.015em">Cubes, arêtes et connexions</span></div><div class="type-row"><span class="type-label">3xl · 2.25rem</span><span class="type-sample" style="font-size:2.25rem;line-height:2.5rem;letter-spacing:-0.02em">Cubes, arêtes et connexions</span></div><div class="type-row"><span class="type-label">4xl · 3rem</span><span class="type-sample" style="font-size:3rem;line-height:3.15rem;letter-spacing:-0.025em">Cubes, arêtes et connexions</span></div><div class="type-row"><span class="type-label">5xl · 4rem</span><span class="type-sample" style="font-size:4rem;line-height:4.1rem;letter-spacing:-0.03em">Cubes, arêtes et connexions</span></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Usage</h2>
+  <div class="cards">
+    <div class="card do"><h3>Zone de protection</h3><p>Réserver autour du logo une marge égale à la largeur d'un cube. Taille minimale : 24 px en écran, 12 mm en impression.</p></div>
+    <div class="card do"><h3>Fonds</h3><p>Version couleur sur blanc ou sur les gris 50–100. Version blanche sur les fonds abyss/plum et sur photo sombre. Version encre pour le monochrome.</p></div>
+    <div class="card dont"><h3>À éviter</h3><p>Ne pas recolorer les faces, ne pas ajouter d'ombre portée, ne pas incliner ni étirer la grille isométrique, ne pas poser la version couleur sur un fond magenta ou violet.</p></div>
+    <div class="card do"><h3>Accessibilité</h3><p>Anneau de focus aqua 500 sur 2 px avec 2 px de décalage, jamais supprimé. Le magenta ne porte jamais seul une information : toujours doublé d'un libellé ou d'une icône.</p></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">Généré depuis <code>logo-white.png</code> — régénérer <code>design-tokens.json</code> pour propager toute évolution vers Nuxt et Flutter.</div></footer>
+</body></html>

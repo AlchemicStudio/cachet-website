@@ -1,0 +1,368 @@
+{
+  "site": {
+    "name": "Cachet",
+    "tagline": "Firma de PDF por lotes con la tarjeta eID belga",
+    "description": "Firme una carpeta entera de PDF con su tarjeta eID belga o con un certificado de Azure Key Vault. PAdES B-LTA de forma predeterminada: sellos de tiempo de confianza, datos de revocación incrustados y una cadena de archivo, verificados en el acto y nunca degradados en silencio."
+  },
+  "nav": {
+    "docs": "Documentación",
+    "news": "Novedades",
+    "github": "GitHub",
+    "repository": "Código fuente en GitHub",
+    "download": "Descargar",
+    "downloadVersion": "Descargar {version}",
+    "home": "Volver al inicio",
+    "menu": "Abrir el menú",
+    "close": "Cerrar el menú",
+    "language": "Idioma",
+    "changeLanguage": "Cambiar de idioma",
+    "theme": "Tema",
+    "themeLight": "Claro",
+    "themeDark": "Oscuro",
+    "themeSystem": "Sistema",
+    "toggleTheme": "Cambiar de tema",
+    "skip": "Ir al contenido"
+  },
+  "home": {
+    "eyebrow": "Código abierto · GPL-3.0",
+    "lead": "Cachet firma un lote entero de PDF en una sola pasada: con su tarjeta eID belga, con su certificado personal en Azure Key Vault o con un simple sello de imagen. Cada firma criptográfica es PAdES, va sellada en el tiempo, es verificable a largo plazo y se vuelve a comprobar en cuanto se escribe.",
+    "readMore": "Leer la presentación completa",
+    "viewSource": "Ver el código fuente",
+    "badges": {
+      "qes": "Firmas eID cualificadas",
+      "pades": "PAdES B-LTA por defecto",
+      "batch": "Carpetas enteras de una vez",
+      "standalone": "Sin necesidad de Python"
+    },
+    "featuresTitle": "Qué hace",
+    "featuresLead": "La versión breve. La documentación desarrolla cada punto en detalle.",
+    "modesTitle": "Tres formas de firmar",
+    "modesLead": "Elija el modo que corresponda al peso jurídico que necesita el documento.",
+    "modesMore": "Comparar los modos en detalle",
+    "newsTitle": "Última versión",
+    "newsMore": "Todas las versiones"
+  },
+  "download": {
+    "title": "Descarga",
+    "lead": "Ejecutables autónomos: una aplicación con ventana y un programa de consola en un mismo archivo. No hace falta instalar Python en el equipo de destino.",
+    "version": "Versión {version}",
+    "released": "Publicada el {date}",
+    "latest": "Última versión",
+    "prerelease": "Versión preliminar",
+    "recommended": "Recomendado para su sistema",
+    "otherPlatforms": "Otras plataformas",
+    "allFiles": "Todos los archivos de esta versión",
+    "size": "Tamaño",
+    "downloads": "{count} descargas",
+    "checksum": "Suma de verificación {algo}",
+    "copyChecksum": "Copiar la suma de verificación {algo}",
+    "copied": "Copiado",
+    "verifyHint": "Compruebe el archivo antes de ejecutarlo:",
+    "viewOnGitHub": "Ver esta versión en GitHub",
+    "allReleases": "Todas las versiones",
+    "empty": "Todavía no hay ninguna versión publicada.",
+    "emptyHint": "Los ejecutables aparecen aquí en cuanto se etiqueta una versión en GitHub.",
+    "loading": "Cargando las versiones desde GitHub…",
+    "live": "En directo desde GitHub",
+    "snapshot": "Copia en caché",
+    "asOf": "a fecha de {date}",
+    "staleTitle": "Se muestra una copia en caché",
+    "staleBody": "No se ha podido contactar con GitHub: su API permite 60 peticiones por hora desde una misma dirección. Los archivos siguientes provienen de la última comprobación correcta y los enlaces siguen funcionando.",
+    "platform": {
+      "linux": "Linux",
+      "windows": "Windows",
+      "macos": "macOS",
+      "source": "Código fuente",
+      "other": "Otros"
+    },
+    "platformDetail": {
+      "linux": "x86-64 · tar.gz",
+      "windows": "x86-64 · zip",
+      "macos": "x86-64",
+      "source": "Archivo",
+      "other": ""
+    },
+    "contents": {
+      "title": "Qué contiene el archivo",
+      "gui": "`cachet`: el asistente gráfico",
+      "cli": "`cachet-cli`: la herramienta de consola"
+    },
+    "afterTitle": "Antes de firmar",
+    "after": {
+      "beid": "Para firmar con eID, instale el middleware eID belga y conecte un lector de tarjetas.",
+      "network": "Los niveles b-t y superiores necesitan acceso a la red para la autoridad de sellado de tiempo, la lista de confianza de la UE y las comprobaciones de revocación.",
+      "offline": "El nivel b-b y el modo imagen funcionan totalmente sin conexión."
+    }
+  },
+  "docs": {
+    "title": "Documentación",
+    "lead": "Qué hace Cachet, qué garantiza realmente cada nivel de firma y cómo firmar un lote de documentos de principio a fin.",
+    "toc": "En esta página",
+    "onGitHub": "Documentación en GitHub",
+    "onGitHubLead": "El repositorio contiene la documentación técnica de referencia, siempre a la par del código.",
+    "links": {
+      "readme": { "title": "README", "text": "Referencia completa de opciones y modos" },
+      "build": { "title": "BUILD.md", "text": "Empaquetado: compilación nativa, Wine y CI" },
+      "spec": { "title": "specifications.md", "text": "La especificación del paso a PAdES B-LTA" },
+      "issues": { "title": "Issues", "text": "Informar de un error o plantear una duda" }
+    },
+    "sections": {
+      "overview": "Visión general",
+      "features": "Funciones",
+      "modes": "Los tres modos",
+      "walkthrough": "Firmar un lote, paso a paso",
+      "cli": "Línea de comandos",
+      "levels": "Niveles de firma",
+      "tiers": "¿AES o QES?",
+      "requirements": "Requisitos",
+      "install": "Instalación",
+      "glossary": "Glosario",
+      "sources": "Fuentes",
+      "legal": "Conviene saber"
+    },
+    "overview": {
+      "p1": "Cachet es un firmador de PDF por lotes pensado para los flujos administrativos belgas. Usted le indica una carpeta, elige cómo deben firmarse los documentos, coloca la marca visible una sola vez y él aplica la misma firma a cada archivo del lote.",
+      "p2": "Funciona como asistente gráfico paso a paso o como herramienta de consola, sobre el mismo núcleo. Las firmas criptográficas siguen la norma PAdES (ETSI EN 319 142-1) hasta el nivel B-LTA: un sello de tiempo RFC 3161 de confianza, datos de revocación incrustados en el documento y una cadena de sellos de archivo, con anclas de confianza tomadas de la lista de confianza de la UE para las firmas eID, o de la autoridad de certificación interna de su organización para las firmas de Azure.",
+      "p3": "Cada archivo firmado se vuelve a abrir y validar inmediatamente después de escribirlo, y se informa del nivel realmente alcanzado. Si el nivel solicitado no puede alcanzarse, el documento se marca como fallido. Cachet nunca produce en silencio una firma más débil que la que usted pidió.",
+      "quote": "El modo eID utiliza el certificado de no repudio de la tarjeta, jurídicamente equivalente a una firma manuscrita."
+    },
+    "features": {
+      "batch": { "title": "Lotes enteros de una vez", "text": "Indique a Cachet archivos o carpetas. La misma marca, la misma página y la misma posición se aplican a todos los documentos del lote." },
+      "modes": { "title": "Tres modos de firma", "text": "Una firma eID cualificada, una firma avanzada desde Azure Key Vault o un simple sello de imagen sin valor jurídico." },
+      "pades": { "title": "PAdES hasta B-LTA", "text": "Niveles b-b, b-t, b-lt y b-lta, seleccionables en cada ejecución. b-lta es el predeterminado: el más fuerte y el más duradero." },
+      "timestamp": { "title": "Sellado de tiempo de confianza", "text": "Una autoridad de sellado de tiempo RFC 3161 acredita cuándo firmó. Apúntela a una TSA cualificada cuando se exija una conservación cualificada según eIDAS." },
+      "ltv": { "title": "Validación a largo plazo", "text": "Los certificados de la AC y las respuestas OCSP/CRL se incrustan al firmar, de modo que el PDF sigue siendo verificable tras la caducidad de los certificados." },
+      "verify": { "title": "Verificado en el acto", "text": "Cada archivo firmado se vuelve a abrir y validar, y se informa del nivel alcanzado. Los niveles nunca se degradan en silencio." },
+      "template": { "title": "Validación con plantilla", "text": "Un documento solo se acepta si su número de páginas y las dimensiones de cada una coinciden exactamente con un PDF de plantilla. Los archivos rechazados nunca se firman." },
+      "placement": { "title": "Colocar con un clic", "text": "Una vista previa real de la página de destino, generada por el motor PDFium incorporado. Haga clic donde deba ir la marca: ahí es donde se firma." },
+      "vignette": { "title": "Marca de firma visible", "text": "Las firmas eID estampan la foto del titular, su nombre y la fecha; las firmas de Azure estampan el nombre y la fecha." },
+      "safety": { "title": "No se sobrescribe nada", "text": "El resultado se escribe como `{pattern}` en la carpeta que elija, y los archivos existentes nunca se reemplazan." },
+      "i18n": { "title": "Seis idiomas en la aplicación", "text": "El asistente habla inglés, francés, neerlandés, alemán, español y portugués, y sigue de forma predeterminada el idioma del sistema." },
+      "standalone": { "title": "Ejecutables autónomos", "text": "Una aplicación con ventana y una herramienta de consola por plataforma, para Linux y Windows. No hay nada que instalar salvo el middleware eID." }
+    },
+    "modes": {
+      "lead": "Los tres modos estampan una marca visible y procesan el lote de forma idéntica. Lo que cambia es el peso jurídico de lo que producen.",
+      "table": {
+        "mode": "Modo",
+        "requires": "Requiere",
+        "nature": "Naturaleza",
+        "output": "Marca visible"
+      },
+      "beid": {
+        "name": "Tarjeta eID",
+        "flag": "--mode beid",
+        "requires": "Lector de tarjetas, tarjeta eID, un PIN por documento",
+        "nature": "Firma criptográfica de grado cualificado (QES)",
+        "output": "Foto del titular, nombre y fecha",
+        "note": "El mayor peso jurídico y el método más lento para lotes grandes: el PIN se solicita para cada documento."
+      },
+      "azure": {
+        "name": "Azure Key Vault",
+        "flag": "--mode azure",
+        "requires": "Un inicio de sesión de Microsoft por lote, una clave y un certificado personales en Key Vault",
+        "nature": "Firma electrónica avanzada (AES)",
+        "output": "Nombre y fecha",
+        "note": "Solo el resumen del documento se envía a Azure; el archivo nunca sale de su equipo y la clave privada nunca sale del almacén."
+      },
+      "image": {
+        "name": "Sello de imagen",
+        "flag": "--mode image",
+        "requires": "Nada; funciona sin conexión",
+        "nature": "No es una firma criptográfica",
+        "output": "La imagen que usted proporcione",
+        "note": "Solo una marca visual. No tiene valor jurídico ni acredita quién la aplicó."
+      }
+    },
+    "walkthrough": {
+      "lead": "El asistente gráfico se recorre en ocho pasos. Una barra de pasos marca en verde los completados y en rojo los problemáticos, cada formulario va acompañado de ayuda contextual, y cambiar de idioma vuelve a dibujar el paso actual sin perder nada de lo introducido.",
+      "stepLabel": "Paso {n}",
+      "cliNote": "¿Prefiere la consola? El mismo lote se procesa con un único comando; vea la sección de línea de comandos más abajo.",
+      "welcomeAlt": "La pantalla de bienvenida de Cachet, con el selector de idioma y el botón Empezar",
+      "shotNote": "Las capturas muestran la interfaz en inglés; el asistente también habla español, francés, neerlandés, alemán y portugués.",
+      "steps": {
+        "template": { "title": "Elegir una plantilla", "text": "Seleccione un PDF de plantilla con el que deba coincidir cada documento del lote. ¿Solo firma un documento? Elija ese mismo documento como plantilla." },
+        "documents": { "title": "Añadir los documentos", "text": "Seleccione archivos sueltos o carpetas enteras. En las carpetas se buscan los PDF automáticamente." },
+        "validation": { "title": "Validar con la plantilla", "text": "Cada archivo se comprueba: mismo número de páginas y dimensiones de página exactamente idénticas. Una tabla muestra el resultado, y los archivos rechazados nunca se firman. Si algunos archivos tienen un número de páginas distinto —anexos escaneados añadidos, por ejemplo— aparece un selector para firmar cada archivo en su propia primera o última página." },
+        "output": { "title": "Elegir una carpeta de salida", "text": "Los archivos firmados se escriben como `{pattern}`. Los archivos existentes nunca se sobrescriben: si el nombre coincide, se añade ` - 1`, ` - 2`, etc." },
+        "type": { "title": "Elegir el tipo de firma", "text": "eID, Azure o imagen, más el nivel PAdES (b-lta de forma predeterminada). En el modo Azure, un panel recoge la configuración del almacén y ofrece la acción «Iniciar sesión con Microsoft». Un botón «Documentación completa» abre esta misma referencia dentro de la aplicación." },
+        "placement": { "title": "Colocar la marca", "text": "La página de destino se muestra realmente. Haga clic donde deba situarse la marca: en los modos eID y Azure, la viñeta visible se firma exactamente ahí. Hay un campo manual de página, y cuando el número de páginas difiere, el selector de primera/última también aparece aquí." },
+        "signing": { "title": "Firmar", "text": "Un resumen de todo lo elegido, un recordatorio de insertar la tarjeta eID en el modo eID, y después el progreso conforme se firma cada documento. En el modo eID el PIN se solicita una vez por documento; en el modo Azure inició sesión una sola vez para todo el lote." },
+        "report": { "title": "Leer el informe", "text": "Una tabla de resultados documento por documento, con el nivel realmente alcanzado por cada archivo —por ejemplo «PAdES-B-LTA, LTV ok»— y un botón que abre la carpeta de salida." }
+      }
+    },
+    "cli": {
+      "lead": "La herramienta de consola comparte todo su núcleo con el asistente, así que todo lo que hace la interfaz está a un comando de distancia. Estos ejemplos suponen una instalación desde el código fuente; con un ejecutable descargado, sustituya la llamada al intérprete por `cachet-cli`.",
+      "examplesTitle": "Comandos habituales",
+      "flagsTitle": "Opciones",
+      "flagsLead": "Las opciones que necesita la mayoría de las ejecuciones. El README documenta el conjunto completo, incluidas todas las opciones de Azure.",
+      "flagColumn": "Opción",
+      "meaningColumn": "Significado",
+      "examples": {
+        "beid": "Firmar una carpeta con la tarjeta eID, en el nivel b-lta predeterminado",
+        "offline": "Firmar sin conexión en el nivel básico, sin ningún acceso a la red",
+        "image": "Estampar una imagen, validando con una plantilla",
+        "azure": "Firmar con un certificado personal de Azure Key Vault",
+        "gui": "Abrir el asistente gráfico"
+      },
+      "flags": {
+        "--gui": "Lanza la interfaz gráfica; si no, la herramienta se ejecuta en modo consola.",
+        "--input": "Archivos y carpetas que procesar. En las carpetas se buscan los PDF.",
+        "--output": "Carpeta de salida. Los archivos se escriben como `{pattern}` y nunca se sobrescriben.",
+        "--template": "PDF de plantilla. Si se indica, cada archivo de entrada se valida con él.",
+        "--mode": "`beid`, `azure` o `image`. Por defecto, `beid`.",
+        "--pades-level": "`b-b`, `b-t`, `b-lt` o `b-lta`. Por defecto, `b-lta`.",
+        "--page": "Página de destino: un número a partir de 1, o `first` / `last`, resuelto documento a documento.",
+        "--x-y": "Esquina inferior izquierda de la marca, en puntos desde la esquina inferior izquierda de la página. Omita ambos en modo eID para obtener la esquina inferior derecha de la última página.",
+        "--image-path": "La imagen que estampar. Obligatoria en modo imagen.",
+        "--timestamp-url": "Autoridad de sellado de tiempo RFC 3161 para los niveles b-t y superiores.",
+        "--digest": "Resumen de la firma: `sha256` (predeterminado), `sha384` o `sha512`.",
+        "--azure-vault-url": "URL del Key Vault. Obligatoria en modo Azure.",
+        "--azure-trust-anchors": "Archivo PEM o DER, o un directorio, con la cadena de la AC interna usada como anclas de confianza LTV en modo Azure.",
+        "--refresh-trust-list": "Fuerza una nueva descarga de la lista de confianza de la UE, saltándose la caché de 24 horas."
+      }
+    },
+    "levels": {
+      "lead": "Los niveles PAdES definidos por la norma ETSI EN 319 142-1. Cada uno se apoya en el anterior, y Cachet usa el más fuerte de forma predeterminada.",
+      "table": {
+        "level": "Nivel",
+        "adds": "Añade",
+        "network": "Red"
+      },
+      "networkNone": "Ninguna; totalmente sin conexión",
+      "networkTsa": "Autoridad de sellado de tiempo",
+      "networkFull": "Autoridad de sellado, lista de confianza, OCSP/CRL",
+      "default": "Predeterminado",
+      "adds": {
+        "b-b": "La firma básica: quién firmó y que nada ha cambiado desde entonces",
+        "b-t": "Un sello de tiempo RFC 3161 de confianza, que acredita cuándo",
+        "b-lt": "Datos de revocación y certificados de AC incrustados en el documento (LTV)",
+        "b-lta": "Una cadena de sellos de archivo, para que la propia prueba siga sosteniéndose"
+      }
+    },
+    "requirements": {
+      "lead": "Lo que necesita cada modo en tiempo de ejecución.",
+      "beid": {
+        "title": "Modo eID",
+        "items": [
+          "El middleware eID belga, que aporta la biblioteca PKCS#11",
+          "Un lector de tarjetas con una tarjeta eID insertada",
+          "El servicio PC/SC en ejecución",
+          "Acceso a la red para los niveles b-t y superiores; b-b funciona totalmente sin conexión"
+        ]
+      },
+      "azure": {
+        "title": "Modo Azure",
+        "items": [
+          "Ningún equipo adicional",
+          "Acceso saliente a login.microsoftonline.com y a la URL de su Key Vault",
+          "Una clave y un certificado personales aprovisionados en Key Vault por una administración",
+          "Puntos CRL u OCSP accesibles en la AC interna para los niveles b-lt y superiores"
+        ]
+      },
+      "image": {
+        "title": "Modo imagen",
+        "items": [
+          "Nada; puro estampado de PDF, totalmente sin conexión"
+        ]
+      },
+      "preview": "La vista previa del paso de colocación no necesita nada más: el motor de renderizado PDFium va incorporado en la aplicación."
+    },
+    "install": {
+      "lead": "Dos caminos: descargar un ejecutable autónomo o ejecutarlo desde el código fuente.",
+      "binaryTitle": "Ejecutable autónomo",
+      "binaryText": "Descargue el archivo correspondiente a su plataforma y descomprímalo. Contiene una aplicación con ventana y una herramienta de consola, ambas autosuficientes: no hace falta instalar Python. El middleware eID sigue siendo un requisito aparte para la firma eID y nunca se incluye.",
+      "sourceTitle": "Desde el código fuente",
+      "sourceText": "Clone el repositorio, cree un entorno virtual e instale las dependencias. En Debian y Ubuntu, la interfaz gráfica necesita además el paquete Tk del sistema.",
+      "buildTitle": "Compilarlo usted mismo",
+      "buildText": "La compilación nativa en Linux, la compilación nativa en Windows, la compilación cruzada mediante Wine y la canalización de GitHub Actions están documentadas en BUILD.md.",
+      "downloadCta": "Ir a las descargas"
+    },
+    "reference": {
+      "title": "Referencia",
+      "lead": "Las secciones siguientes son la documentación de referencia de la propia aplicación, reproducida palabra por palabra para que el sitio y la aplicación nunca digan cosas distintas.",
+      "fromApp": "De la documentación integrada en la aplicación",
+      "notTranslated": "Esta referencia todavía no está disponible en su idioma; se muestra en inglés."
+    },
+    "legal": {
+      "rrn": {
+        "title": "Su número de registro nacional va en cada firma eID",
+        "text": "El certificado de no repudio de la tarjeta eID belga contiene su número de registro nacional (NRN), y ese certificado se incrusta en cada firma que produce. Cualquiera que reciba un PDF firmado puede leerlo. Cachet lo advierte al arrancar y en su resumen: piense en cómo se distribuirán los documentos firmados."
+      },
+      "tsa": {
+        "title": "Un sello de tiempo gratuito no es un sello cualificado",
+        "text": "La autoridad de sellado de tiempo predeterminada es gratuita y produce firmas B-T y B-LTA técnicamente válidas, pero no sellos cualificados en el sentido de eIDAS. Para una conservación cualificada real a largo plazo, apunte la URL de sellado a una autoridad cualificada: la lista de confianza de la UE identifica a los prestadores que ofrecen servicios de sellado cualificado."
+      },
+      "aes": {
+        "title": "Las firmas de Azure son avanzadas, no cualificadas",
+        "text": "El modo Azure produce una firma electrónica avanzada (AES). Es adecuada para documentos internos, pero queda un escalón por debajo de la firma cualificada (QES) que produce la tarjeta eID. Para documentos en los que se apoyen terceros externos haría falta un emisor cualificado reconocido públicamente."
+      },
+      "archival": {
+        "title": "Las cadenas B-LTA hay que renovarlas",
+        "text": "La cadena de sellos de archivo mantiene la prueba demostrable con el paso del tiempo, pero un archivado realmente duradero exige renovar esa cadena periódicamente. BUILD.md explica lo que ello supone."
+      }
+    }
+  },
+  "news": {
+    "title": "Novedades",
+    "lead": "Todas las versiones publicadas, directamente desde GitHub, con sus notas y sus descargas.",
+    "latest": "Última",
+    "prerelease": "Versión preliminar",
+    "released": "Publicada el {date}",
+    "downloadsTitle": "Descargas",
+    "notesTitle": "Notas de la versión",
+    "notesLanguage": "Las notas de versión se publican en inglés.",
+    "viewOnGitHub": "Ver en GitHub",
+    "empty": "Todavía no se ha publicado ninguna versión.",
+    "emptyHint": "Esta página se rellena con las versiones del repositorio en cuanto se etiquete la primera.",
+    "feed": "Suscribirse al canal",
+    "count": "{count} versión | {count} versiones"
+  },
+  "footer": {
+    "tagline": "Firma de PDF por lotes para los flujos administrativos belgas.",
+    "project": "Proyecto",
+    "resources": "Recursos",
+    "legal": "Aviso legal",
+    "license": "Publicado bajo la licencia GPL-3.0",
+    "sourceCode": "Código fuente",
+    "issues": "Issues",
+    "releases": "Versiones",
+    "builtBy": "Creado por {org}",
+    "notAffiliated": "Cachet es un proyecto de código abierto independiente. No está afiliado ni respaldado por el Estado belga ni por Microsoft.",
+    "eidLink": "Middleware eID belga",
+    "eidasLink": "Reglamento eIDAS",
+    "tlBrowserLink": "Navegador de listas de confianza de la UE"
+  },
+  "error": {
+    "404": {
+      "title": "Página no encontrada",
+      "text": "Esa página no existe, o se ha movido.",
+      "cta": "Volver al inicio"
+    },
+    "500": {
+      "title": "Algo ha ido mal",
+      "text": "Se ha producido un error inesperado.",
+      "cta": "Volver al inicio"
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "Cachet — firma de PDF por lotes con la tarjeta eID belga",
+      "description": "Firme carpetas enteras de PDF con su tarjeta eID belga (QES) o un certificado de Azure Key Vault (AES). PAdES B-LTA, sellado de tiempo de confianza, validación a largo plazo. Libre y de código abierto, para Linux y Windows."
+    },
+    "docs": {
+      "title": "Documentación",
+      "description": "Cómo firma Cachet los PDF: los tres modos, los niveles PAdES de b-b a b-lta, el asistente de ocho pasos, la referencia de línea de comandos y un glosario de las normas implicadas."
+    },
+    "news": {
+      "title": "Novedades",
+      "description": "Todas las versiones de Cachet con sus notas y sus descargas para Linux y Windows, en directo desde GitHub."
+    },
+    "ogTagline": "Firma de PDF por lotes con la tarjeta eID belga"
+  },
+  "a11y": {
+    "externalLink": "se abre en una pestaña nueva",
+    "currentPage": "Página actual",
+    "loading": "Cargando",
+    "copy": "Copiar"
+  }
+}

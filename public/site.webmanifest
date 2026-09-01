@@ -1,0 +1,27 @@
+{
+  "name": "Cachet",
+  "short_name": "Cachet",
+  "description": "Batch PDF signing with the Belgian eID card",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#F9F9F9",
+  "theme_color": "#011689",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

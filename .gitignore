@@ -1,0 +1,26 @@
+# Nuxt
+.nuxt/
+.output/
+.data/
+dist
+
+# Dependencies
+node_modules/
+
+# Generated during the asset build
+.cache/
+
+# Editors / OS
+.DS_Store
+*.log
+.vscode/
+.idea/
+
+# Playwright artefacts from local checks
+.playwright-mcp/
+*.png.tmp
+
+# Local environment
+.env
+.env.*
+!.env.example

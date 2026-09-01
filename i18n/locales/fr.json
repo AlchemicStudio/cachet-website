@@ -1,0 +1,368 @@
+{
+  "site": {
+    "name": "Cachet",
+    "tagline": "Signature de PDF par lots avec la carte eID belge",
+    "description": "Signez un dossier entier de PDF avec votre carte eID belge ou un certificat Azure Key Vault. PAdES B-LTA par défaut : horodatage de confiance, données de révocation intégrées et chaîne d'archivage — vérifiées immédiatement, jamais dégradées en silence."
+  },
+  "nav": {
+    "docs": "Documentation",
+    "news": "Actualités",
+    "github": "GitHub",
+    "repository": "Code source sur GitHub",
+    "download": "Télécharger",
+    "downloadVersion": "Télécharger {version}",
+    "home": "Retour à l'accueil",
+    "menu": "Ouvrir le menu",
+    "close": "Fermer le menu",
+    "language": "Langue",
+    "changeLanguage": "Changer de langue",
+    "theme": "Thème",
+    "themeLight": "Clair",
+    "themeDark": "Sombre",
+    "themeSystem": "Système",
+    "toggleTheme": "Changer de thème",
+    "skip": "Aller au contenu"
+  },
+  "home": {
+    "eyebrow": "Open source · GPL-3.0",
+    "lead": "Cachet signe un lot entier de PDF en une seule passe — avec votre carte eID belge, avec votre certificat personnel dans Azure Key Vault, ou avec un simple tampon image. Chaque signature cryptographique est au format PAdES, horodatée, vérifiable à long terme, et recontrôlée dès son écriture.",
+    "readMore": "Lire la présentation complète",
+    "viewSource": "Voir le code source",
+    "badges": {
+      "qes": "Signatures eID qualifiées",
+      "pades": "PAdES B-LTA par défaut",
+      "batch": "Des dossiers entiers d'un coup",
+      "standalone": "Aucun Python requis"
+    },
+    "featuresTitle": "Ce qu'il fait",
+    "featuresLead": "La version courte. La documentation reprend chaque point en détail.",
+    "modesTitle": "Trois façons de signer",
+    "modesLead": "Choisissez le mode correspondant à la portée juridique dont le document a besoin.",
+    "modesMore": "Comparer les modes en détail",
+    "newsTitle": "Dernière version",
+    "newsMore": "Toutes les versions"
+  },
+  "download": {
+    "title": "Téléchargement",
+    "lead": "Exécutables autonomes — une application fenêtrée et un binaire console dans une même archive. Aucune installation de Python n'est nécessaire sur la machine cible.",
+    "version": "Version {version}",
+    "released": "Publiée le {date}",
+    "latest": "Dernière version",
+    "prerelease": "Préversion",
+    "recommended": "Recommandé pour votre système",
+    "otherPlatforms": "Autres plateformes",
+    "allFiles": "Tous les fichiers de cette version",
+    "size": "Taille",
+    "downloads": "{count} téléchargements",
+    "checksum": "Empreinte {algo}",
+    "copyChecksum": "Copier l'empreinte {algo}",
+    "copied": "Copié",
+    "verifyHint": "Vérifiez l'archive avant de l'exécuter :",
+    "viewOnGitHub": "Voir cette version sur GitHub",
+    "allReleases": "Toutes les versions",
+    "empty": "Aucune version publiée pour l'instant.",
+    "emptyHint": "Les exécutables apparaissent ici dès qu'une version est étiquetée sur GitHub.",
+    "loading": "Chargement des versions depuis GitHub…",
+    "live": "En direct de GitHub",
+    "snapshot": "Copie en cache",
+    "asOf": "au {date}",
+    "staleTitle": "Affichage d'une copie en cache",
+    "staleBody": "GitHub n'a pas pu être contacté — son API autorise 60 requêtes par heure depuis une même adresse. Les fichiers ci-dessous proviennent du dernier contrôle réussi et les liens restent valides.",
+    "platform": {
+      "linux": "Linux",
+      "windows": "Windows",
+      "macos": "macOS",
+      "source": "Code source",
+      "other": "Autre"
+    },
+    "platformDetail": {
+      "linux": "x86-64 · tar.gz",
+      "windows": "x86-64 · zip",
+      "macos": "x86-64",
+      "source": "Archive",
+      "other": ""
+    },
+    "contents": {
+      "title": "Contenu de l'archive",
+      "gui": "`cachet` — l'assistant graphique",
+      "cli": "`cachet-cli` — l'outil en ligne de commande"
+    },
+    "afterTitle": "Avant de signer",
+    "after": {
+      "beid": "Pour la signature eID, installez le middleware eID belge et branchez un lecteur de cartes.",
+      "network": "Les niveaux b-t et supérieurs nécessitent un accès réseau pour l'autorité d'horodatage, la liste de confiance de l'UE et les contrôles de révocation.",
+      "offline": "Le niveau b-b et le mode image fonctionnent entièrement hors ligne."
+    }
+  },
+  "docs": {
+    "title": "Documentation",
+    "lead": "Ce que fait Cachet, ce que chaque niveau de signature garantit réellement, et comment signer un lot de documents du début à la fin.",
+    "toc": "Sur cette page",
+    "onGitHub": "Documentation sur GitHub",
+    "onGitHubLead": "Le dépôt contient la documentation technique de référence, tenue à jour avec le code.",
+    "links": {
+      "readme": { "title": "README", "text": "Référence complète des options et des modes" },
+      "build": { "title": "BUILD.md", "text": "Empaquetage : compilation native, Wine et CI" },
+      "spec": { "title": "specifications.md", "text": "La spécification du passage à PAdES B-LTA" },
+      "issues": { "title": "Issues", "text": "Signaler un bug ou poser une question" }
+    },
+    "sections": {
+      "overview": "Vue d'ensemble",
+      "features": "Fonctionnalités",
+      "modes": "Les trois modes",
+      "walkthrough": "Signer un lot, étape par étape",
+      "cli": "Ligne de commande",
+      "levels": "Niveaux de signature",
+      "tiers": "AES ou QES ?",
+      "requirements": "Prérequis",
+      "install": "Installation",
+      "glossary": "Glossaire",
+      "sources": "Sources",
+      "legal": "À savoir"
+    },
+    "overview": {
+      "p1": "Cachet est un signeur de PDF par lots conçu pour les flux administratifs belges. Vous lui indiquez un dossier, choisissez comment les documents doivent être signés, placez la marque visible une seule fois, et il applique la même signature à chaque fichier du lot.",
+      "p2": "Il s'utilise soit comme un assistant graphique pas à pas, soit comme un outil en ligne de commande, à partir du même cœur applicatif. Les signatures cryptographiques suivent la norme PAdES (ETSI EN 319 142-1) jusqu'au niveau B-LTA : un horodatage RFC 3161 de confiance, des données de révocation intégrées au document et une chaîne d'horodatages d'archivage — avec des ancres de confiance issues de la liste de confiance de l'UE pour les signatures eID, ou de l'autorité de certification interne de votre organisation pour les signatures Azure.",
+      "p3": "Chaque fichier signé est rouvert et validé immédiatement après son écriture, et le niveau réellement atteint est rapporté. Si le niveau demandé ne peut pas être atteint, le document est marqué en échec. Cachet ne produit jamais en silence une signature plus faible que celle que vous avez demandée.",
+      "quote": "Le mode eID utilise le certificat de non-répudiation de la carte, juridiquement équivalent à une signature manuscrite."
+    },
+    "features": {
+      "batch": { "title": "Des lots entiers d'un coup", "text": "Indiquez à Cachet des fichiers ou des dossiers. La même marque, la même page et la même position sont appliquées à chaque document du lot." },
+      "modes": { "title": "Trois modes de signature", "text": "Une signature eID qualifiée, une signature avancée depuis Azure Key Vault, ou un simple tampon image sans valeur juridique." },
+      "pades": { "title": "PAdES jusqu'à B-LTA", "text": "Niveaux b-b, b-t, b-lt et b-lta, sélectionnables à chaque exécution. b-lta est le niveau par défaut — le plus fort et le plus durable." },
+      "timestamp": { "title": "Horodatage de confiance", "text": "Une autorité d'horodatage RFC 3161 prouve quand vous avez signé. Pointez-la vers une TSA qualifiée lorsqu'une conservation qualifiée eIDAS est requise." },
+      "ltv": { "title": "Validation à long terme", "text": "Les certificats d'AC et les réponses OCSP/CRL sont intégrés au moment de la signature : le PDF reste vérifiable après l'expiration des certificats." },
+      "verify": { "title": "Vérifié sur-le-champ", "text": "Chaque fichier signé est rouvert et validé, et le niveau atteint est rapporté. Les niveaux ne sont jamais dégradés en silence." },
+      "template": { "title": "Validation par modèle", "text": "Un document n'est accepté que si son nombre de pages et les dimensions de chacune correspondent exactement à un PDF modèle. Les fichiers rejetés ne sont jamais signés." },
+      "placement": { "title": "Placement au clic", "text": "Un véritable aperçu de la page cible, rendu par le moteur PDFium embarqué. Cliquez à l'endroit voulu : c'est là que la marque est signée." },
+      "vignette": { "title": "Marque de signature visible", "text": "Les signatures eID apposent la photo du titulaire, son nom et la date ; les signatures Azure apposent le nom et la date." },
+      "safety": { "title": "Rien n'est écrasé", "text": "Le résultat est écrit sous la forme `{pattern}` dans un dossier de votre choix, et les fichiers existants ne sont jamais remplacés." },
+      "i18n": { "title": "Six langues dans l'application", "text": "L'assistant parle anglais, français, néerlandais, allemand, espagnol et portugais, et suit par défaut la langue du système." },
+      "standalone": { "title": "Exécutables autonomes", "text": "Une application fenêtrée et un outil console par plateforme, pour Linux et Windows. Rien à installer, hormis le middleware eID." }
+    },
+    "modes": {
+      "lead": "Les trois modes apposent une marque visible et traitent le lot de façon identique. Ce qui les distingue, c'est la portée juridique de ce qu'ils produisent.",
+      "table": {
+        "mode": "Mode",
+        "requires": "Nécessite",
+        "nature": "Nature",
+        "output": "Marque visible"
+      },
+      "beid": {
+        "name": "Carte eID",
+        "flag": "--mode beid",
+        "requires": "Lecteur de cartes, carte eID, un code PIN par document",
+        "nature": "Signature cryptographique de niveau qualifié (QES)",
+        "output": "Photo du titulaire, nom et date",
+        "note": "La portée juridique la plus forte, et la plus lente pour les gros lots — le code PIN est demandé pour chaque document."
+      },
+      "azure": {
+        "name": "Azure Key Vault",
+        "flag": "--mode azure",
+        "requires": "Une connexion Microsoft par lot, une clé et un certificat personnels dans Key Vault",
+        "nature": "Signature électronique avancée (AES)",
+        "output": "Nom et date",
+        "note": "Seule l'empreinte du document est envoyée à Azure ; le fichier lui-même ne quitte jamais votre machine, et la clé privée ne quitte jamais le coffre."
+      },
+      "image": {
+        "name": "Tampon image",
+        "flag": "--mode image",
+        "requires": "Rien — fonctionne hors ligne",
+        "nature": "Ce n'est pas une signature cryptographique",
+        "output": "L'image que vous fournissez",
+        "note": "Une marque purement visuelle. Elle n'a aucune valeur juridique et ne prouve rien quant à son auteur."
+      }
+    },
+    "walkthrough": {
+      "lead": "L'assistant graphique se parcourt en huit étapes. Un fil d'étapes marque en vert celles qui sont terminées et en rouge celles qui posent problème, une aide contextuelle accompagne chaque formulaire, et changer de langue réaffiche l'étape en cours sans rien perdre de ce qui a été saisi.",
+      "stepLabel": "Étape {n}",
+      "cliNote": "Vous préférez la console ? Le même lot se traite en une seule commande — voir la section ligne de commande ci-dessous.",
+      "welcomeAlt": "L'écran d'accueil de Cachet, avec le sélecteur de langue et le bouton Démarrer",
+      "shotNote": "Les captures montrent l'interface en anglais ; l'assistant parle aussi français, néerlandais, allemand, espagnol et portugais.",
+      "steps": {
+        "template": { "title": "Choisir un modèle", "text": "Sélectionnez un PDF modèle auquel chaque document du lot devra correspondre. Vous ne signez qu'un seul document ? Choisissez ce document lui-même comme modèle." },
+        "documents": { "title": "Ajouter les documents", "text": "Sélectionnez des fichiers isolés ou des dossiers entiers. Les dossiers sont parcourus automatiquement à la recherche de PDF." },
+        "validation": { "title": "Valider par rapport au modèle", "text": "Chaque fichier est contrôlé : même nombre de pages et dimensions de pages strictement identiques. Un tableau indique le résultat, et les fichiers rejetés ne sont jamais signés. Si certains fichiers ont un nombre de pages différent — des annexes numérisées ajoutées, par exemple — un sélecteur apparaît pour signer chaque fichier sur sa propre première ou dernière page." },
+        "output": { "title": "Choisir un dossier de sortie", "text": "Les fichiers signés sont écrits sous la forme `{pattern}`. Les fichiers existants ne sont jamais écrasés : en cas de collision de nom, ` - 1`, ` - 2`, etc. sont ajoutés." },
+        "type": { "title": "Choisir le type de signature", "text": "eID, Azure ou image, ainsi que le niveau PAdES (b-lta par défaut). En mode Azure, un panneau recueille les paramètres du coffre et propose une action « Se connecter avec Microsoft ». Un bouton « Documentation complète » ouvre cette même référence dans l'application." },
+        "placement": { "title": "Placer la marque", "text": "La page cible est réellement affichée. Cliquez à l'endroit où la marque doit apparaître : en modes eID et Azure, la vignette visible est signée exactement là. Un champ de page manuel est disponible, et lorsque les nombres de pages diffèrent, le sélecteur première/dernière apparaît également ici." },
+        "signing": { "title": "Signer", "text": "Un récapitulatif de tous les choix, un rappel d'insérer la carte eID en mode eID, puis la progression au fil de la signature de chaque document. En mode eID, le code PIN est demandé une fois par document ; en mode Azure, vous vous êtes connecté une seule fois pour tout le lot." },
+        "report": { "title": "Lire le rapport", "text": "Un tableau des résultats document par document, avec le niveau réellement atteint pour chaque fichier — par exemple « PAdES-B-LTA, LTV ok » — et un bouton qui ouvre le dossier de sortie." }
+      }
+    },
+    "cli": {
+      "lead": "L'outil console partage tout son cœur avec l'assistant : tout ce que fait l'interface est à une commande près. Ces exemples supposent une installation depuis les sources ; avec un exécutable téléchargé, remplacez l'appel à l'interpréteur par `cachet-cli`.",
+      "examplesTitle": "Commandes courantes",
+      "flagsTitle": "Options",
+      "flagsLead": "Les options nécessaires à la plupart des exécutions. Le README documente l'ensemble complet, y compris toutes les options Azure.",
+      "flagColumn": "Option",
+      "meaningColumn": "Signification",
+      "examples": {
+        "beid": "Signer un dossier avec la carte eID, au niveau b-lta par défaut",
+        "offline": "Signer hors ligne au niveau de base, sans aucun accès réseau",
+        "image": "Apposer une image, avec validation par rapport à un modèle",
+        "azure": "Signer avec un certificat personnel Azure Key Vault",
+        "gui": "Ouvrir l'assistant graphique"
+      },
+      "flags": {
+        "--gui": "Lance l'interface graphique ; sinon l'outil s'exécute en mode console.",
+        "--input": "Fichiers et dossiers à traiter. Les dossiers sont parcourus à la recherche de PDF.",
+        "--output": "Dossier de sortie. Les fichiers sont écrits sous la forme `{pattern}` et ne sont jamais écrasés.",
+        "--template": "PDF modèle. S'il est fourni, chaque document en entrée est validé par rapport à lui.",
+        "--mode": "`beid`, `azure` ou `image`. Vaut `beid` par défaut.",
+        "--pades-level": "`b-b`, `b-t`, `b-lt` ou `b-lta`. Vaut `b-lta` par défaut.",
+        "--page": "Page cible : un numéro à partir de 1, ou `first` / `last`, résolu document par document.",
+        "--x-y": "Coin inférieur gauche de la marque, en points depuis le bas à gauche de la page. Omettez les deux en mode eID pour obtenir le bas à droite de la dernière page.",
+        "--image-path": "L'image à apposer. Obligatoire en mode image.",
+        "--timestamp-url": "Autorité d'horodatage RFC 3161 pour les niveaux b-t et supérieurs.",
+        "--digest": "Empreinte de la signature : `sha256` (défaut), `sha384` ou `sha512`.",
+        "--azure-vault-url": "URL du Key Vault. Obligatoire en mode Azure.",
+        "--azure-trust-anchors": "Fichier PEM ou DER, ou répertoire, contenant la chaîne de l'AC interne utilisée comme ancres de confiance LTV en mode Azure.",
+        "--refresh-trust-list": "Force le retéléchargement de la liste de confiance de l'UE, en contournant le cache de 24 heures."
+      }
+    },
+    "levels": {
+      "lead": "Les niveaux PAdES tels que définis par la norme ETSI EN 319 142-1. Chacun s'appuie sur le précédent, et Cachet utilise le plus fort par défaut.",
+      "table": {
+        "level": "Niveau",
+        "adds": "Ajoute",
+        "network": "Réseau"
+      },
+      "networkNone": "Aucun — entièrement hors ligne",
+      "networkTsa": "Autorité d'horodatage",
+      "networkFull": "Autorité d'horodatage, liste de confiance, OCSP/CRL",
+      "default": "Par défaut",
+      "adds": {
+        "b-b": "La signature de base : qui a signé, et que rien n'a changé depuis",
+        "b-t": "Un horodatage RFC 3161 de confiance, qui prouve quand",
+        "b-lt": "Les données de révocation et les certificats d'AC intégrés au document (LTV)",
+        "b-lta": "Une chaîne d'horodatages d'archivage, pour que la preuve elle-même continue de tenir"
+      }
+    },
+    "requirements": {
+      "lead": "Ce dont chaque mode a besoin à l'exécution.",
+      "beid": {
+        "title": "Mode eID",
+        "items": [
+          "Le middleware eID belge, qui fournit la bibliothèque PKCS#11",
+          "Un lecteur de cartes avec une carte eID insérée",
+          "Le service PC/SC en cours d'exécution",
+          "Un accès réseau pour les niveaux b-t et supérieurs ; b-b est entièrement hors ligne"
+        ]
+      },
+      "azure": {
+        "title": "Mode Azure",
+        "items": [
+          "Aucun matériel",
+          "Un accès sortant vers login.microsoftonline.com et l'URL de votre Key Vault",
+          "Une clé et un certificat personnels provisionnés dans Key Vault par un administrateur",
+          "Des points de distribution CRL ou OCSP accessibles sur l'AC interne pour les niveaux b-lt et supérieurs"
+        ]
+      },
+      "image": {
+        "title": "Mode image",
+        "items": [
+          "Rien — pur marquage de PDF, entièrement hors ligne"
+        ]
+      },
+      "preview": "L'aperçu de page de l'étape de placement ne demande rien de plus : le moteur de rendu PDFium est embarqué dans l'application."
+    },
+    "install": {
+      "lead": "Deux voies : télécharger un exécutable autonome, ou lancer l'application depuis les sources.",
+      "binaryTitle": "Exécutable autonome",
+      "binaryText": "Téléchargez l'archive correspondant à votre plateforme et extrayez-la. Elle contient une application fenêtrée et un outil console, tous deux autonomes — aucune installation de Python n'est nécessaire. Le middleware eID reste un prérequis distinct pour la signature eID et n'est jamais embarqué.",
+      "sourceTitle": "Depuis les sources",
+      "sourceText": "Clonez le dépôt, créez un environnement virtuel et installez les dépendances. Sur Debian et Ubuntu, l'interface graphique nécessite en plus le paquet système Tk.",
+      "buildTitle": "Compiler soi-même",
+      "buildText": "La compilation native sous Linux, la compilation native sous Windows, la compilation croisée via Wine et le pipeline GitHub Actions sont tous documentés dans BUILD.md.",
+      "downloadCta": "Aller aux téléchargements"
+    },
+    "reference": {
+      "title": "Référence",
+      "lead": "Les sections ci-dessous constituent la documentation de référence de l'application elle-même, reproduite mot pour mot afin que le site et l'application ne disent jamais deux choses différentes.",
+      "fromApp": "Extrait de la documentation intégrée à l'application",
+      "notTranslated": "Cette référence n'est pas encore disponible dans votre langue ; elle est affichée en anglais."
+    },
+    "legal": {
+      "rrn": {
+        "title": "Votre numéro de registre national figure dans chaque signature eID",
+        "text": "Le certificat de non-répudiation de la carte eID belge contient votre numéro de registre national (NRN), et ce certificat est intégré à chaque signature qu'il produit. Toute personne recevant un PDF signé peut le lire. Cachet le signale au démarrage et dans son récapitulatif — réfléchissez à la manière dont les documents signés seront diffusés."
+      },
+      "tsa": {
+        "title": "Un horodatage gratuit n'est pas un horodatage qualifié",
+        "text": "L'autorité d'horodatage utilisée par défaut est gratuite et produit des signatures B-T et B-LTA techniquement valides, mais pas des horodatages qualifiés au sens d'eIDAS. Pour une véritable conservation qualifiée à long terme, pointez l'URL d'horodatage vers une autorité qualifiée — la liste de confiance de l'UE recense les prestataires proposant des services d'horodatage qualifié."
+      },
+      "aes": {
+        "title": "Les signatures Azure sont avancées, pas qualifiées",
+        "text": "Le mode Azure produit une signature électronique avancée (AES). C'est adapté aux documents internes, mais cela reste un cran en dessous de la signature qualifiée (QES) produite par la carte eID. Pour des documents sur lesquels des tiers externes s'appuient, un émetteur qualifié reconnu publiquement serait nécessaire."
+      },
+      "archival": {
+        "title": "Les chaînes B-LTA doivent être renouvelées",
+        "text": "La chaîne d'horodatages d'archivage maintient la preuve démontrable dans le temps, mais un archivage réellement durable suppose de renouveler cette chaîne périodiquement. BUILD.md explique ce que cela implique."
+      }
+    }
+  },
+  "news": {
+    "title": "Actualités",
+    "lead": "Toutes les versions publiées, directement depuis GitHub, avec leurs notes et leurs téléchargements.",
+    "latest": "Dernière",
+    "prerelease": "Préversion",
+    "released": "Publiée le {date}",
+    "downloadsTitle": "Téléchargements",
+    "notesTitle": "Notes de version",
+    "notesLanguage": "Les notes de version sont publiées en anglais.",
+    "viewOnGitHub": "Voir sur GitHub",
+    "empty": "Aucune version n'a encore été publiée.",
+    "emptyHint": "Cette page se remplit à partir des versions du dépôt dès que la première sera étiquetée.",
+    "feed": "S'abonner au flux",
+    "count": "{count} version | {count} versions"
+  },
+  "footer": {
+    "tagline": "Signature de PDF par lots pour les flux administratifs belges.",
+    "project": "Projet",
+    "resources": "Ressources",
+    "legal": "Mentions",
+    "license": "Publié sous licence GPL-3.0",
+    "sourceCode": "Code source",
+    "issues": "Issues",
+    "releases": "Versions",
+    "builtBy": "Réalisé par {org}",
+    "notAffiliated": "Cachet est un projet open source indépendant. Il n'est ni affilié à l'État belge ou à Microsoft, ni approuvé par eux.",
+    "eidLink": "Middleware eID belge",
+    "eidasLink": "Règlement eIDAS",
+    "tlBrowserLink": "Navigateur des listes de confiance de l'UE"
+  },
+  "error": {
+    "404": {
+      "title": "Page introuvable",
+      "text": "Cette page n'existe pas, ou elle a été déplacée.",
+      "cta": "Retour à l'accueil"
+    },
+    "500": {
+      "title": "Une erreur est survenue",
+      "text": "Une erreur inattendue s'est produite.",
+      "cta": "Retour à l'accueil"
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "Cachet — signature de PDF par lots avec la carte eID belge",
+      "description": "Signez des dossiers entiers de PDF avec votre carte eID belge (QES) ou un certificat Azure Key Vault (AES). PAdES B-LTA, horodatage de confiance, validation à long terme. Libre et open source, pour Linux et Windows."
+    },
+    "docs": {
+      "title": "Documentation",
+      "description": "Comment Cachet signe les PDF : les trois modes, les niveaux PAdES de b-b à b-lta, l'assistant en huit étapes, la référence en ligne de commande et un glossaire des normes concernées."
+    },
+    "news": {
+      "title": "Actualités",
+      "description": "Toutes les versions de Cachet, avec leurs notes et leurs téléchargements pour Linux et Windows, en direct de GitHub."
+    },
+    "ogTagline": "Signature de PDF par lots avec la carte eID belge"
+  },
+  "a11y": {
+    "externalLink": "s'ouvre dans un nouvel onglet",
+    "currentPage": "Page actuelle",
+    "loading": "Chargement",
+    "copy": "Copier"
+  }
+}

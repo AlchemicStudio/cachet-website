@@ -1,0 +1,51 @@
+{
+  "_generated": "Written by scripts/capture_screenshots.py \u2014 re-run it rather than editing this file.",
+  "language": "en",
+  "shots": {
+    "welcome": {
+      "file": "welcome.png",
+      "width": 1180,
+      "height": 560
+    },
+    "template": {
+      "file": "step-1-template.png",
+      "width": 1180,
+      "height": 900
+    },
+    "documents": {
+      "file": "step-2-documents.png",
+      "width": 1180,
+      "height": 900
+    },
+    "validation": {
+      "file": "step-3-validation.png",
+      "width": 1180,
+      "height": 900
+    },
+    "output": {
+      "file": "step-4-output.png",
+      "width": 1180,
+      "height": 900
+    },
+    "type": {
+      "file": "step-5-type.png",
+      "width": 1180,
+      "height": 900
+    },
+    "placement": {
+      "file": "step-6-placement.png",
+      "width": 1180,
+      "height": 900
+    },
+    "signing": {
+      "file": "step-7-signing.png",
+      "width": 1180,
+      "height": 900
+    },
+    "report": {
+      "file": "step-8-report.png",
+      "width": 1180,
+      "height": 900
+    }
+  }
+}

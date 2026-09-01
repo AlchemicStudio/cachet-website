@@ -1,0 +1,368 @@
+{
+  "site": {
+    "name": "Cachet",
+    "tagline": "PDF-Stapelsignatur mit dem belgischen eID-Ausweis",
+    "description": "Signieren Sie einen ganzen Ordner voller PDFs mit Ihrem belgischen eID-Ausweis oder einem Zertifikat aus Azure Key Vault. Standardmäßig PAdES B-LTA: vertrauenswürdige Zeitstempel, eingebettete Sperrinformationen und eine Archivkette — sofort geprüft, nie stillschweigend herabgestuft."
+  },
+  "nav": {
+    "docs": "Dokumentation",
+    "news": "Neuigkeiten",
+    "github": "GitHub",
+    "repository": "Quellcode auf GitHub",
+    "download": "Herunterladen",
+    "downloadVersion": "{version} herunterladen",
+    "home": "Zurück zur Startseite",
+    "menu": "Menü öffnen",
+    "close": "Menü schließen",
+    "language": "Sprache",
+    "changeLanguage": "Sprache wechseln",
+    "theme": "Design",
+    "themeLight": "Hell",
+    "themeDark": "Dunkel",
+    "themeSystem": "System",
+    "toggleTheme": "Design wechseln",
+    "skip": "Zum Inhalt springen"
+  },
+  "home": {
+    "eyebrow": "Open Source · GPL-3.0",
+    "lead": "Cachet signiert einen ganzen Stapel PDFs in einem Durchgang — mit Ihrem belgischen eID-Ausweis, mit Ihrem persönlichen Zertifikat in Azure Key Vault oder mit einem einfachen Bildstempel. Jede kryptografische Signatur ist PAdES, mit Zeitstempel versehen, langfristig überprüfbar und wird unmittelbar nach dem Schreiben erneut geprüft.",
+    "readMore": "Die vollständige Vorstellung lesen",
+    "viewSource": "Quellcode ansehen",
+    "badges": {
+      "qes": "Qualifizierte eID-Signaturen",
+      "pades": "Standardmäßig PAdES B-LTA",
+      "batch": "Ganze Ordner auf einmal",
+      "standalone": "Kein Python erforderlich"
+    },
+    "featuresTitle": "Was es leistet",
+    "featuresLead": "Die Kurzfassung. Die Dokumentation behandelt jeden Punkt ausführlich.",
+    "modesTitle": "Drei Wege zu signieren",
+    "modesLead": "Wählen Sie den Modus, der dem rechtlichen Gewicht entspricht, das das Dokument braucht.",
+    "modesMore": "Die Modi im Detail vergleichen",
+    "newsTitle": "Neueste Version",
+    "newsMore": "Alle Versionen"
+  },
+  "download": {
+    "title": "Download",
+    "lead": "Eigenständige Programme — eine Fensteranwendung und ein Konsolenprogramm in einem Archiv. Auf dem Zielrechner muss kein Python installiert sein.",
+    "version": "Version {version}",
+    "released": "Veröffentlicht am {date}",
+    "latest": "Neueste Version",
+    "prerelease": "Vorabversion",
+    "recommended": "Für Ihr System empfohlen",
+    "otherPlatforms": "Andere Plattformen",
+    "allFiles": "Alle Dateien dieser Version",
+    "size": "Größe",
+    "downloads": "{count} Downloads",
+    "checksum": "{algo}-Prüfsumme",
+    "copyChecksum": "{algo}-Prüfsumme kopieren",
+    "copied": "Kopiert",
+    "verifyHint": "Prüfen Sie das Archiv, bevor Sie es ausführen:",
+    "viewOnGitHub": "Diese Version auf GitHub ansehen",
+    "allReleases": "Alle Versionen",
+    "empty": "Noch keine Version veröffentlicht.",
+    "emptyHint": "Programme erscheinen hier, sobald auf GitHub eine Version getaggt wird.",
+    "loading": "Versionen werden von GitHub geladen…",
+    "live": "Live von GitHub",
+    "snapshot": "Zwischengespeicherte Kopie",
+    "asOf": "Stand {date}",
+    "staleTitle": "Es wird eine zwischengespeicherte Kopie angezeigt",
+    "staleBody": "GitHub war nicht erreichbar — die API erlaubt 60 Anfragen pro Stunde von derselben Adresse. Die Dateien unten stammen aus der letzten erfolgreichen Abfrage, und die Links funktionieren weiterhin.",
+    "platform": {
+      "linux": "Linux",
+      "windows": "Windows",
+      "macos": "macOS",
+      "source": "Quellcode",
+      "other": "Sonstige"
+    },
+    "platformDetail": {
+      "linux": "x86-64 · tar.gz",
+      "windows": "x86-64 · zip",
+      "macos": "x86-64",
+      "source": "Archiv",
+      "other": ""
+    },
+    "contents": {
+      "title": "Inhalt des Archivs",
+      "gui": "`cachet` — der grafische Assistent",
+      "cli": "`cachet-cli` — das Konsolenprogramm"
+    },
+    "afterTitle": "Bevor Sie signieren",
+    "after": {
+      "beid": "Für die eID-Signatur installieren Sie die belgische eID-Middleware und schließen ein Kartenlesegerät an.",
+      "network": "Ab Stufe b-t wird Netzwerkzugang für die Zeitstempelstelle, die EU-Vertrauensliste und die Sperrprüfungen benötigt.",
+      "offline": "Stufe b-b und der Bildmodus funktionieren vollständig offline."
+    }
+  },
+  "docs": {
+    "title": "Dokumentation",
+    "lead": "Was Cachet tut, was die einzelnen Signaturstufen tatsächlich garantieren, und wie Sie einen Stapel Dokumente von Anfang bis Ende signieren.",
+    "toc": "Auf dieser Seite",
+    "onGitHub": "Dokumentation auf GitHub",
+    "onGitHubLead": "Das Repository enthält die maßgebliche technische Dokumentation, stets im Gleichschritt mit dem Code.",
+    "links": {
+      "readme": { "title": "README", "text": "Vollständige Referenz der Optionen und Modi" },
+      "build": { "title": "BUILD.md", "text": "Paketierung: native Builds, Wine und CI" },
+      "spec": { "title": "specifications.md", "text": "Die Spezifikation der Umstellung auf PAdES B-LTA" },
+      "issues": { "title": "Issues", "text": "Einen Fehler melden oder eine Frage stellen" }
+    },
+    "sections": {
+      "overview": "Überblick",
+      "features": "Funktionen",
+      "modes": "Die drei Modi",
+      "walkthrough": "Einen Stapel signieren, Schritt für Schritt",
+      "cli": "Befehlszeile",
+      "levels": "Signaturstufen",
+      "tiers": "AES oder QES?",
+      "requirements": "Voraussetzungen",
+      "install": "Installation",
+      "glossary": "Glossar",
+      "sources": "Quellen",
+      "legal": "Wissenswertes"
+    },
+    "overview": {
+      "p1": "Cachet ist ein Stapelsignierer für PDFs, gebaut für belgische Verwaltungsabläufe. Sie zeigen ihm einen Ordner, wählen, wie die Dokumente signiert werden sollen, setzen die sichtbare Markierung einmal, und er wendet dieselbe Signatur auf jede Datei des Stapels an.",
+      "p2": "Er läuft entweder als schrittweiser grafischer Assistent oder als Konsolenprogramm, aus demselben Kern heraus. Kryptografische Signaturen folgen dem PAdES-Basisstandard (ETSI EN 319 142-1) bis zur Stufe B-LTA: ein vertrauenswürdiger RFC-3161-Zeitstempel, im Dokument eingebettete Sperrinformationen und eine Kette von Archivzeitstempeln — mit Vertrauensankern aus der EU-Vertrauensliste bei eID-Signaturen oder aus der internen Zertifizierungsstelle Ihrer Organisation bei Azure-Signaturen.",
+      "p3": "Jede signierte Datei wird unmittelbar nach dem Schreiben erneut geöffnet und validiert, und die tatsächlich erreichte Stufe wird gemeldet. Lässt sich die angeforderte Stufe nicht erreichen, wird das Dokument als fehlgeschlagen markiert. Cachet erzeugt niemals stillschweigend eine schwächere Signatur als die, die Sie angefordert haben.",
+      "quote": "Der eID-Modus verwendet das Nichtabstreitbarkeits-Zertifikat der Karte, das rechtlich einer handschriftlichen Unterschrift gleichsteht."
+    },
+    "features": {
+      "batch": { "title": "Ganze Stapel auf einmal", "text": "Zeigen Sie Cachet Dateien oder Ordner. Dieselbe Markierung, dieselbe Seite und dieselbe Position werden auf jedes Dokument des Stapels angewendet." },
+      "modes": { "title": "Drei Signaturmodi", "text": "Eine qualifizierte eID-Signatur, eine fortgeschrittene Signatur aus Azure Key Vault oder ein schlichter Bildstempel ohne Rechtswirkung." },
+      "pades": { "title": "PAdES bis B-LTA", "text": "Die Stufen b-b, b-t, b-lt und b-lta, pro Durchlauf wählbar. b-lta ist die Voreinstellung — die stärkste und langlebigste." },
+      "timestamp": { "title": "Vertrauenswürdige Zeitstempel", "text": "Eine RFC-3161-Zeitstempelstelle belegt, wann Sie signiert haben. Richten Sie sie auf eine qualifizierte TSA, wenn eine eIDAS-qualifizierte Aufbewahrung gefordert ist." },
+      "ltv": { "title": "Langzeitvalidierung", "text": "CA-Zertifikate sowie OCSP-/CRL-Antworten werden beim Signieren eingebettet, sodass das PDF auch nach Ablauf der Zertifikate überprüfbar bleibt." },
+      "verify": { "title": "Sofort überprüft", "text": "Jede signierte Datei wird erneut geöffnet und validiert, und die erreichte Stufe wird gemeldet. Stufen werden nie stillschweigend herabgestuft." },
+      "template": { "title": "Prüfung gegen eine Vorlage", "text": "Eingaben werden nur akzeptiert, wenn Seitenzahl und Seitenabmessungen exakt einer Vorlagen-PDF entsprechen. Abgelehnte Dateien werden nie signiert." },
+      "placement": { "title": "Platzieren per Klick", "text": "Eine echte Vorschau der Zielseite, gerendert von der mitgelieferten PDFium-Engine. Klicken Sie dorthin, wo die Markierung hingehört — genau dort wird sie signiert." },
+      "vignette": { "title": "Sichtbare Signaturmarke", "text": "eID-Signaturen stempeln Lichtbild, Name und Datum des Karteninhabers; Azure-Signaturen stempeln Name und Datum." },
+      "safety": { "title": "Nichts wird überschrieben", "text": "Die Ausgabe wird als `{pattern}` in einen Ordner Ihrer Wahl geschrieben, und vorhandene Dateien werden nie ersetzt." },
+      "i18n": { "title": "Sechs Sprachen in der Anwendung", "text": "Der Assistent spricht Englisch, Französisch, Niederländisch, Deutsch, Spanisch und Portugiesisch und folgt standardmäßig Ihrer Systemsprache." },
+      "standalone": { "title": "Eigenständige Programme", "text": "Eine Fensteranwendung und ein Konsolenprogramm je Plattform, für Linux und Windows. Außer der eID-Middleware ist nichts zu installieren." }
+    },
+    "modes": {
+      "lead": "Alle drei Modi setzen eine sichtbare Markierung und verarbeiten den Stapel auf dieselbe Weise. Was sich unterscheidet, ist das rechtliche Gewicht des Ergebnisses.",
+      "table": {
+        "mode": "Modus",
+        "requires": "Erfordert",
+        "nature": "Art",
+        "output": "Sichtbares Ergebnis"
+      },
+      "beid": {
+        "name": "eID-Ausweis",
+        "flag": "--mode beid",
+        "requires": "Kartenlesegerät, eID-Ausweis, eine PIN je Dokument",
+        "nature": "Kryptografische Signatur auf qualifiziertem Niveau (QES)",
+        "output": "Lichtbild des Karteninhabers, Name und Datum",
+        "note": "Das stärkste rechtliche Gewicht und das langsamste Verfahren bei großen Stapeln — die PIN wird für jedes Dokument abgefragt."
+      },
+      "azure": {
+        "name": "Azure Key Vault",
+        "flag": "--mode azure",
+        "requires": "Eine Microsoft-Anmeldung je Stapel, ein persönlicher Schlüssel und ein Zertifikat im Key Vault",
+        "nature": "Fortgeschrittene elektronische Signatur (AES)",
+        "output": "Name und Datum",
+        "note": "Nur der Hashwert des Dokuments geht an Azure; die Datei selbst verlässt Ihren Rechner nie, und der private Schlüssel verlässt den Tresor nie."
+      },
+      "image": {
+        "name": "Bildstempel",
+        "flag": "--mode image",
+        "requires": "Nichts — funktioniert offline",
+        "nature": "Keine kryptografische Signatur",
+        "output": "Das von Ihnen bereitgestellte Bild",
+        "note": "Nur eine optische Markierung. Sie hat keine Rechtswirkung und belegt nicht, wer sie angebracht hat."
+      }
+    },
+    "walkthrough": {
+      "lead": "Der grafische Assistent führt durch acht Schritte. Eine Schrittleiste färbt erledigte Schritte grün und Probleme rot, neben jedem Formular steht eine kontextbezogene Hilfe, und ein Sprachwechsel zeichnet den aktuellen Schritt neu, ohne Eingaben zu verlieren.",
+      "stepLabel": "Schritt {n}",
+      "cliNote": "Lieber die Konsole? Derselbe Stapel läuft mit einem einzigen Befehl — siehe den Abschnitt zur Befehlszeile weiter unten.",
+      "welcomeAlt": "Der Begrüßungsbildschirm von Cachet mit der Sprachauswahl und der Schaltfläche „Start“",
+      "shotNote": "Die Bildschirmfotos zeigen die englische Oberfläche; der Assistent spricht auch Deutsch, Französisch, Niederländisch, Spanisch und Portugiesisch.",
+      "steps": {
+        "template": { "title": "Eine Vorlage wählen", "text": "Wählen Sie eine Vorlagen-PDF, der jedes Dokument des Stapels entsprechen soll. Sie signieren nur ein einzelnes Dokument? Wählen Sie dieses Dokument selbst als Vorlage." },
+        "documents": { "title": "Die Dokumente hinzufügen", "text": "Wählen Sie einzelne Dateien oder ganze Ordner aus. Ordner werden automatisch nach PDFs durchsucht." },
+        "validation": { "title": "Gegen die Vorlage prüfen", "text": "Jede Datei wird auf dieselbe Seitenzahl und exakt gleiche Seitenabmessungen geprüft. Eine Tabelle zeigt das Ergebnis, und abgelehnte Dateien werden nie signiert. Haben einzelne Dateien eine abweichende Seitenzahl — etwa weil gescannte Anlagen angehängt wurden —, erscheint eine Auswahl, mit der jede Datei stattdessen auf ihrer eigenen ersten oder letzten Seite signiert wird." },
+        "output": { "title": "Einen Ausgabeordner wählen", "text": "Signierte Dateien werden als `{pattern}` geschrieben. Vorhandene Dateien werden nie überschrieben: bei einem Namenskonflikt wird ` - 1`, ` - 2` und so weiter angehängt." },
+        "type": { "title": "Die Signaturart wählen", "text": "eID, Azure oder Bild, dazu die PAdES-Stufe (standardmäßig b-lta). Im Azure-Modus sammelt ein Bereich die Tresoreinstellungen und bietet die Aktion „Mit Microsoft anmelden“. Eine Schaltfläche „Vollständige Dokumentation“ öffnet dieselbe Referenz innerhalb der Anwendung." },
+        "placement": { "title": "Die Markierung setzen", "text": "Die Zielseite wird tatsächlich dargestellt. Klicken Sie dorthin, wo die Markierung sitzen soll — im eID- und im Azure-Modus wird die sichtbare Vignette genau dort signiert. Ein Feld für die Seitenzahl steht zur Verfügung, und bei abweichenden Seitenzahlen erscheint die Erste/Letzte-Auswahl auch hier." },
+        "signing": { "title": "Signieren", "text": "Eine Zusammenfassung aller Einstellungen, im eID-Modus die Erinnerung, den eID-Ausweis einzustecken, und dann der Fortschritt, während jedes Dokument signiert wird. Im eID-Modus wird die PIN je Dokument abgefragt; im Azure-Modus haben Sie sich einmal für den gesamten Stapel angemeldet." },
+        "report": { "title": "Den Bericht lesen", "text": "Eine Ergebnistabelle je Dokument mit der Stufe, die jede Datei tatsächlich erreicht hat — zum Beispiel „PAdES-B-LTA, LTV ok“ — und eine Schaltfläche, die den Ausgabeordner öffnet." }
+      }
+    },
+    "cli": {
+      "lead": "Das Konsolenprogramm teilt seinen gesamten Kern mit dem Assistenten: Alles, was die Oberfläche kann, ist einen Befehl entfernt. Diese Beispiele setzen eine Installation aus dem Quellcode voraus; mit einem heruntergeladenen Programm ersetzen Sie den Aufruf des Interpreters durch `cachet-cli`.",
+      "examplesTitle": "Gebräuchliche Befehle",
+      "flagsTitle": "Optionen",
+      "flagsLead": "Die Optionen, die die meisten Durchläufe brauchen. Die README dokumentiert den vollständigen Umfang einschließlich aller Azure-Optionen.",
+      "flagColumn": "Option",
+      "meaningColumn": "Bedeutung",
+      "examples": {
+        "beid": "Einen Ordner mit dem eID-Ausweis signieren, auf der Standardstufe b-lta",
+        "offline": "Offline auf der Basisstufe signieren, ohne jeden Netzwerkzugang",
+        "image": "Ein Bild aufstempeln, geprüft gegen eine Vorlage",
+        "azure": "Mit einem persönlichen Zertifikat aus Azure Key Vault signieren",
+        "gui": "Den grafischen Assistenten öffnen"
+      },
+      "flags": {
+        "--gui": "Startet die grafische Oberfläche; sonst läuft das Programm in der Konsole.",
+        "--input": "Zu verarbeitende Dateien und Ordner. Ordner werden nach PDFs durchsucht.",
+        "--output": "Ausgabeordner. Dateien werden als `{pattern}` geschrieben und nie überschrieben.",
+        "--template": "Vorlagen-PDF. Ist sie angegeben, wird jede Eingabedatei dagegen geprüft.",
+        "--mode": "`beid`, `azure` oder `image`. Voreinstellung: `beid`.",
+        "--pades-level": "`b-b`, `b-t`, `b-lt` oder `b-lta`. Voreinstellung: `b-lta`.",
+        "--page": "Zielseite: eine ab 1 gezählte Nummer oder `first` / `last`, je Dokument aufgelöst.",
+        "--x-y": "Linke untere Ecke der Markierung, in Punkt von der unteren linken Ecke der Seite. Lassen Sie im eID-Modus beide weg, um unten rechts auf der letzten Seite zu landen.",
+        "--image-path": "Das aufzustempelnde Bild. Im Bildmodus erforderlich.",
+        "--timestamp-url": "RFC-3161-Zeitstempelstelle für Stufe b-t und höher.",
+        "--digest": "Hashverfahren der Signatur: `sha256` (Voreinstellung), `sha384` oder `sha512`.",
+        "--azure-vault-url": "URL des Key Vault. Im Azure-Modus erforderlich.",
+        "--azure-trust-anchors": "PEM- oder DER-Datei oder ein Verzeichnis mit der internen CA-Kette, die im Azure-Modus als LTV-Vertrauensanker dient.",
+        "--refresh-trust-list": "Erzwingt einen erneuten Download der EU-Vertrauensliste und umgeht den 24-Stunden-Cache."
+      }
+    },
+    "levels": {
+      "lead": "Die PAdES-Basisstufen nach ETSI EN 319 142-1. Jede baut auf der vorherigen auf, und Cachet verwendet standardmäßig die stärkste.",
+      "table": {
+        "level": "Stufe",
+        "adds": "Ergänzt um",
+        "network": "Netzwerk"
+      },
+      "networkNone": "Keines — vollständig offline",
+      "networkTsa": "Zeitstempelstelle",
+      "networkFull": "Zeitstempelstelle, Vertrauensliste, OCSP/CRL",
+      "default": "Voreinstellung",
+      "adds": {
+        "b-b": "Die Basissignatur: wer signiert hat und dass sich seither nichts geändert hat",
+        "b-t": "Einen vertrauenswürdigen RFC-3161-Zeitstempel, der das Wann belegt",
+        "b-lt": "Sperrinformationen und CA-Zertifikate, im Dokument eingebettet (LTV)",
+        "b-lta": "Eine Kette von Archivzeitstempeln, damit der Nachweis selbst belegbar bleibt"
+      }
+    },
+    "requirements": {
+      "lead": "Was jeder Modus zur Laufzeit benötigt.",
+      "beid": {
+        "title": "eID-Modus",
+        "items": [
+          "Die belgische eID-Middleware, die die PKCS#11-Bibliothek bereitstellt",
+          "Ein Kartenlesegerät mit eingestecktem eID-Ausweis",
+          "Den laufenden PC/SC-Dienst",
+          "Netzwerkzugang ab Stufe b-t; b-b arbeitet vollständig offline"
+        ]
+      },
+      "azure": {
+        "title": "Azure-Modus",
+        "items": [
+          "Überhaupt keine Hardware",
+          "Ausgehenden Zugang zu login.microsoftonline.com und zu Ihrer Key-Vault-URL",
+          "Einen persönlichen Schlüssel und ein Zertifikat, von einer Administration im Key Vault bereitgestellt",
+          "Erreichbare CRL- oder OCSP-Endpunkte der internen CA ab Stufe b-lt"
+        ]
+      },
+      "image": {
+        "title": "Bildmodus",
+        "items": [
+          "Nichts — reines PDF-Stempeln, vollständig offline"
+        ]
+      },
+      "preview": "Die Seitenvorschau im Platzierungsschritt braucht nichts Zusätzliches: die PDFium-Rendering-Engine ist in der Anwendung enthalten."
+    },
+    "install": {
+      "lead": "Zwei Wege: ein eigenständiges Programm herunterladen oder aus dem Quellcode ausführen.",
+      "binaryTitle": "Eigenständiges Programm",
+      "binaryText": "Laden Sie das Archiv für Ihre Plattform herunter und entpacken Sie es. Es enthält eine Fensteranwendung und ein Konsolenprogramm, beide in sich abgeschlossen — eine Python-Installation ist nicht nötig. Die eID-Middleware bleibt eine gesonderte Voraussetzung für die eID-Signatur und wird nie mitgeliefert.",
+      "sourceTitle": "Aus dem Quellcode",
+      "sourceText": "Klonen Sie das Repository, legen Sie eine virtuelle Umgebung an und installieren Sie die Abhängigkeiten. Unter Debian und Ubuntu benötigt die grafische Oberfläche zusätzlich das Tk-Systempaket.",
+      "buildTitle": "Selbst bauen",
+      "buildText": "Der native Build unter Linux, der native Build unter Windows, das Cross-Building über Wine und die GitHub-Actions-Pipeline sind sämtlich in BUILD.md beschrieben.",
+      "downloadCta": "Zu den Downloads"
+    },
+    "reference": {
+      "title": "Referenz",
+      "lead": "Die folgenden Abschnitte sind die Referenzdokumentation der Anwendung selbst, Wort für Wort übernommen, damit Website und Anwendung nie Unterschiedliches sagen.",
+      "fromApp": "Aus der in der Anwendung enthaltenen Dokumentation",
+      "notTranslated": "Diese Referenz liegt in Ihrer Sprache noch nicht vor; sie wird auf Englisch angezeigt."
+    },
+    "legal": {
+      "rrn": {
+        "title": "Ihre Nationalregisternummer steckt in jeder eID-Signatur",
+        "text": "Das Nichtabstreitbarkeits-Zertifikat des belgischen eID-Ausweises enthält Ihre Nationalregisternummer (NRN), und dieses Zertifikat wird in jede damit erzeugte Signatur eingebettet. Wer ein signiertes PDF erhält, kann sie lesen. Cachet weist beim Start und in der Zusammenfassung darauf hin — bedenken Sie, wie die signierten Dokumente weitergegeben werden."
+      },
+      "tsa": {
+        "title": "Kostenlose Zeitstempel sind keine qualifizierten Zeitstempel",
+        "text": "Die voreingestellte Zeitstempelstelle ist kostenlos und liefert technisch gültige B-T- und B-LTA-Signaturen, jedoch keine qualifizierten Zeitstempel im Sinne von eIDAS. Für eine echte qualifizierte Langzeitaufbewahrung richten Sie die Zeitstempel-URL auf eine qualifizierte Stelle — die EU-Vertrauensliste weist die Anbieter qualifizierter Zeitstempeldienste aus."
+      },
+      "aes": {
+        "title": "Azure-Signaturen sind fortgeschritten, nicht qualifiziert",
+        "text": "Der Azure-Modus erzeugt eine fortgeschrittene elektronische Signatur (AES). Für interne Dokumente ist das angemessen, es liegt aber eine Stufe unter der qualifizierten Signatur (QES) des eID-Ausweises. Für Dokumente, auf die sich externe Dritte stützen, wäre ein öffentlich anerkannter qualifizierter Aussteller nötig."
+      },
+      "archival": {
+        "title": "B-LTA-Ketten müssen erneuert werden",
+        "text": "Die Kette der Archivzeitstempel hält den Nachweis über die Zeit belegbar, doch echte Langzeitarchivierung setzt voraus, dass diese Kette regelmäßig erneuert wird. BUILD.md erläutert, was dazugehört."
+      }
+    }
+  },
+  "news": {
+    "title": "Neuigkeiten",
+    "lead": "Jede veröffentlichte Version, direkt von GitHub, mit ihren Anmerkungen und ihren Downloads.",
+    "latest": "Neueste",
+    "prerelease": "Vorabversion",
+    "released": "Veröffentlicht am {date}",
+    "downloadsTitle": "Downloads",
+    "notesTitle": "Versionshinweise",
+    "notesLanguage": "Die Versionshinweise werden auf Englisch veröffentlicht.",
+    "viewOnGitHub": "Auf GitHub ansehen",
+    "empty": "Es wurde noch keine Version veröffentlicht.",
+    "emptyHint": "Diese Seite füllt sich mit den Versionen des Repositorys, sobald die erste getaggt wird.",
+    "feed": "Den Feed abonnieren",
+    "count": "{count} Version | {count} Versionen"
+  },
+  "footer": {
+    "tagline": "PDF-Stapelsignatur für belgische Verwaltungsabläufe.",
+    "project": "Projekt",
+    "resources": "Ressourcen",
+    "legal": "Rechtliches",
+    "license": "Veröffentlicht unter der GPL-3.0-Lizenz",
+    "sourceCode": "Quellcode",
+    "issues": "Issues",
+    "releases": "Versionen",
+    "builtBy": "Erstellt von {org}",
+    "notAffiliated": "Cachet ist ein unabhängiges Open-Source-Projekt. Es steht weder dem belgischen Staat noch Microsoft nahe und wird von ihnen nicht unterstützt.",
+    "eidLink": "Belgische eID-Middleware",
+    "eidasLink": "eIDAS-Verordnung",
+    "tlBrowserLink": "EU-Vertrauenslisten-Browser"
+  },
+  "error": {
+    "404": {
+      "title": "Seite nicht gefunden",
+      "text": "Diese Seite gibt es nicht, oder sie wurde verschoben.",
+      "cta": "Zurück zur Startseite"
+    },
+    "500": {
+      "title": "Etwas ist schiefgelaufen",
+      "text": "Es ist ein unerwarteter Fehler aufgetreten.",
+      "cta": "Zurück zur Startseite"
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "Cachet — PDF-Stapelsignatur mit dem belgischen eID-Ausweis",
+      "description": "Signieren Sie ganze Ordner voller PDFs mit Ihrem belgischen eID-Ausweis (QES) oder einem Zertifikat aus Azure Key Vault (AES). PAdES B-LTA, vertrauenswürdige Zeitstempel, Langzeitvalidierung. Kostenlos und quelloffen, für Linux und Windows."
+    },
+    "docs": {
+      "title": "Dokumentation",
+      "description": "Wie Cachet PDFs signiert: die drei Modi, die PAdES-Stufen von b-b bis b-lta, der Assistent in acht Schritten, die Befehlszeilenreferenz und ein Glossar der beteiligten Normen."
+    },
+    "news": {
+      "title": "Neuigkeiten",
+      "description": "Jede Cachet-Version mit ihren Anmerkungen und ihren Downloads für Linux und Windows, live von GitHub."
+    },
+    "ogTagline": "PDF-Stapelsignatur mit dem belgischen eID-Ausweis"
+  },
+  "a11y": {
+    "externalLink": "wird in einem neuen Tab geöffnet",
+    "currentPage": "Aktuelle Seite",
+    "loading": "Wird geladen",
+    "copy": "Kopieren"
+  }
+}

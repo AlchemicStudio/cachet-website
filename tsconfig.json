@@ -1,0 +1,12 @@
+{
+  // Nuxt generates the real configs under .nuxt/ (one each for the app, the
+  // server, the shared folder and the build tooling); this file just points at
+  // them so editors and `nuxt typecheck` resolve the same paths the build does.
+  "files": [],
+  "references": [
+    { "path": "./.nuxt/tsconfig.app.json" },
+    { "path": "./.nuxt/tsconfig.server.json" },
+    { "path": "./.nuxt/tsconfig.shared.json" },
+    { "path": "./.nuxt/tsconfig.node.json" }
+  ]
+}

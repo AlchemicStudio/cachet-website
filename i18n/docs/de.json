@@ -1,0 +1,603 @@
+{
+  "_generated": "Ported from the Cachet app's i18n_docs.py by scripts/extract_app_docs.py — edit there, not here.",
+  "sections": [
+    {
+      "id": "modes",
+      "title": "DIE DREI MODI",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cachet signiert alle PDF-Dokumente eines Stapels auf dieselbe Weise. Wählen Sie den Modus, der zur benötigten rechtlichen Verbindlichkeit passt."
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "term": "BEID — Ihre belgische eID-Karte",
+              "text": "",
+              "lines": [
+                {
+                  "label": "Worum es sich handelt",
+                  "text": "eine qualifizierte elektronische Signatur (QES), die höchste rechtliche Stufe, der handschriftlichen Unterschrift gleichgestellt.",
+                  "bullet": false
+                },
+                {
+                  "label": "Erfordert",
+                  "text": "einen Kartenleser, Ihre eID-Karte und eine PIN-Eingabe pro Dokument. Eine sichtbare Vignette (Ihr Foto, Name und Datum) wird hinzugefügt.",
+                  "bullet": false
+                },
+                {
+                  "label": "Geeignet, wenn",
+                  "text": "ein Dokument rechtsverbindlich und nachweislich von Ihnen persönlich signiert sein muss.",
+                  "bullet": false
+                },
+                {
+                  "label": "Hinweis",
+                  "text": "Ihre nationale Registernummer (RRN) wird in jede Signatur eingebettet; geben Sie signierte Dateien daher mit Bedacht weiter.",
+                  "bullet": false
+                }
+              ]
+            },
+            {
+              "term": "AZURE — Ihr persönliches Zertifikat in Azure Key Vault",
+              "text": "",
+              "lines": [
+                {
+                  "label": "Worum es sich handelt",
+                  "text": "eine fortgeschrittene elektronische Signatur (AES). Stark und prüfbar, aber eine Stufe unter QES.",
+                  "bullet": false
+                },
+                {
+                  "label": "Erfordert",
+                  "text": "eine Microsoft-Anmeldung pro Stapel (nicht pro Dokument). Nur der Hashwert des Dokuments verlässt Ihren Rechner; der private Schlüssel nie. Das Vertrauen ist in der internen CA Ihrer Organisation verankert.",
+                  "bullet": false
+                },
+                {
+                  "label": "Geeignet, wenn",
+                  "text": "Sie schnell eine echte kryptografische Signatur für viele Dateien benötigen, ohne Ihre physische Karte.",
+                  "bullet": false
+                }
+              ]
+            },
+            {
+              "term": "IMAGE — nur ein Bild einfügen",
+              "text": "",
+              "lines": [
+                {
+                  "label": "Worum es sich handelt",
+                  "text": "ein sichtbarer Stempel, KEINE kryptografische Signatur. Ohne Rechtswert.",
+                  "bullet": false
+                },
+                {
+                  "label": "Erfordert",
+                  "text": "nichts; funktioniert vollständig offline.",
+                  "bullet": false
+                },
+                {
+                  "label": "Geeignet, wenn",
+                  "text": "ein Dokument lediglich signiert aussehen soll, ohne rechtliche Wirkung.",
+                  "bullet": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "**Empfehlung:** Verwenden Sie BEID für rechtsverbindliche Dokumente, AZURE für große Stapel und IMAGE nur, wenn es allein um das Erscheinungsbild geht."
+        }
+      ]
+    },
+    {
+      "id": "levels",
+      "title": "PAdES-NIVEAUS",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Die PAdES-Niveaus (ETSI EN 319 142-1) beschreiben, wie haltbar und prüfbar Ihre Signatur ist. Jedes Niveau baut auf dem vorherigen auf. Cachet verwendet standardmäßig b-lta und fällt bei Netzwerkproblemen nie stillschweigend auf ein niedrigeres Niveau zurück."
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "term": "B-B (Basis)",
+              "text": "Die Basissignatur: Sie beweist, wer signiert hat und dass das Dokument nicht verändert wurde. Funktioniert vollständig offline. Wählen Sie dieses Niveau nur für schnelle interne Entwürfe, bei denen ein Langzeitnachweis und eine vertrauenswürdige Zeitangabe keine Rolle spielen.",
+              "lines": []
+            },
+            {
+              "term": "B-T (+ Zeitstempel)",
+              "text": "Fügt einen vertrauenswürdigen Zeitstempel eines Zeitstempeldienstes (TSA) hinzu und beweist damit, WANN Sie signiert haben. Benötigt Netzwerkzugang. Wählen Sie dieses Niveau, wenn das Signaturdatum nachweisbar sein muss, aber keine Langzeitarchivierung erforderlich ist.",
+              "lines": []
+            },
+            {
+              "term": "B-LT (+ Langzeitvalidierung)",
+              "text": "Bettet die Sperrinformationen (OCSP/CRL) und die CA-Zertifikate in das PDF ein (LTV). Die Signatur bleibt auch nach Ablauf der Zertifikate prüfbar. Benötigt Netzwerkzugang. Wählen Sie dieses Niveau für Dokumente, die Sie aufbewahren und noch Jahre später prüfen müssen.",
+              "lines": []
+            },
+            {
+              "term": "B-LTA (+ Archivierung, STANDARD)",
+              "text": "Fügt eine Kette von Archivzeitstempeln hinzu, sodass der Nachweis selbst über Jahrzehnte erhalten bleibt (die Kette wird alle paar Jahre erneuert). Benötigt Netzwerkzugang. Dies ist das Standardniveau, weil es die stärkste und langlebigste Garantie für amtliche Unterlagen bietet.",
+              "lines": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tiers",
+      "title": "AES ODER QES: WELCHE SIGNATUR BRAUCHE ICH?",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Nach EU-Recht (eIDAS) gibt es drei Stufen elektronischer Signaturen:"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "term": "SES (einfach)",
+              "text": "jedes elektronische Zeichen, selbst ein eingefügtes Bild. Unkompliziert, aber nur ein schwacher Nachweis dafür, wer signiert hat. Das erzeugt der Modus „image“ — ohne Rechtswert.",
+              "lines": []
+            },
+            {
+              "term": "AES (fortgeschritten)",
+              "text": "eindeutig einem Unterzeichner und genau diesem Dokument zugeordnet; jede spätere Änderung ist erkennbar. Das ist der Modus „azure“.",
+              "lines": []
+            },
+            {
+              "term": "QES (qualifiziert)",
+              "text": "eine AES, die mit einem zertifizierten Gerät und einer persönlich überprüften Identität erstellt wurde. Sie ist von Gesetzes wegen der handschriftlichen Unterschrift gleichgestellt. Das ist der Modus „beid“ (eID-Karte).",
+              "lines": []
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "QES — eID-Karte (beid)",
+          "lines": [
+            {
+              "label": "Vorteile",
+              "text": "die stärkste Stufe; rechtlich der handschriftlichen Unterschrift gleichgestellt; von jedem Dritten ohne vorherige Vereinbarung anerkannt.",
+              "bullet": false
+            },
+            {
+              "label": "Nachteile",
+              "text": "benötigt einen Kartenleser und Ihre Karte; Sie geben Ihre PIN EINMAL PRO DOKUMENT ein (langsam bei großen Stapeln); Ihre nationale Registernummer (RRN) wird in jede Datei eingebettet.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "AES — Azure Key Vault (azure)",
+          "lines": [
+            {
+              "label": "Vorteile",
+              "text": "EINE Anmeldung pro Stapel, daher schnell bei vielen Dateien; weder Karte noch Kartenleser nötig; keine Preisgabe der RRN.",
+              "bullet": false
+            },
+            {
+              "label": "Nachteile",
+              "text": "nicht „qualifiziert“; das Vertrauen beruht auf der internen CA Ihrer Organisation, sodass Außenstehende die Signatur möglicherweise nicht automatisch anerkennen.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Welche soll ich wählen?",
+          "lines": [
+            {
+              "label": "Interne Dokumente oder große Stapel",
+              "text": "Verwenden Sie azure (AES). Eine Anmeldung genügt für den ganzen Stapel.",
+              "bullet": true
+            },
+            {
+              "label": null,
+              "text": "Dokumente, die die Organisation verlassen, oder wenn eine der handschriftlichen Unterschrift gleichgestellte Signatur erforderlich ist: Verwenden Sie beid (QES) und nehmen Sie eine PIN-Eingabe pro Dokument in Kauf.",
+              "bullet": true
+            },
+            {
+              "label": "Weder Karte noch Kartenleser verfügbar",
+              "text": "azure ist Ihre einzige kryptografische Option.",
+              "bullet": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glossary",
+      "title": "GLOSSAR",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Cachet signiert PDF-Dokumente stapelweise. Es kann drei Arten von Kennzeichnung anbringen: eine kryptografische Signatur mit Ihrer belgischen eID-Karte (beid), eine kryptografische Signatur mit Ihrem persönlichen Zertifikat in Azure Key Vault (azure) oder ein einfach eingefügtes Bild ohne Rechtswert (image). Für die beiden kryptografischen Modi folgt es dem europäischen PAdES-Standard, prüft nach dem Signieren jede Datei erneut und teilt Ihnen genau mit, was erreicht wurde. Die folgenden Begriffe erklären, was diese Prüfungen und Bezeichnungen bedeuten."
+        },
+        {
+          "type": "definition",
+          "term": "Elektronische Signatur",
+          "lines": [
+            {
+              "label": null,
+              "text": "Eine rechtlich anerkannte Art, ein Dokument elektronisch zu unterzeichnen. Anders als eine eingescannte handschriftliche Unterschrift beweist eine kryptografische elektronische Signatur auch, WER signiert hat und dass die Datei seither nicht verändert wurde.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "SES / AES / QES",
+          "lines": [
+            {
+              "label": null,
+              "text": "Die drei eIDAS-Stufen, von der schwächsten zur stärksten. SES (einfach) ist lediglich „ein elektronisches Zeichen“. AES (fortgeschritten) ist eindeutig mit dem Unterzeichner verknüpft und macht jede spätere Änderung erkennbar. QES (qualifiziert) ist eine AES, die mit einem qualifizierten Zertifikat und einem sicheren Gerät erstellt wurde, und ist der handschriftlichen Unterschrift rechtlich gleichgestellt. eID = QES, Azure = AES, image = keine.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "eIDAS",
+          "lines": [
+            {
+              "label": null,
+              "text": "Die EU-Verordnung, die elektronische Signaturen, Vertrauensdienste und die Stufen SES/AES/QES definiert, sodass eine in einem EU-Land erstellte Signatur in allen anderen anerkannt wird.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "PAdES",
+          "lines": [
+            {
+              "label": "„PDF Advanced Electronic Signatures“",
+              "text": "der ETSI-Standard (EN 319 142-1) zum Einbetten von Signaturen in PDF-Dateien. Cachet schreibt PAdES-Signaturen, damit jedes konforme Leseprogramm (z. B. Adobe) sie prüfen kann.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "CMS",
+          "lines": [
+            {
+              "label": null,
+              "text": "Das technische Containerformat (Cryptographic Message Syntax), das die eigentlichen Signaturbytes, Zertifikate und Zeitstempel im PDF enthält. PAdES ist ein PDF-spezifisches Profil, das auf CMS aufbaut.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Digest / Hashwert",
+          "lines": [
+            {
+              "label": null,
+              "text": "Ein kurzer Fingerabdruck fester Länge, der aus dem Dokument berechnet wird. Ändert sich ein einziges Byte, ändert sich der Fingerabdruck vollständig. Die Signatur wird über diesen Fingerabdruck erstellt; deshalb wird nur der Hashwert, nie die vollständige Datei, an Azure gesendet.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Zertifikat",
+          "lines": [
+            {
+              "label": null,
+              "text": "Ein elektronischer Ausweis für einen kryptografischen Schlüssel: Das Zertifikat bindet einen öffentlichen Schlüssel an eine Person oder einen Dienst und ist selbst von einer Zertifizierungsstelle signiert. Ihres beweist, dass die Signatur tatsächlich von Ihnen stammt.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "CA / Zertifikatskette",
+          "lines": [
+            {
+              "label": null,
+              "text": "Eine Zertifizierungsstelle (Certificate Authority, CA) stellt Zertifikate aus. Eine Signatur zu prüfen heißt, der Kette von Ihrem Zertifikat über eine oder mehrere CAs bis zu einem vertrauenswürdigen Root-Zertifikat zu folgen. Ist die gesamte Kette in Ordnung, gilt die Signatur als vertrauenswürdig.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "eID / Nichtabstreitbarkeitszertifikat",
+          "lines": [
+            {
+              "label": null,
+              "text": "Eine belgische eID-Karte trägt zwei Zertifikate; Cachet verwendet das Zertifikat „Nichtabstreitbarkeit“ (non-repudiation), das rechtsverbindlichen Signaturen vorbehalten ist (im Gegensatz zum Zertifikat „Authentifizierung“, das nur zur Anmeldung dient).",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "RRN",
+          "lines": [
+            {
+              "label": null,
+              "text": "Die belgische nationale Registernummer. Sie wird in jede eID-Signatur eingebettet. Jeder, der ein signiertes PDF erhält, kann sie lesen; geben Sie signierte Dateien daher mit Bedacht weiter.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "PKCS#11",
+          "lines": [
+            {
+              "label": null,
+              "text": "Die standardisierte Softwareschnittstelle, mit der Cachet über die Kartenleser-Middleware mit der eID-Karte kommuniziert. Sie erlaubt der Anwendung, den Schlüssel der Karte zu verwenden, ohne dass dieser die Karte jemals verlässt.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "PIN",
+          "lines": [
+            {
+              "label": null,
+              "text": "Der Geheimcode, der den Signaturschlüssel Ihrer eID-Karte freischaltet. Die Karte gibt den Schlüssel nie preis; sie signiert nur, wenn die PIN korrekt ist. Im beid-Modus fragt Cachet sie einmal PRO DOKUMENT ab.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Azure Key Vault",
+          "lines": [
+            {
+              "label": null,
+              "text": "Ein Microsoft-Cloud-Dienst, der Ihr persönliches Zertifikat und Ihren Schlüssel so speichert, dass der Schlüssel nicht exportiert werden kann. Das Signieren findet im Vault statt: Nur der Hashwert des Dokuments wird dorthin gesendet, und das signierte Ergebnis kommt zurück.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Microsoft Entra ID",
+          "lines": [
+            {
+              "label": null,
+              "text": "Der Identitäts- und Anmeldedienst von Microsoft (früher Azure Active Directory). Im azure-Modus melden Sie sich einmal PRO STAPEL an, um nachzuweisen, dass Sie Ihren Schlüssel im Vault verwenden dürfen.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "UPN",
+          "lines": [
+            {
+              "label": "User Principal Name",
+              "text": "Ihre Anmeldeidentität in Entra ID, üblicherweise in der Form name@organisation. Daran erkennt die Anwendung, welches Vault-Konto Ihres ist.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Zeitstempel nach RFC 3161 / TSA",
+          "lines": [
+            {
+              "label": null,
+              "text": "Ein vertrauenswürdiger, datierter Stempel, der beweist, dass die Signatur zu einem bestimmten Zeitpunkt existierte. Er wird über das Netzwerk von einem Zeitstempeldienst (Time-Stamping Authority, TSA) bezogen und schützt die Signatur auch dann, wenn das Signaturzertifikat später abläuft.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Qualifizierter oder kostenloser Zeitstempel",
+          "lines": [
+            {
+              "label": null,
+              "text": "Ein kostenloser Zeitstempel (in Cachet voreingestellt, von DigiCert) ist technisch gültig und weithin anerkannt. Ein qualifizierter Zeitstempel stammt von einem eIDAS-qualifizierten TSA und hat ein stärkeres rechtliches Gewicht. Beide beweisen das „Wann“; nur der qualifizierte ist „qualifiziert“.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "LTV",
+          "lines": [
+            {
+              "label": null,
+              "text": "Langzeitvalidierung (Long-Term Validation): Im PDF werden genügend Nachweise gespeichert, damit es auch Jahre später noch geprüft werden kann, selbst wenn die Zertifikate abgelaufen sind oder die ausstellende CA nicht mehr erreichbar ist.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "DSS",
+          "lines": [
+            {
+              "label": "Der Document Security Store",
+              "text": "der Bereich im PDF, in dem die LTV-Nachweise (Zertifikate und Sperrinformationen) abgelegt werden, damit die Datei alle Nachweise selbst enthält.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "OCSP",
+          "lines": [
+            {
+              "label": null,
+              "text": "Eine Online-Abfrage in Echtzeit, die bei der CA nachfragt: „Ist dieses Zertifikat jetzt noch gültig oder wurde es gesperrt?“ Die Antwort wird für die LTV im DSS gespeichert.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "CRL",
+          "lines": [
+            {
+              "label": null,
+              "text": "Zertifikatssperrliste (Certificate Revocation List): eine veröffentlichte Liste der Zertifikate, die die CA gesperrt hat. Eine Alternative zu OCSP, um nachzuweisen, dass ein Zertifikat zum Zeitpunkt der Verwendung noch gültig war; wird ebenfalls für die LTV gespeichert.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "EU-Vertrauensliste (LOTL)",
+          "lines": [
+            {
+              "label": null,
+              "text": "Die offizielle EU-Liste der vertrauenswürdigen qualifizierten Anbieter (die „List of Trusted Lists“). Das Vertrauen in eID (QES) geht letztlich hierauf zurück. Bei Azure (AES) NICHT: Dort beruht das Vertrauen stattdessen auf der internen CA Ihrer Organisation.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Interne CA",
+          "lines": [
+            {
+              "label": null,
+              "text": "Die eigene Zertifizierungsstelle Ihrer Organisation. Im azure-Modus sind Vertrauen und LTV in dieser internen CA-Kette verankert (einer PEM-Datei, die Sie bereitstellen), nicht in der EU-Vertrauensliste.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Vignette",
+          "lines": [
+            {
+              "label": null,
+              "text": "Der kleine sichtbare Stempel, den Cachet in den Modi eID und Azure auf die Seite zeichnet: das Foto des Karteninhabers (nur eID), „Signed by:“, der Name und das Datum. Die Vignette ist das für Menschen lesbare Gesicht einer ansonsten unsichtbaren kryptografischen Signatur. Die Position wählen Sie per Klick auf die Seitenvorschau; ohne Klick kommt sie unten rechts auf die letzte Seite.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "Vorlagenprüfung",
+          "lines": [
+            {
+              "label": "Eine Sicherheitsprüfung",
+              "text": "Vor dem Signieren wird jedes Eingabe-PDF mit einem Muster („Vorlage“) verglichen und muss dieselbe Seitenzahl und identische Seitengrößen haben. Das garantiert, dass die Signatur bei jeder Datei des Stapels an der richtigen Stelle landet. Haben einige Dateien eine ABWEICHENDE Seitenzahl (z. B. weil gescannte Anhänge hinzugefügt wurden), erscheint im Prüfschritt und oben im Platzierungsschritt ein Auswahlfeld für die erste/letzte Seite: Jede solche Datei wird dann auf ihrer eigenen ersten oder letzten Seite signiert — diese Seite muss weiterhin exakt die Seitengröße der Vorlage haben, sodass die gewählte Position garantiert passt.",
+              "bullet": false
+            }
+          ]
+        },
+        {
+          "type": "definition",
+          "term": "B-LTA-Erneuerung",
+          "lines": [
+            {
+              "label": null,
+              "text": "B-LTA (das Standardniveau) fügt eine Kette von Archivzeitstempeln hinzu, damit die Nachweise über Jahrzehnte beweiskräftig bleiben. „Erneuerung“ bedeutet, dass alle paar Jahre ein neuer Archivzeitstempel hinzugefügt werden muss, bevor der Schutz des vorherigen nachlässt.",
+              "bullet": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "glance",
+      "title": "PAdES-NIVEAUS AUF EINEN BLICK",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            {
+              "term": "B-B",
+              "text": "Basissignatur, vollständig offline.",
+              "lines": []
+            },
+            {
+              "term": "B-T",
+              "text": "fügt einen vertrauenswürdigen Zeitstempel hinzu (Netzwerk erforderlich).",
+              "lines": []
+            },
+            {
+              "term": "B-LT",
+              "text": "fügt Sperrinformationen und CA-Zertifikate hinzu (LTV).",
+              "lines": []
+            },
+            {
+              "term": "B-LTA",
+              "text": "fügt die Kette von Archivzeitstempeln hinzu (Standard).",
+              "lines": []
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text": "Cachet stuft diese Niveaus nie stillschweigend herab. Ist das Netzwerk nicht verfügbar und das gewünschte Niveau nicht erreichbar, meldet es dies, statt unbemerkt eine schwächere Signatur zu erzeugen."
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "heading": "QUELLEN UND WEITERFÜHRENDE INFORMATIONEN",
+    "intro": "Die oben genannten Standards und Dienste. Klicken Sie auf einen Titel, um ihn in Ihrem Browser zu öffnen (die meisten dieser Dokumente sind auf Englisch).",
+    "items": [
+      {
+        "title": "eIDAS — Verordnung (EU) Nr. 910/2014 über elektronische Identifizierung und Vertrauensdienste (EUR-Lex)",
+        "url": "https://eur-lex.europa.eu/eli/reg/2014/910/oj"
+      },
+      {
+        "title": "ETSI EN 319 142-1 — Digitale PAdES-Signaturen: Bausteine und Baseline-Signaturen (B-B, B-T, B-LT, B-LTA)",
+        "url": "https://www.etsi.org/deliver/etsi_en/319100_319199/31914201/01.01.01_60/en_31914201v010101p.pdf"
+      },
+      {
+        "title": "ETSI TS 119 612 — Trusted Lists (Format der EU-Vertrauensliste und der nationalen Vertrauenslisten)",
+        "url": "https://www.etsi.org/deliver/etsi_ts/119600_119699/119612/02.02.01_60/ts_119612v020201p.pdf"
+      },
+      {
+        "title": "EU Trusted List Browser — die List of Trusted Lists (LOTL) und alle nationalen Listen",
+        "url": "https://eidas.ec.europa.eu/efda/tl-browser/"
+      },
+      {
+        "title": "RFC 3161 — Time-Stamp Protocol (TSP): wie vertrauenswürdige Zeitstempel angefordert und ausgestellt werden",
+        "url": "https://www.rfc-editor.org/rfc/rfc3161"
+      },
+      {
+        "title": "DigiCert — der kostenlose Zeitstempeldienst nach RFC 3161, den Cachet standardmäßig verwendet",
+        "url": "https://knowledge.digicert.com/general-information/rfc3161-compliant-time-stamp-authority-server"
+      },
+      {
+        "title": "RFC 5652 — Cryptographic Message Syntax (CMS): der Signaturcontainer im PDF",
+        "url": "https://www.rfc-editor.org/rfc/rfc5652"
+      },
+      {
+        "title": "RFC 6960 — Online Certificate Status Protocol (OCSP): Sperrstatusprüfung von Zertifikaten in Echtzeit",
+        "url": "https://www.rfc-editor.org/rfc/rfc6960"
+      },
+      {
+        "title": "RFC 5280 — X.509-Zertifikate und Zertifikatssperrlisten (CRL)",
+        "url": "https://www.rfc-editor.org/rfc/rfc5280"
+      },
+      {
+        "title": "Belgische eID — offizielle Website: die Karte, die Middleware, die PIN und der Kartenleser",
+        "url": "https://eid.belgium.be/en"
+      },
+      {
+        "title": "OASIS PKCS #11 — die Schnittstelle für kryptografische Token, über die mit der eID-Karte kommuniziert wird",
+        "url": "https://docs.oasis-open.org/pkcs11/pkcs11-base/v2.40/pkcs11-base-v2.40.html"
+      },
+      {
+        "title": "Azure Key Vault — Informationen zu Schlüsseln: wie Schlüssel im Vault geschützt und zum Signieren verwendet werden",
+        "url": "https://learn.microsoft.com/azure/key-vault/keys/about-keys"
+      },
+      {
+        "title": "Microsoft Entra ID — der Identitätsdienst für die Anmeldung im azure-Modus",
+        "url": "https://learn.microsoft.com/entra/fundamentals/whatis"
+      },
+      {
+        "title": "pyHanko — die Open-Source-Bibliothek zum Signieren und Prüfen von PDFs, auf der Cachet aufbaut",
+        "url": "https://pyhanko.readthedocs.io/"
+      }
+    ]
+  }
+}

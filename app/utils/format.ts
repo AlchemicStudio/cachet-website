@@ -22,12 +22,6 @@ export function formatDate(iso: string, locale: string): string {
   return new Intl.DateTimeFormat(locale, { dateStyle: 'long', timeZone: 'UTC' }).format(d)
 }
 
-export function formatDateTime(iso: string, locale: string): string {
-  const d = new Date(iso)
-  if (Number.isNaN(d.getTime())) return iso
-  return new Intl.DateTimeFormat(locale, { dateStyle: 'medium', timeStyle: 'short' }).format(d)
-}
-
 export function formatNumber(n: number, locale: string): string {
   return new Intl.NumberFormat(locale).format(n)
 }

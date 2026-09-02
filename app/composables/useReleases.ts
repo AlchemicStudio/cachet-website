@@ -50,9 +50,10 @@ export function useReleases() {
 
   const releases = computed(() => data.value?.releases ?? [])
   const latest = computed(() => pickLatest(releases.value))
-  const isLive = computed(() => data.value?.source === 'live')
-  const staleError = computed(() => data.value?.error ?? null)
-  const fetchedAt = computed(() => data.value?.fetchedAt ?? null)
 
-  return { data, releases, latest, isLive, staleError, fetchedAt }
+  // `source`, `fetchedAt` and `error` stay on the payload — the live refresh
+  // sets them — but nothing renders them: whether a visitor is looking at the
+  // baked-in copy or a fresh one is not something they should have to think
+  // about.
+  return { data, releases, latest }
 }

@@ -62,12 +62,6 @@
     "allReleases": "Todas las versiones",
     "empty": "Todavía no hay ninguna versión publicada.",
     "emptyHint": "Los ejecutables aparecen aquí en cuanto se etiqueta una versión en GitHub.",
-    "loading": "Cargando las versiones desde GitHub…",
-    "live": "En directo desde GitHub",
-    "snapshot": "Copia en caché",
-    "asOf": "a fecha de {date}",
-    "staleTitle": "Se muestra una copia en caché",
-    "staleBody": "No se ha podido contactar con GitHub: su API permite 60 peticiones por hora desde una misma dirección. Los archivos siguientes provienen de la última comprobación correcta y los enlaces siguen funcionando.",
     "platform": {
       "linux": "Linux",
       "windows": "Windows",
@@ -351,9 +345,6 @@
       "downloadCta": "Ir a las descargas"
     },
     "reference": {
-      "title": "Referencia",
-      "lead": "Las secciones siguientes son la documentación de referencia de la propia aplicación, reproducida palabra por palabra para que el sitio y la aplicación nunca digan cosas distintas.",
-      "fromApp": "De la documentación integrada en la aplicación",
       "notTranslated": "Esta referencia todavía no está disponible en su idioma; se muestra en inglés."
     },
     "legal": {

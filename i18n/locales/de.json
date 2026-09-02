@@ -62,12 +62,6 @@
     "allReleases": "Alle Versionen",
     "empty": "Noch keine Version veröffentlicht.",
     "emptyHint": "Programme erscheinen hier, sobald auf GitHub eine Version getaggt wird.",
-    "loading": "Versionen werden von GitHub geladen…",
-    "live": "Live von GitHub",
-    "snapshot": "Zwischengespeicherte Kopie",
-    "asOf": "Stand {date}",
-    "staleTitle": "Es wird eine zwischengespeicherte Kopie angezeigt",
-    "staleBody": "GitHub war nicht erreichbar — die API erlaubt 60 Anfragen pro Stunde von derselben Adresse. Die Dateien unten stammen aus der letzten erfolgreichen Abfrage, und die Links funktionieren weiterhin.",
     "platform": {
       "linux": "Linux",
       "windows": "Windows",
@@ -351,9 +345,6 @@
       "downloadCta": "Zu den Downloads"
     },
     "reference": {
-      "title": "Referenz",
-      "lead": "Die folgenden Abschnitte sind die Referenzdokumentation der Anwendung selbst, Wort für Wort übernommen, damit Website und Anwendung nie Unterschiedliches sagen.",
-      "fromApp": "Aus der in der Anwendung enthaltenen Dokumentation",
       "notTranslated": "Diese Referenz liegt in Ihrer Sprache noch nicht vor; sie wird auf Englisch angezeigt."
     },
     "legal": {

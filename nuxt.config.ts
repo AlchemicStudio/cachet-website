@@ -8,11 +8,18 @@ import { LOCALES, LOCALE_COOKIE, SITE } from './shared/site'
  * root URL lands on the visitor's language without the prerendered markup
  * being hydrated first and navigated away from. Kept deliberately small and
  * dependency-free; anything it cannot resolve simply leaves the page alone.
+ *
+ * It skips anyone arriving from the site itself. Guessing a language is for
+ * visitors who just turned up; someone who reached `/` by choosing English in
+ * the switcher — or by opening that link in a new tab — has stated a
+ * preference, and bouncing them back to the language they were reading would
+ * make English unreachable from the home page.
  */
 const LOCALE_REDIRECT_SCRIPT = `(function(){try{
 var codes=${JSON.stringify(LOCALES.map(l => l.code))};
 var path=location.pathname.replace(/\\/index\\.html$/,'/');
 if(path!=='/')return;
+if(document.referrer&&document.referrer.indexOf(location.origin+'/')===0)return;
 var m=document.cookie.match(/(?:^|; )${LOCALE_COOKIE}=([^;]*)/);
 var saved=m?decodeURIComponent(m[1]):null;
 var target=saved&&codes.indexOf(saved)>-1?saved:null;

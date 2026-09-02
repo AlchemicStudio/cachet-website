@@ -62,12 +62,6 @@
     "allReleases": "Alle versies",
     "empty": "Nog geen versie gepubliceerd.",
     "emptyHint": "Builds verschijnen hier zodra er op GitHub een versie wordt getagd.",
-    "loading": "Versies worden van GitHub geladen…",
-    "live": "Live van GitHub",
-    "snapshot": "Kopie uit de cache",
-    "asOf": "op {date}",
-    "staleTitle": "Er wordt een gecachte kopie getoond",
-    "staleBody": "GitHub was niet bereikbaar — de API laat 60 aanvragen per uur toe vanaf hetzelfde adres. De bestanden hieronder komen uit de laatste geslaagde controle en de links werken nog steeds.",
     "platform": {
       "linux": "Linux",
       "windows": "Windows",
@@ -351,9 +345,6 @@
       "downloadCta": "Naar de downloads"
     },
     "reference": {
-      "title": "Referentie",
-      "lead": "De secties hieronder vormen de eigen referentiedocumentatie van de toepassing, woordelijk overgenomen zodat de site en de toepassing nooit iets anders zeggen.",
-      "fromApp": "Uit de ingebouwde documentatie van de toepassing",
       "notTranslated": "Deze referentie is nog niet in uw taal beschikbaar; ze wordt in het Engels getoond."
     },
     "legal": {

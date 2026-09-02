@@ -58,7 +58,6 @@ const { reference, translated: referenceTranslated } = useDocsReference()
       class="mt-6"
       :section="reference.glance"
       :translated="referenceTranslated"
-      hide-note
     />
   </div>
 </template>

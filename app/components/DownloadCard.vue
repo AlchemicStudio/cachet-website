@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { formatDate, formatDateTime } from '~/utils/format'
+import { formatDate } from '~/utils/format'
 
 /**
  * The download card. Data comes from the prerendered snapshot and is replaced
  * by a live GitHub fetch on mount, so it is populated instantly and accurate a
- * moment later. When the live call fails the cached copy stays visible with a
- * note rather than collapsing into an error.
+ * moment later — and if that call fails the baked-in copy simply stays. Which
+ * of the two a visitor is looking at is not something they need to reason
+ * about, so the card does not say.
  */
-const { latest, isLive, staleError, fetchedAt } = useReleases()
+const { latest } = useReleases()
 const platform = usePlatform()
 const { t, locale } = useI18n()
 
@@ -36,44 +37,18 @@ const isRecommended = (index: number) =>
     }"
   >
     <template #header>
-      <div class="flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <p class="eyebrow text-secondary">{{ t('download.latest') }}</p>
-          <h2 class="mt-1.5 font-display text-2xl font-bold text-highlighted">
-            {{ t('download.title') }}
-            <span v-if="latest" class="text-muted">· {{ latest.tag }}</span>
-          </h2>
-          <p v-if="latest" class="mt-1 text-sm text-muted">
-            {{ t('download.released', { date: formatDate(latest.publishedAt, locale) }) }}
-          </p>
-        </div>
-
-        <UBadge
-          v-if="latest"
-          :color="isLive ? 'success' : 'neutral'"
-          variant="subtle"
-          size="sm"
-          :icon="isLive ? 'i-lucide-radio' : 'i-lucide-database'"
-          :title="fetchedAt ? t('download.asOf', { date: formatDateTime(fetchedAt, locale) }) : undefined"
-        >
-          {{ isLive ? t('download.live') : t('download.snapshot') }}
-        </UBadge>
-      </div>
-
+      <p class="eyebrow text-secondary">{{ t('download.latest') }}</p>
+      <h2 class="mt-1.5 font-display text-2xl font-bold text-highlighted">
+        {{ t('download.title') }}
+        <span v-if="latest" class="text-muted">· {{ latest.tag }}</span>
+      </h2>
+      <p v-if="latest" class="mt-1 text-sm text-muted">
+        {{ t('download.released', { date: formatDate(latest.publishedAt, locale) }) }}
+      </p>
       <p class="mt-4 max-w-prose text-sm leading-relaxed text-toned">
         {{ t('download.lead') }}
       </p>
     </template>
-
-    <UAlert
-      v-if="staleError === 'live-refresh-failed'"
-      class="mb-5"
-      color="warning"
-      variant="subtle"
-      icon="i-lucide-cloud-off"
-      :title="t('download.staleTitle')"
-      :description="t('download.staleBody')"
-    />
 
     <div v-if="ordered.length" class="space-y-3">
       <DownloadAsset

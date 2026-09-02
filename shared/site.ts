@@ -48,3 +48,28 @@ export const GTM_ID = 'GTM-PS4XN2Z2'
 
 /** Records whether the visitor agreed to analytics. */
 export const CONSENT_COOKIE = 'cachet_consent'
+
+/** Locale codes that appear as a URL prefix — every locale except the default. */
+const PREFIXED = LOCALES.filter(l => l.code !== 'en').map(l => l.code)
+
+/**
+ * The same path in another language.
+ *
+ * `switchLocalePath` cannot be trusted for this: with `prefix_except_default`
+ * it returns the *current* path when asked for the default locale, so from
+ * `/it/news` the English entry pointed at `/it/news`. Every other language
+ * worked, which made it easy to miss — but it left anyone browsing in one of
+ * the six prefixed languages with no way back to English.
+ *
+ * Swapping the prefix is unambiguous and needs no route table. Pages whose slug
+ * differs per language (the documentation sections) override this through
+ * `useLocalisedPaths`.
+ */
+export function pathInLocale(path: string, locale: string): string {
+  const segments = path.split('/').filter(Boolean)
+  if (segments.length && PREFIXED.includes(segments[0]!)) segments.shift()
+
+  const rest = segments.join('/')
+  if (locale === 'en') return rest ? `/${rest}` : '/'
+  return rest ? `/${locale}/${rest}` : `/${locale}`
+}

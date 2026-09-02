@@ -62,12 +62,6 @@
     "allReleases": "All releases",
     "empty": "No published release yet.",
     "emptyHint": "Builds appear here as soon as a version is tagged on GitHub.",
-    "loading": "Loading releases from GitHub…",
-    "live": "Live from GitHub",
-    "snapshot": "Cached copy",
-    "asOf": "as of {date}",
-    "staleTitle": "Showing a cached copy",
-    "staleBody": "GitHub could not be reached — its API allows 60 requests an hour from a shared address. The files below are from the last successful check and the links still work.",
     "platform": {
       "linux": "Linux",
       "windows": "Windows",
@@ -351,9 +345,6 @@
       "downloadCta": "Go to the downloads"
     },
     "reference": {
-      "title": "Reference",
-      "lead": "The sections below are the application's own reference documentation, reproduced word for word so the site and the app never say different things.",
-      "fromApp": "From the application's built-in documentation",
       "notTranslated": "This reference is not yet available in your language; it is shown in English."
     },
     "legal": {

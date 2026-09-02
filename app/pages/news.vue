@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { SITE } from '#shared/site'
-import { formatDate, formatDateTime } from '~/utils/format'
+import { formatDate } from '~/utils/format'
 
 /**
  * Every published release, newest first. The list is prerendered from the
  * build-time GitHub fetch and replaced by a live one on mount, so it is never
  * empty and never more than a page load out of date.
  */
-const { releases, isLive, staleError, fetchedAt } = useReleases()
+const { releases } = useReleases()
 const { t, locale } = useI18n()
 
 useSiteSeo('news')
@@ -37,40 +37,20 @@ useHead(() => ({
   <div>
     <PageHeader :title="t('news.title')" :lead="t('news.lead')">
       <template #actions>
-        <div class="flex flex-wrap items-center gap-3">
-          <UBadge
-            :color="isLive ? 'success' : 'neutral'"
-            variant="subtle"
-            :icon="isLive ? 'i-lucide-radio' : 'i-lucide-database'"
-            :title="fetchedAt ? t('download.asOf', { date: formatDateTime(fetchedAt, locale) }) : undefined"
-          >
-            {{ isLive ? t('download.live') : t('download.snapshot') }}
-          </UBadge>
-          <UButton
-            :to="feedPath"
-            external
-            color="neutral"
-            variant="outline"
-            size="sm"
-            icon="i-lucide-rss"
-          >
-            {{ t('news.feed') }}
-          </UButton>
-        </div>
+        <UButton
+          :to="feedPath"
+          external
+          color="neutral"
+          variant="outline"
+          size="sm"
+          icon="i-lucide-rss"
+        >
+          {{ t('news.feed') }}
+        </UButton>
       </template>
     </PageHeader>
 
     <UContainer class="pb-16">
-      <UAlert
-        v-if="staleError === 'live-refresh-failed'"
-        class="mb-8"
-        color="warning"
-        variant="subtle"
-        icon="i-lucide-cloud-off"
-        :title="t('download.staleTitle')"
-        :description="t('download.staleBody')"
-      />
-
       <div v-if="releases.length" class="space-y-8">
         <article
           v-for="(release, index) in releases"
